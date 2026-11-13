@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>受ける前の点検（10問）｜一陸特・一陸技　計算で止まる所の辞典</title>
+<meta name="description" content="一陸特・一陸技の対策の本の解説を読み進められるかを、計算の土台の10問で確かめます。答えは画面の中だけで採点し、どこにも送りません。">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site"><a href="index.html">一陸特・一陸技　計算で止まる所の辞典</a></header>
+<main>
+<h1>受ける前の点検（10問）</h1>
+<p class="lead">対策の本の解説は、ここにある計算ができる前提で書かれています。電卓を使わずに、紙に書いて解いてください。分からない問題は「分からない」を選んでかまいません。当てずっぽうで選ぶと、やり直す所が見えなくなります。</p>
+<p>答えはこの画面の中だけで採点します。どこにも送りません。</p>
+
+<form id="quiz"></form>
+<p><button type="button" class="btn" id="grade">採点する</button></p>
+<div id="result" class="result" hidden></div>
+
+<p><a href="index.html">辞典の入口へ戻る</a></p>
+</main>
+<footer>
+<p>書いている人：数字でつまずく所の手帳。資格の計算で止まる所を1つずつ解く本と問題集を作っています。</p>
+<p>この点検は、計算の土台だけを確かめる物です。全部できても、合格を約束する物ではありません。問題は自分で作ったもので、過去問題そのものではありません。</p>
+</footer>
+<script>
+(function () {
+  var areas = {
+    keta: { name: "10の何乗と単位", page: "keta-hachou.html", stop: "波長や周波数の計算で、桁がずれます。" },
+    log: { name: "対数", page: "", stop: "デシベルの式（10 log）の意味が読めません。" },
+    db: { name: "デシベル", page: "db-3-10.html", stop: "利得や損失の計算の解説で止まります。" },
+    root: { name: "平方根と、j の付いた数の大きさ", page: "", stop: "交流回路のインピーダンスの解説で止まります。" },
+    bunsu: { name: "分数", page: "", stop: "並列の合成抵抗や、式の変形で止まります。" },
+    sankaku: { name: "三角関数", page: "", stop: "位相や力率の出てくる解説で止まります。" }
+  };
+  var qs = [
+    { a: "keta", t: "10³ × 10⁻⁶ は、いくつですか。", c: ["10⁻³", "10⁻¹⁸", "10⁹", "10⁻²"], k: 0 },
+    { a: "keta", t: "2.4 GHz は、何 MHz ですか。", c: ["0.0024 MHz", "24 MHz", "240 MHz", "2400 MHz"], k: 3 },
+    { a: "log", t: "log₁₀ 1000 は、いくつですか。", c: ["100", "30", "3", "0.001"], k: 2 },
+    { a: "log", t: "log₁₀ 2 ＝ 0.3 とすると、log₁₀ 8 は、いくつですか。", c: ["0.9", "2.4", "1.2", "0.6"], k: 0 },
+    { a: "db", t: "電力が100倍になりました。何 dB ですか。", c: ["100 dB", "40 dB", "20 dB", "10 dB"], k: 2 },
+    { a: "db", t: "電力が2倍になりました。およそ何 dB ですか。", c: ["2 dB", "3 dB", "6 dB", "10 dB"], k: 1 },
+    { a: "db", t: "電圧が10倍になりました。何 dB ですか。", c: ["10 dB", "20 dB", "40 dB", "100 dB"], k: 1 },
+    { a: "root", t: "√(3² ＋ 4²) は、いくつですか。", c: ["7", "25", "12", "5"], k: 3 },
+    { a: "bunsu", t: "6 Ω と 3 Ω の抵抗を並列につなぎました。合成抵抗は何 Ω ですか。", c: ["9 Ω", "4.5 Ω", "2 Ω", "0.5 Ω"], k: 2 },
+    { a: "sankaku", t: "cos 60° は、いくつですか。", c: ["0.5", "0.71", "0.87", "1"], k: 0 }
+  ];
+  var form = document.getElementById("quiz");
+  qs.forEach(function (q, i) {
+    var f = document.createElement("fieldset");
+    f.className = "q";
+    var l = document.createElement("legend");
+    l.textContent = "問" + (i + 1) + "　" + q.t;
+    f.appendChild(l);
+    q.c.concat(["分からない"]).forEach(function (c, j) {
+      var lab = document.createElement("label");
+      var r = document.createElement("input");
+      r.type = "radio"; r.name = "q" + i; r.value = String(j);
+      lab.appendChild(r);
+      lab.appendChild(document.createTextNode(" " + c));
+      f.appendChild(lab);
+    });
+    form.appendChild(f);
+  });
+  document.getElementById("grade").addEventListener("click", function () {
+    var res = document.getElementById("result");
+    var miss = {}, right = 0, blank = 0;
+    qs.forEach(function (q, i) {
+      var sel = form.querySelector('input[name="q' + i + '"]:checked');
+      if (!sel) { blank++; miss[q.a] = true; return; }
+      if (Number(sel.value) === q.k) { right++; } else { miss[q.a] = true; }
+    });
+    var h = "<h2>結果：10問のうち " + right + "問</h2>";
+    if (blank > 0) { h += "<p>選んでいない問題が " + blank + "問あります。分からない問題として数えました。</p>"; }
+    var keys = Object.keys(areas).filter(function (k) { return miss[k]; });
+    if (keys.length === 0) {
+      h += "<p>計算の土台は足りています。対策の本の解説を、計算で止まらずに読み進められる見込みです。あとは、無線の中身と法規に時間を使えます。</p>";
+    } else {
+      h += "<p>やり直す所は、次の " + keys.length + "つです。ここを先に埋めると、対策の本の解説が読めるようになります。</p><ul>";
+      keys.forEach(function (k) {
+        var a = areas[k];
+        h += "<li><strong>" + a.name + "</strong>：そのままだと、" + a.stop;
+        h += a.page ? ' <a href="' + a.page + '">この辞典のページを読む</a>' : "（この辞典のページは準備中です）";
+        h += "</li>";
+      });
+      h += "</ul>";
+    }
+    h += "<p>この点検で分かるのは、計算の土台だけです。合格には、このほかに無線の中身と法規の勉強が要ります。</p>";
+    res.innerHTML = h;
+    res.hidden = false;
+    res.scrollIntoView({ behavior: "smooth" });
+  });
+})();
+</script>
+</body>
+</html>

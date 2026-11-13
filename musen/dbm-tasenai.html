@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dBm：30 dBm ＋ 30 dBm は、60 dBm ではない｜一陸特・一陸技　計算で止まる所の辞典</title>
+<meta name="description" content="dB は足せるのに、dBm どうしは足せません。比と量の違いから、足してよい組み合わせと、W に戻して足す組み合わせを解きます。">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site"><a href="index.html">一陸特・一陸技　計算で止まる所の辞典</a></header>
+<main>
+<h1>dBm：30 dBm ＋ 30 dBm は、60 dBm ではない</h1>
+<p class="lead">デシベルは足し算で計算できる、と覚えた直後に、足してはいけない場面が出てきます。dB と dBm は、見た目は似ていますが、表している物が違います。</p>
+
+<h2>どこで止まるか</h2>
+<div class="wrong">1 W（30 dBm）の電力を2つ合わせるとき、30 ＋ 30 ＝ 60 dBm としてしまう。60 dBm は 1000 W です。1 W と 1 W を合わせて、1000 W にはなりません。</div>
+
+<h2>dB は「何倍か」、dBm は「何ミリワットか」</h2>
+<p>dB は比です。「100倍」を 20 dB と書きます。dBm は量です。1 mW を 0 dBm と決めて、そこから何 dB 上かで電力の大きさを表します。</p>
+<table>
+<thead><tr><th>dBm</th><th>電力</th></tr></thead>
+<tbody>
+<tr><td>0 dBm</td><td>1 mW</td></tr>
+<tr><td>10 dBm</td><td>10 mW</td></tr>
+<tr><td>20 dBm</td><td>100 mW</td></tr>
+<tr><td>30 dBm</td><td>1 W</td></tr>
+<tr><td>40 dBm</td><td>10 W</td></tr>
+</tbody>
+</table>
+<p>足してよいかどうかは、組み合わせで決まります。</p>
+<table>
+<thead><tr><th>組み合わせ</th><th>足せるか</th><th>意味</th></tr></thead>
+<tbody>
+<tr><td>dB ＋ dB</td><td>足せる</td><td>倍率に倍率を掛ける</td></tr>
+<tr><td>dBm ＋ dB</td><td>足せる</td><td>電力に倍率を掛ける。答えは dBm</td></tr>
+<tr><td>dBm ＋ dBm</td><td>足せない</td><td>電力に電力を掛けることになり、意味が無い</td></tr>
+</tbody>
+</table>
+<p>電力どうしを合わせるときは、W に戻してから足します。</p>
+<div class="calc">30 dBm ＋ 30 dBm → 1 W ＋ 1 W ＝ 2 W<br>2 W は 1 W の2倍なので、30 ＋ 3 ＝ 33 dBm</div>
+
+<h2>数値で確かめる</h2>
+<p>送信機の出力が 5 W、給電線の損失が 2 dB、アンテナの絶対利得（どの向きにも同じ強さで出す仮のアンテナと比べた利得）が 15 dB のとき、アンテナのいちばん強い向きでの見かけの電力（等価等方輻射電力）を求めます。</p>
+<div class="calc">5 W ＝ 10 W ÷ 2 なので、40 − 3 ＝ 37 dBm<br>37 − 2 ＋ 15 ＝ 50 dBm<br>50 dBm ＝ 30 ＋ 20 なので、1 W × 100 ＝ 100 W</div>
+<p>dBm に、損失と利得の dB を足し引きしています。量に比を足す組み合わせなので、足せます。</p>
+
+<div class="check"><strong>確かめの1問</strong><br>20 dBm の電力を2つ合わせると、何 dBm ですか。
+<details><summary>答え</summary>100 mW ＋ 100 mW ＝ 200 mW。100 mW の2倍なので、20 ＋ 3 ＝ 23 dBm。</details></div>
+
+<p><a href="keta-hachou.html">次のページ：300 を周波数で割るとき、桁がずれる</a></p>
+<p><a href="index.html">辞典の入口へ戻る</a></p>
+</main>
+<footer>
+<p>書いている人：数字でつまずく所の手帳。資格の計算で止まる所を1つずつ解く本と問題集を作っています。</p>
+<p>この辞典の数値と例題は自分で作ったもので、過去問題そのものではありません。誤りに気付いたときは、X の @tsumazuki_note へ知らせていただけると助かります。</p>
+</footer>
+</body>
+</html>

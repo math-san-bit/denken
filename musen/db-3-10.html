@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>デシベル：電卓なしで、3 と 10 だけで出す｜一陸特・一陸技　計算で止まる所の辞典</title>
+<meta name="description" content="電力が400倍は何デシベルか。log 400 を計算せずに、2倍は3、10倍は10の2つだけで出す方法を、一陸特・一陸技の計算向けに解きます。">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="site"><a href="index.html">一陸特・一陸技　計算で止まる所の辞典</a></header>
+<main>
+<h1>デシベル：電卓なしで、3 と 10 だけで出す</h1>
+<p class="lead">「電力が400倍のとき、利得は何 dB か」。式は 10 log 400 ですが、一陸技の試験では電卓が使えません。log 400 を出そうとした所で手が止まります。実は、log を計算する必要はありません。</p>
+
+<h2>どこで止まるか</h2>
+<div class="wrong">10 log 400 と書いた後、log 400 の値が出せない。対数の表を覚えようとして、量の多さにあきらめる。</div>
+
+<h2>掛け算を、足し算に直す</h2>
+<p>デシベルは、「何倍か」という掛け算を、足し算に直すための目盛りです。電力のとき、覚える値は2つだけです。</p>
+<div class="calc">電力が 2倍 → ＋3 dB<br>電力が 10倍 → ＋10 dB</div>
+<p>400倍は、2倍を2回、10倍を2回、掛けた数です。掛けた回数だけ、足します。</p>
+<div class="calc">400 ＝ 2 × 2 × 10 × 10<br>3 ＋ 3 ＋ 10 ＋ 10 ＝ 26 dB</div>
+<p>割り算は引き算になります。5倍は「10倍して、2で割る」なので、10 − 3 ＝ 7 dB です。</p>
+
+<table>
+<thead><tr><th>電力の倍率</th><th>分け方</th><th>dB</th></tr></thead>
+<tbody>
+<tr><td>2倍</td><td>2</td><td>3</td></tr>
+<tr><td>4倍</td><td>2 × 2</td><td>6</td></tr>
+<tr><td>5倍</td><td>10 ÷ 2</td><td>7</td></tr>
+<tr><td>8倍</td><td>2 × 2 × 2</td><td>9</td></tr>
+<tr><td>10倍</td><td>10</td><td>10</td></tr>
+<tr><td>20倍</td><td>2 × 10</td><td>13</td></tr>
+<tr><td>50倍</td><td>100 ÷ 2</td><td>17</td></tr>
+<tr><td>100倍</td><td>10 × 10</td><td>20</td></tr>
+<tr><td>1000倍</td><td>10 × 10 × 10</td><td>30</td></tr>
+</tbody>
+</table>
+<p>2倍を 3 dB とするのは丸めた値で、正確には 3.01 dB です。400倍も、正確には 26.02 dB です。</p>
+
+<h2>電圧のときは、倍になる</h2>
+<p>電圧や電流の比のときは、同じ倍率でも dB の値が2倍になります。電力は電圧の2乗に比例するからです。</p>
+<div class="calc">電圧が 2倍 → ＋6 dB<br>電圧が 10倍 → ＋20 dB</div>
+<p>問題文が「電力」の比なのか「電圧」の比なのかを、最初に確かめます。式で言うと、電力は 10 log、電圧は 20 log です。</p>
+
+<h2>数値で確かめる</h2>
+<p>逆向きも同じです。利得 23 dB の増幅器は、電力を何倍にするでしょうか。23 を、10 と 3 に分けます。</p>
+<div class="calc">23 ＝ 10 ＋ 10 ＋ 3<br>10 × 10 × 2 ＝ 200倍</div>
+
+<div class="check"><strong>確かめの1問</strong><br>電力が50倍のとき、何 dB ですか。
+<details><summary>答え</summary>50 ＝ 100 ÷ 2 なので、20 − 3 ＝ 17 dB。</details></div>
+
+<p><a href="dbm-tasenai.html">次のページ：30 dBm ＋ 30 dBm は、60 dBm ではない</a></p>
+<p><a href="index.html">辞典の入口へ戻る</a></p>
+</main>
+<footer>
+<p>書いている人：数字でつまずく所の手帳。資格の計算で止まる所を1つずつ解く本と問題集を作っています。</p>
+<p>この辞典の数値と例題は自分で作ったもので、過去問題そのものではありません。誤りに気付いたときは、X の @tsumazuki_note へ知らせていただけると助かります。</p>
+</footer>
+</body>
+</html>
