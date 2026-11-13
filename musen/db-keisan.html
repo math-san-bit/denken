@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>デシベルの計算の道具：倍率と dB の行き来を、分け方つきで｜一陸特・一陸技　計算で止まる所の辞典</title>
+<meta name="description" content="倍率を入れると dB を、dB を入れると倍率を出します。2 と 10 に分けられる数は、3 と 10 の足し算での出し方も見せます。">
+<link rel="canonical" href="https://math-san-bit.github.io/denken/musen/db-keisan.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="デシベルの計算の道具：倍率と dB の行き来を、分け方つきで｜一陸特・一陸技　計算で止まる所の辞典">
+<meta property="og:description" content="倍率を入れると dB を、dB を入れると倍率を出します。2 と 10 に分けられる数は、3 と 10 の足し算での出し方も見せます。">
+<meta property="og:url" content="https://math-san-bit.github.io/denken/musen/db-keisan.html">
+<meta property="og:image" content="https://math-san-bit.github.io/denken/img/og-musen.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "デシベルの計算の道具：倍率と dB の行き来を、分け方つきで", "description": "倍率を入れると dB を、dB を入れると倍率を出します。2 と 10 に分けられる数は、3 と 10 の足し算での出し方も見せます。", "inLanguage": "ja", "datePublished": "2026-11-13", "dateModified": "2026-11-13", "mainEntityOfPage": "https://math-san-bit.github.io/denken/musen/db-keisan.html", "author": {"@type": "Organization", "name": "数字でつまずく所の手帳"}}</script>
+<link rel="stylesheet" href="../style.css">
+<script src="../m.js"></script>
+</head>
+<body>
+<header class="site"><a href="index.html">一陸特・一陸技　計算で止まる所の辞典</a></header>
+<main>
+<h1>デシベルの計算の道具</h1>
+<p class="lead">倍率と dB を行き来します。答えだけでなく、電卓なしで出すときの分け方も見せます。手で解いた後の、答え合わせに使ってください。</p>
+
+<div class="tool">
+<label>何の倍率か　<select id="kind"><option value="10">電力</option><option value="20">電圧・電流</option></select></label>
+<label>倍率 → dB　<input id="ratio" type="number" inputmode="decimal" step="any" placeholder="例：400"></label>
+<output id="o1"></output>
+<label>dB → 倍率　<input id="db" type="number" inputmode="decimal" step="any" placeholder="例：26"></label>
+<output id="o2"></output>
+</div>
+<p>入れた数は、この画面の中だけで計算します。どこにも送りません。</p>
+
+<h2>分け方について</h2>
+<p>電力の2倍を 3 dB とするのは、近い値です（正しくは 3.01 dB）。試験の選択肢を選ぶには、これで足ります。2 と 10 の掛け算と割り算に分けられない数（3倍、7倍など）は、分け方を出しません。3倍は <a href="log-2-3.html">log 3 を使うページ</a>を見てください。</p>
+<p>手で解く方法は、<a href="db-3-10.html">デシベルを 3 と 10 だけで出すページ</a>に書いてあります。</p>
+<script>
+(function () {
+  var used = false;
+  function note() { if (!used && window.jitenEvent) { used = true; window.jitenEvent("tool_use", {}); } }
+  function split(r) {
+    for (var b = -9; b <= 9; b++) { for (var a = -6; a <= 6; a++) {
+      var v = Math.pow(2, a) * Math.pow(10, b);
+      if (Math.abs(v - r) <= 1e-9 * Math.max(1, r)) { return [a, b]; }
+    } }
+    return null;
+  }
+  function f1() {
+    var k = Number(document.getElementById("kind").value);
+    var r = Number(document.getElementById("ratio").value);
+    var o = document.getElementById("o1");
+    if (!(r > 0)) { o.textContent = ""; return; }
+    note();
+    var t = "正しい値：" + (k * Math.log(r) / Math.LN10).toFixed(2).replace("-", "−") + " dB";
+    var s = split(r);
+    if (s && (s[0] !== 0 || s[1] !== 0)) {
+      var u2 = k === 10 ? 3 : 6, u10 = k, mul = [], div = [], sum = 0, i;
+      for (i = 0; i < Math.abs(s[1]); i++) { (s[1] > 0 ? mul : div).push([10, u10]); }
+      for (i = 0; i < Math.abs(s[0]); i++) { (s[0] > 0 ? mul : div).push([2, u2]); }
+      var left = mul.length ? mul.map(function (x) { return x[0]; }).join(" × ") : "1";
+      div.forEach(function (x) { left += " ÷ " + x[0]; });
+      var right = mul.map(function (x) { return x[1]; }).join(" ＋ ");
+      div.forEach(function (x) { right += (right ? " − " : "−") + x[1]; });
+      mul.forEach(function (x) { sum += x[1]; }); div.forEach(function (x) { sum -= x[1]; });
+      t += "。分け方：" + r + " ＝ " + left + " なので、" + right + " ＝ " + String(sum).replace("-", "−") + " dB";
+    }
+    o.textContent = t;
+  }
+  function f2() {
+    var k = Number(document.getElementById("kind").value);
+    var v = document.getElementById("db").value;
+    var o = document.getElementById("o2");
+    if (v === "") { o.textContent = ""; return; }
+    note();
+    var x = Math.pow(10, Number(v) / k);
+    o.textContent = "倍率：" + (x >= 100 ? x.toFixed(1) : x.toPrecision(4)) + " 倍";
+  }
+  ["kind", "ratio"].forEach(function (id) { document.getElementById(id).addEventListener("input", f1); });
+  ["kind", "db"].forEach(function (id) { document.getElementById(id).addEventListener("input", f2); });
+})();
+</script>
+<p><a href="index.html">辞典の入口へ戻る</a></p>
+</main>
+<footer>
+<p>書いている人：数字でつまずく所の手帳。資格の計算で止まる所を1つずつ解く本と問題集を作っています。</p>
+<p>この辞典の数値と例題は自分で作ったもので、過去問題そのものではありません。誤りに気付いたときは、X の @tsumazuki_note へ知らせていただけると助かります。</p>
+<p><a href="../privacy.html">このサイトが数えている物</a></p>
+</footer>
+</body>
+</html>

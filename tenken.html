@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>計算の点検（10問）｜電験三種　計算で止まる所の辞典</title>
 <meta name="description" content="電験三種の参考書の解説を読み進められるかを、計算の10問で確かめます。約5分。やり直す所と、読むページと本が分かります。">
+<link rel="canonical" href="https://math-san-bit.github.io/denken/tenken.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="計算の点検（10問）｜電験三種　計算で止まる所の辞典">
+<meta property="og:description" content="電験三種の参考書の解説を読み進められるかを、計算の10問で確かめます。約5分。やり直す所と、読むページと本が分かります。">
+<meta property="og:url" content="https://math-san-bit.github.io/denken/tenken.html">
+<meta property="og:image" content="https://math-san-bit.github.io/denken/img/og-denken.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "計算の点検（10問）", "description": "電験三種の参考書の解説を読み進められるかを、計算の10問で確かめます。約5分。やり直す所と、読むページと本が分かります。", "inLanguage": "ja", "datePublished": "2026-11-13", "dateModified": "2026-11-13", "mainEntityOfPage": "https://math-san-bit.github.io/denken/tenken.html", "author": {"@type": "Organization", "name": "電験数学ノート編集室"}}</script>
 <link rel="stylesheet" href="style.css">
 <script src="m.js"></script>
 </head>
@@ -29,12 +37,12 @@
 <script>
 (function () {
   var areas = {
-    fukuso: { name: "j の付いた数", page: "", book: "https://www.amazon.co.jp/dp/B0HLYB3HQY", bname: "第1巻『複素数とベクトル図』", stop: "交流回路のインピーダンスとベクトル図の解説で止まります。" },
-    pz: { name: "パーセントインピーダンス", page: "tanraku-100.html", book: "https://www.amazon.co.jp/dp/B0HLXHL4PM", bname: "第2巻『パーセントインピーダンスの計算がわかる』", stop: "短絡電流と、基準容量の換算で止まります。" },
-    sansou: { name: "三相交流と √3", page: "root3.html", book: "https://www.amazon.co.jp/dp/B0HMMDKGDW", bname: "第3巻『三相交流の計算がわかる』", stop: "√3 を掛けるのか割るのかで止まります。" },
-    rikiritsu: { name: "力率と無効電力", page: "", book: "https://www.amazon.co.jp/dp/B0HNDJMNTQ", bname: "第4巻『力率改善の計算がわかる』", stop: "コンデンサーの容量と、力率を上げる計算で止まります。" },
-    henatsu: { name: "変圧器の巻数比", page: "", book: "https://www.amazon.co.jp/dp/B0HPYX48YY", bname: "第5巻『変圧器の計算がわかる』", stop: "一次と二次の換算で、掛けるのか割るのかで止まります。" },
-    juyou: { name: "需要率・負荷率", page: "", book: "https://www.amazon.co.jp/dp/B0HQVZ88JP", bname: "第6巻『需要率・不等率・負荷率の計算がわかる』", stop: "法規の施設管理の計算で止まります。" }
+    fukuso: { name: "j の付いた数", page: "", book: "hon.html#v1", bname: "第1巻『複素数とベクトル図』", stop: "交流回路のインピーダンスとベクトル図の解説で止まります。" },
+    pz: { name: "パーセントインピーダンス", page: "tanraku-100.html", book: "hon.html#v2", bname: "第2巻『パーセントインピーダンスの計算がわかる』", stop: "短絡電流と、基準容量の換算で止まります。" },
+    sansou: { name: "三相交流と √3", page: "root3.html", book: "hon.html#v3", bname: "第3巻『三相交流の計算がわかる』", stop: "√3 を掛けるのか割るのかで止まります。" },
+    rikiritsu: { name: "力率と無効電力", page: "", book: "hon.html#v4", bname: "第4巻『力率改善の計算がわかる』", stop: "コンデンサーの容量と、力率を上げる計算で止まります。" },
+    henatsu: { name: "変圧器の巻数比", page: "", book: "hon.html#v5", bname: "第5巻『変圧器の計算がわかる』", stop: "一次と二次の換算で、掛けるのか割るのかで止まります。" },
+    juyou: { name: "需要率・負荷率", page: "", book: "hon.html#v6", bname: "第6巻『需要率・不等率・負荷率の計算がわかる』", stop: "法規の施設管理の計算で止まります。" }
   };
   var qs = [
     { a: "fukuso", t: "3 ＋ j4 の大きさは、いくつですか。", c: ["7", "5", "12", "1"], k: 1 },
@@ -88,17 +96,21 @@
         var a = areas[k];
         h += "<li><strong>" + a.name + "</strong>：そのままだと、" + a.stop;
         if (a.page) { h += ' <a href="' + a.page + '">この辞典のページを読む</a>。'; }
-        h += ' 順を追って解く本：<a href="' + a.book + '">' + a.bname + '</a>';
+        h += ' 順を追って解く本：<a href="' + a.book + '">' + a.bname + 'の案内</a>';
         h += "</li>";
       });
       h += "</ul>";
     }
     h += "<p>この点検で分かるのは、計算の土台だけです。合格には、このほかに4科目それぞれの中身の勉強が要ります。</p>";
+    var st = "電験三種 計算の点検（10問）：10問のうち " + right + "問できました。";
+    h += '<p><a class="btn" id="share" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=' + encodeURIComponent(st) + '&url=' + encodeURIComponent("https://math-san-bit.github.io/denken/tenken.html") + '&hashtags=%E9%9B%BB%E9%A8%93%E4%B8%89%E7%A8%AE">結果を X に書く</a></p><p>押すと、X の投稿の画面が開きます。押さなければ、結果はどこにも出ません。</p>';
     if (window.jitenEvent) {
       window.jitenEvent("tenken_done", { right: right, miss_n: keys.length, miss: keys.join(",") || "none", blank: blank });
     }
     res.innerHTML = h;
     res.hidden = false;
+    var sb = document.getElementById("share");
+    if (sb) { sb.addEventListener("click", function () { if (window.jitenEvent) { window.jitenEvent("share", {}); } }); }
     res.scrollIntoView({ behavior: "smooth" });
   });
 })();

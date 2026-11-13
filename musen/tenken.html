@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>受ける前の点検（10問）｜一陸特・一陸技　計算で止まる所の辞典</title>
 <meta name="description" content="一陸特・一陸技の対策の本の解説を読み進められるかを、計算の土台の10問で確かめます。約5分。やり直す所と、読むページが分かります。">
+<link rel="canonical" href="https://math-san-bit.github.io/denken/musen/tenken.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="受ける前の点検（10問）｜一陸特・一陸技　計算で止まる所の辞典">
+<meta property="og:description" content="一陸特・一陸技の対策の本の解説を読み進められるかを、計算の土台の10問で確かめます。約5分。やり直す所と、読むページが分かります。">
+<meta property="og:url" content="https://math-san-bit.github.io/denken/musen/tenken.html">
+<meta property="og:image" content="https://math-san-bit.github.io/denken/img/og-musen.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "受ける前の点検（10問）", "description": "一陸特・一陸技の対策の本の解説を読み進められるかを、計算の土台の10問で確かめます。約5分。やり直す所と、読むページが分かります。", "inLanguage": "ja", "datePublished": "2026-11-13", "dateModified": "2026-11-13", "mainEntityOfPage": "https://math-san-bit.github.io/denken/musen/tenken.html", "author": {"@type": "Organization", "name": "数字でつまずく所の手帳"}}</script>
 <link rel="stylesheet" href="../style.css">
 <script src="../m.js"></script>
 </head>
@@ -88,17 +96,21 @@
         var a = areas[k];
         h += "<li><strong>" + a.name + "</strong>：そのままだと、" + a.stop;
         h += a.page ? ' <a href="' + a.page + '">この辞典のページを読む</a>' : "（この辞典のページは準備中です）";
-        if (k === "db") { h += ' 紙の上で固める問題集：<a href="https://tsumazuki-techo.booth.pm/items/9144717">『電卓なしのデシベル 書き込み式の問題集 40問』</a>（PDF、300円、BOOTH）'; }
+        if (k === "db") { h += ' 紙の上で固める問題集：<a href="mondaishu.html">『電卓なしのデシベル 書き込み式の問題集 40問』の案内</a>'; }
         h += "</li>";
       });
       h += "</ul>";
     }
     h += "<p>この点検で分かるのは、計算の土台だけです。合格には、このほかに無線の中身と法規の勉強が要ります。</p>";
+    var st = "一陸特・一陸技 受ける前の点検（10問）：10問のうち " + right + "問できました。";
+    h += '<p><a class="btn" id="share" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=' + encodeURIComponent(st) + '&url=' + encodeURIComponent("https://math-san-bit.github.io/denken/musen/tenken.html") + '&hashtags=%E4%B8%80%E9%99%B8%E7%89%B9">結果を X に書く</a></p><p>押すと、X の投稿の画面が開きます。押さなければ、結果はどこにも出ません。</p>';
     if (window.jitenEvent) {
       window.jitenEvent("tenken_done", { right: right, miss_n: keys.length, miss: keys.join(",") || "none", blank: blank });
     }
     res.innerHTML = h;
     res.hidden = false;
+    var sb = document.getElementById("share");
+    if (sb) { sb.addEventListener("click", function () { if (window.jitenEvent) { window.jitenEvent("share", {}); } }); }
     res.scrollIntoView({ behavior: "smooth" });
   });
 })();

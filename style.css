@@ -25,3 +25,12 @@ fieldset.q legend{font-weight:700;padding:0 .3em}
 fieldset.q label{display:block;padding:.35em 0}
 .result{border:2px solid var(--accent);border-radius:6px;background:#fff;padding:.4em 1em;margin:1.4em 0}
 table.num th:first-child,table.num td:first-child{white-space:nowrap}
+
+.answer{background:#fff8e1;border:1px solid var(--mark);border-radius:6px;padding:.7em 1em;margin:1em 0}
+.answer strong{display:block;font-size:.9rem;color:var(--sub)}
+.tool{background:#fff;border:1px solid var(--line);border-radius:6px;padding:.8em 1em;margin:1em 0}
+.tool label{display:block;margin:.5em 0}
+.tool input,.tool select{font-size:1.05rem;padding:.4em;max-width:100%}
+.tool output{display:block;margin-top:.6em;font-weight:700}
+img.sample{max-width:100%;border:1px solid var(--line);border-radius:6px}
+.updated{color:var(--sub);font-size:.85rem}
