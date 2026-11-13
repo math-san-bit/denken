@@ -30,7 +30,7 @@
 (function () {
   var areas = {
     keta: { name: "10の何乗と単位", page: "keta-hachou.html", stop: "波長や周波数の計算で、桁がずれます。" },
-    log: { name: "対数", page: "", stop: "デシベルの式（10 log）の意味が読めません。" },
+    log: { name: "対数", page: "log-2-3.html", stop: "デシベルの式（10 log）の意味が読めません。" },
     db: { name: "デシベル", page: "db-3-10.html", stop: "利得や損失の計算の解説で止まります。" },
     root: { name: "平方根と、j の付いた数の大きさ", page: "", stop: "交流回路のインピーダンスの解説で止まります。" },
     bunsu: { name: "分数", page: "", stop: "並列の合成抵抗や、式の変形で止まります。" },
@@ -88,6 +88,7 @@
         var a = areas[k];
         h += "<li><strong>" + a.name + "</strong>：そのままだと、" + a.stop;
         h += a.page ? ' <a href="' + a.page + '">この辞典のページを読む</a>' : "（この辞典のページは準備中です）";
+        if (k === "db") { h += ' 紙の上で固める問題集：<a href="https://tsumazuki-techo.booth.pm/items/9144717">『電卓なしのデシベル 書き込み式の問題集 40問』</a>（PDF、300円、BOOTH）'; }
         h += "</li>";
       });
       h += "</ul>";

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>計算の点検（10問）｜電験三種　計算で止まる所の辞典</title>
+<meta name="description" content="電験三種の参考書の解説を読み進められるかを、計算の10問で確かめます。約5分。やり直す所と、読むページと本が分かります。">
+<link rel="stylesheet" href="style.css">
+<script src="m.js"></script>
+</head>
+<body>
+<header class="site"><a href="index.html">電験三種　計算で止まる所の辞典</a></header>
+<main>
+<h1>計算の点検（10問）</h1>
+<p class="lead">参考書の解説は、ここにある計算ができる前提で進みます。紙に書いて解いてください。電卓を使ってかまいません（√3 は 1.73 とします）。分からない問題は「分からない」を選んでかまいません。当てずっぽうで選ぶと、やり直す所が見えなくなります。</p>
+<p>採点はこの画面の中で行います。どの選択肢を選んだかは、どこにも送りません。数えているのは、採点した回数、何問できたか、やり直す所のまとまりの名前だけです（<a href="privacy.html">このサイトが数えている物</a>）。</p>
+
+<form id="quiz"></form>
+<p><button type="button" class="btn" id="grade">採点する</button></p>
+<div id="result" class="result" hidden></div>
+
+<p><a href="index.html">辞典の入口へ戻る</a></p>
+</main>
+<footer>
+<p>書いている人：電験数学ノート編集室。電験三種の計算で止まる所を1つずつ解く本を作っています。</p>
+<p>この点検は、計算の土台だけを確かめる物です。全部できても、合格を約束する物ではありません。問題は編集室が作ったもので、過去問題そのものではありません。</p>
+<p><a href="privacy.html">このサイトが数えている物</a></p>
+</footer>
+<script>
+(function () {
+  var areas = {
+    fukuso: { name: "j の付いた数", page: "", book: "https://www.amazon.co.jp/dp/B0HLYB3HQY", bname: "第1巻『複素数とベクトル図』", stop: "交流回路のインピーダンスとベクトル図の解説で止まります。" },
+    pz: { name: "パーセントインピーダンス", page: "tanraku-100.html", book: "https://www.amazon.co.jp/dp/B0HLXHL4PM", bname: "第2巻『パーセントインピーダンスの計算がわかる』", stop: "短絡電流と、基準容量の換算で止まります。" },
+    sansou: { name: "三相交流と √3", page: "root3.html", book: "https://www.amazon.co.jp/dp/B0HMMDKGDW", bname: "第3巻『三相交流の計算がわかる』", stop: "√3 を掛けるのか割るのかで止まります。" },
+    rikiritsu: { name: "力率と無効電力", page: "", book: "https://www.amazon.co.jp/dp/B0HNDJMNTQ", bname: "第4巻『力率改善の計算がわかる』", stop: "コンデンサーの容量と、力率を上げる計算で止まります。" },
+    henatsu: { name: "変圧器の巻数比", page: "", book: "https://www.amazon.co.jp/dp/B0HPYX48YY", bname: "第5巻『変圧器の計算がわかる』", stop: "一次と二次の換算で、掛けるのか割るのかで止まります。" },
+    juyou: { name: "需要率・負荷率", page: "", book: "https://www.amazon.co.jp/dp/B0HQVZ88JP", bname: "第6巻『需要率・不等率・負荷率の計算がわかる』", stop: "法規の施設管理の計算で止まります。" }
+  };
+  var qs = [
+    { a: "fukuso", t: "3 ＋ j4 の大きさは、いくつですか。", c: ["7", "5", "12", "1"], k: 1 },
+    { a: "pz", t: "定格電流が 100 A、%Z が 5% の変圧器があります。二次側で三相短絡したときの短絡電流は何 A ですか。", c: ["500 A", "5 A", "2000 A", "20 A"], k: 2 },
+    { a: "pz", t: "10 MV·A を基準にして 5% の %Z を、20 MV·A の基準に直すと何 % ですか。", c: ["2.5%", "5%", "10%", "20%"], k: 2 },
+    { a: "sansou", t: "線間電圧が 200 V の Y 結線の相電圧は、およそ何 V ですか。", c: ["346 V", "200 V", "141 V", "115 V"], k: 3 },
+    { a: "sansou", t: "線間電圧 200 V、線電流 10 A、力率 0.8 の三相負荷の消費電力は、およそ何 kW ですか。", c: ["1.6 kW", "2.8 kW", "3.5 kW", "4.8 kW"], k: 1 },
+    { a: "rikiritsu", t: "消費電力が 80 kW、力率が 0.8 の負荷の皮相電力は何 kV·A ですか。", c: ["100 kV·A", "64 kV·A", "80 kV·A", "160 kV·A"], k: 0 },
+    { a: "rikiritsu", t: "上の負荷の無効電力は何 kvar ですか。", c: ["20 kvar", "48 kvar", "60 kvar", "80 kvar"], k: 2 },
+    { a: "henatsu", t: "一次 6600 V、二次 200 V の変圧器で、二次電流が 330 A のとき、一次電流は何 A ですか（損失は無視します）。", c: ["10 A", "33 A", "330 A", "10890 A"], k: 0 },
+    { a: "juyou", t: "設備容量が 100 kW、需要率が 60% の工場の最大需要電力は何 kW ですか。", c: ["167 kW", "60 kW", "40 kW", "6 kW"], k: 1 },
+    { a: "juyou", t: "最大需要電力が 60 kW、平均電力が 30 kW のとき、負荷率は何 % ですか。", c: ["200%", "30%", "50%", "18%"], k: 2 }
+  ];
+  var form = document.getElementById("quiz");
+  qs.forEach(function (q, i) {
+    var f = document.createElement("fieldset");
+    f.className = "q";
+    var l = document.createElement("legend");
+    l.textContent = "問" + (i + 1) + "　" + q.t;
+    f.appendChild(l);
+    q.c.concat(["分からない"]).forEach(function (c, j) {
+      var lab = document.createElement("label");
+      var r = document.createElement("input");
+      r.type = "radio"; r.name = "q" + i; r.value = String(j);
+      lab.appendChild(r);
+      lab.appendChild(document.createTextNode(" " + c));
+      f.appendChild(lab);
+    });
+    form.appendChild(f);
+  });
+  var started = false;
+  form.addEventListener("change", function () {
+    if (!started && window.jitenEvent) { started = true; window.jitenEvent("tenken_start", {}); }
+  });
+  document.getElementById("grade").addEventListener("click", function () {
+    var res = document.getElementById("result");
+    var miss = {}, right = 0, blank = 0;
+    qs.forEach(function (q, i) {
+      var sel = form.querySelector('input[name="q' + i + '"]:checked');
+      if (!sel) { blank++; miss[q.a] = true; return; }
+      if (Number(sel.value) === q.k) { right++; } else { miss[q.a] = true; }
+    });
+    var h = "<h2>結果：10問のうち " + right + "問</h2>";
+    if (blank > 0) { h += "<p>選んでいない問題が " + blank + "問あります。分からない問題として数えました。</p>"; }
+    var keys = Object.keys(areas).filter(function (k) { return miss[k]; });
+    if (keys.length === 0) {
+      h += "<p>計算の土台は足りています。参考書の解説を、計算で止まらずに読み進められる見込みです。あとは、過去の問題を解くことに時間を使えます。</p>";
+    } else {
+      h += "<p>やり直す所は、次の " + keys.length + "つです。ここを先に埋めると、参考書の解説が読めるようになります。</p><ul>";
+      keys.forEach(function (k) {
+        var a = areas[k];
+        h += "<li><strong>" + a.name + "</strong>：そのままだと、" + a.stop;
+        if (a.page) { h += ' <a href="' + a.page + '">この辞典のページを読む</a>。'; }
+        h += ' 順を追って解く本：<a href="' + a.book + '">' + a.bname + '</a>';
+        h += "</li>";
+      });
+      h += "</ul>";
+    }
+    h += "<p>この点検で分かるのは、計算の土台だけです。合格には、このほかに4科目それぞれの中身の勉強が要ります。</p>";
+    if (window.jitenEvent) {
+      window.jitenEvent("tenken_done", { right: right, miss_n: keys.length, miss: keys.join(",") || "none", blank: blank });
+    }
+    res.innerHTML = h;
+    res.hidden = false;
+    res.scrollIntoView({ behavior: "smooth" });
+  });
+})();
+</script>
+</body>
+</html>

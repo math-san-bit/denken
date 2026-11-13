@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>対数：log 2 と log 3 だけで、ほかの数の log を出す｜一陸特・一陸技　計算で止まる所の辞典</title>
+<meta name="description" content="log 2 と log 3 の値だけが与えられたとき、6倍や50倍の log を、掛け算に分けて足し算で出す方法を解きます。">
+<link rel="stylesheet" href="../style.css">
+<script src="../m.js"></script>
+</head>
+<body>
+<header class="site"><a href="index.html">一陸特・一陸技　計算で止まる所の辞典</a></header>
+<main>
+<h1>対数：log 2 と log 3 だけで、ほかの数の log を出す</h1>
+<p class="lead">一陸技の問題には「log₁₀ 2 ＝ 0.3010、log₁₀ 3 ＝ 0.4771 とする」と添えてあることがあります。与えられるのはこの2つだけで、6倍や50倍の log は、自分で作ります。</p>
+
+<h2>どこで止まるか</h2>
+<div class="wrong">「電力が6倍。log 6 は与えられていないので、出せない」と手が止まる。または、log 6 ＝ log 2 × log 3 ＝ 0.14 としてしまう。</div>
+
+<h2>掛け算は足し算に、割り算は引き算に</h2>
+<p>対数（log）は「10 を何乗するとその数になるか」を表します。10 の何乗どうしの掛け算は、指数の足し算です。だから、数を掛け算の形に分ければ、log は足し算で出せます。</p>
+<div class="calc">log (A × B) ＝ log A ＋ log B<br>log (A ÷ B) ＝ log A − log B<br>log 10 ＝ 1、log 100 ＝ 2</div>
+<p>2、3、10 の掛け算と割り算で書ける数は、すべて出せます。</p>
+<table>
+<thead><tr><th>数</th><th>分け方</th><th>log</th></tr></thead>
+<tbody>
+<tr><td>4</td><td>2 × 2</td><td>0.3010 × 2 ＝ 0.602</td></tr>
+<tr><td>5</td><td>10 ÷ 2</td><td>1 − 0.3010 ＝ 0.699</td></tr>
+<tr><td>6</td><td>2 × 3</td><td>0.3010 ＋ 0.4771 ＝ 0.778</td></tr>
+<tr><td>8</td><td>2 × 2 × 2</td><td>0.3010 × 3 ＝ 0.903</td></tr>
+<tr><td>9</td><td>3 × 3</td><td>0.4771 × 2 ＝ 0.954</td></tr>
+<tr><td>50</td><td>100 ÷ 2</td><td>2 − 0.3010 ＝ 1.699</td></tr>
+</tbody>
+</table>
+<p>5 は「10 ÷ 2」と見るのが要点です。7 は、2 と 3 と 10 では作れません。7 の log が要る問題では、その値が別に与えられるはずです。</p>
+
+<h2>数値で確かめる</h2>
+<p>電力が12倍になる増幅器の利得を、dB で求めます。</p>
+<div class="calc">12 ＝ 2 × 2 × 3<br>log 12 ＝ 0.3010 ＋ 0.3010 ＋ 0.4771 ＝ 1.079<br>10 × 1.079 ＝ 10.79 dB（およそ 10.8 dB）</div>
+<p>電圧が3倍のときは、20 を掛けます。20 × 0.4771 ＝ 9.54 dB です。</p>
+
+<div class="check"><strong>確かめの1問</strong><br>log₁₀ 2 ＝ 0.3010、log₁₀ 3 ＝ 0.4771 として、電力が30倍のときの利得は何 dB ですか。
+<details><summary>答え</summary>30 ＝ 3 × 10。log 30 ＝ 0.4771 ＋ 1 ＝ 1.4771。10 を掛けて、14.77 dB（およそ 14.8 dB）。</details></div>
+
+<p><a href="db-3-10.html">関連するページ：デシベルを、3 と 10 だけで出す</a></p>
+<div class="book">この計算を、紙の上で繰り返して固める問題集：<a href="https://tsumazuki-techo.booth.pm/items/9144717">『電卓なしのデシベル　書き込み式の問題集 40問』</a>（PDF、300円、BOOTH）</div>
+<p><a href="index.html">辞典の入口へ戻る</a></p>
+</main>
+<footer>
+<p>書いている人：数字でつまずく所の手帳。資格の計算で止まる所を1つずつ解く本と問題集を作っています。</p>
+<p>この辞典の数値と例題は自分で作ったもので、過去問題そのものではありません。誤りに気付いたときは、X の @tsumazuki_note へ知らせていただけると助かります。</p>
+<p><a href="../privacy.html">このサイトが数えている物</a></p>
+</footer>
+</body>
+</html>
