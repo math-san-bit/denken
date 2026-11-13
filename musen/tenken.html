@@ -4,15 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>受ける前の点検（10問）｜一陸特・一陸技　計算で止まる所の辞典</title>
-<meta name="description" content="一陸特・一陸技の対策の本の解説を読み進められるかを、計算の土台の10問で確かめます。答えは画面の中だけで採点し、どこにも送りません。">
+<meta name="description" content="一陸特・一陸技の対策の本の解説を読み進められるかを、計算の土台の10問で確かめます。約5分。やり直す所と、読むページが分かります。">
 <link rel="stylesheet" href="../style.css">
+<script src="../m.js"></script>
 </head>
 <body>
 <header class="site"><a href="index.html">一陸特・一陸技　計算で止まる所の辞典</a></header>
 <main>
 <h1>受ける前の点検（10問）</h1>
 <p class="lead">対策の本の解説は、ここにある計算ができる前提で書かれています。電卓を使わずに、紙に書いて解いてください。分からない問題は「分からない」を選んでかまいません。当てずっぽうで選ぶと、やり直す所が見えなくなります。</p>
-<p>答えはこの画面の中だけで採点します。どこにも送りません。</p>
+<p>採点はこの画面の中で行います。どの選択肢を選んだかは、どこにも送りません。数えているのは、採点した回数、何問できたか、やり直す所のまとまりの名前だけです（<a href="../privacy.html">このサイトが数えている物</a>）。</p>
 
 <form id="quiz"></form>
 <p><button type="button" class="btn" id="grade">採点する</button></p>
@@ -23,6 +24,7 @@
 <footer>
 <p>書いている人：数字でつまずく所の手帳。資格の計算で止まる所を1つずつ解く本と問題集を作っています。</p>
 <p>この点検は、計算の土台だけを確かめる物です。全部できても、合格を約束する物ではありません。問題は自分で作ったもので、過去問題そのものではありません。</p>
+<p><a href="../privacy.html">このサイトが数えている物</a></p>
 </footer>
 <script>
 (function () {
@@ -63,6 +65,10 @@
     });
     form.appendChild(f);
   });
+  var started = false;
+  form.addEventListener("change", function () {
+    if (!started && window.jitenEvent) { started = true; window.jitenEvent("tenken_start", {}); }
+  });
   document.getElementById("grade").addEventListener("click", function () {
     var res = document.getElementById("result");
     var miss = {}, right = 0, blank = 0;
@@ -87,6 +93,9 @@
       h += "</ul>";
     }
     h += "<p>この点検で分かるのは、計算の土台だけです。合格には、このほかに無線の中身と法規の勉強が要ります。</p>";
+    if (window.jitenEvent) {
+      window.jitenEvent("tenken_done", { right: right, miss_n: keys.length, miss: keys.join(",") || "none", blank: blank });
+    }
     res.innerHTML = h;
     res.hidden = false;
     res.scrollIntoView({ behavior: "smooth" });
