@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>%Z の基準容量をそろえる：容量の比を、掛けるのか割るのか｜電験三種　計算で止まる所の辞典</title>
+<meta name="description" content="%Z を別の基準容量に直すとき、容量の比を掛けるのか割るのかで止まる所を解きます。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site"><a href="index.html">電験三種　計算で止まる所の辞典</a></header>
+<main>
+<h1>%Z の基準容量をそろえる：容量の比を、掛けるのか割るのか</h1>
+<p class="lead">%Z を足し合わせる前に、基準容量をそろえます。このとき、容量の比を掛けるのか割るのかで手が止まります。</p>
+
+<h2>どこで止まるか</h2>
+<div class="wrong">基準を大きくしたのに、%Z を小さくしてしまう。たとえば 10 MV·A 基準で 7.5% の値を 30 MV·A 基準に直すとき、7.5 ÷ 3 ＝ 2.5% とする。</div>
+
+<h2>なぜ比例するのか</h2>
+<p>%Z は、「基準の電流が流れたとき、インピーダンスにかかる電圧が何%か」です。基準容量を3倍にすると、基準の電流が3倍になります。インピーダンスそのもの（Ω）は変わらないので、かかる電圧も3倍になります。</p>
+<div class="calc">新しい %Z ＝ もとの %Z ×（新しい基準容量 ÷ もとの基準容量）</div>
+<p>基準を大きくすると %Z は大きくなり、小さくすると小さくなります。</p>
+
+<h2>数値で確かめる</h2>
+<div class="calc">10 MV·A 基準で 7.5% → 30 MV·A 基準では 7.5 ×（30 ÷ 10）＝ 22.5%</div>
+<p>基準をそろえた後は、直列の %Z はそのまま足せます。</p>
+
+<div class="check"><strong>確かめの1問</strong><br>20 MV·A 基準で 6% の %Z を、10 MV·A 基準に直すと何%ですか。
+<details><summary>答え</summary>6 ×（10 ÷ 20）＝ 3%。基準の電流が半分になるので、かかる電圧も半分です。</details></div>
+
+<div class="book">基準のそろえ方から短絡電流・短絡容量までを順に扱った本：<a href="https://www.amazon.co.jp/dp/B0HLXHL4PM">『パーセントインピーダンスの計算がわかる　電験三種の短絡電流・短絡容量・変圧器』</a></div>
+<p><a href="index.html">辞典の入口へ戻る</a></p>
+</main>
+<footer>
+<p>書いている人：電験数学ノート編集室。電験三種の計算で止まる所を1つずつ解く本を作っています。</p>
+<p>この辞典の数値と例題は編集室が作ったもので、過去問題そのものではありません。誤りに気付いたときは、本の商品ページのカスタマーレビューで知らせていただけると助かります。</p>
+</footer>
+</body>
+</html>

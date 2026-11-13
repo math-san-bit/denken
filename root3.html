@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>線間電圧と相電圧：√3 は、掛けるのか割るのか｜電験三種　計算で止まる所の辞典</title>
+<meta name="description" content="三相交流で、√3 を掛けるのか割るのかで止まる所を、Y結線とΔ結線に分けて解きます。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site"><a href="index.html">電験三種　計算で止まる所の辞典</a></header>
+<main>
+<h1>線間電圧と相電圧：√3 は、掛けるのか割るのか</h1>
+<p class="lead">三相交流の計算では、√3 がいろいろな式に出てきます。どこで掛け、どこで割るのかを、結線ごとに1つの決まりで見分けます。</p>
+
+<h2>どこで止まるか</h2>
+<div class="wrong">Y結線の負荷の1相にかかる電圧を、線間電圧のまま使ってしまう。線間電圧 200 V のとき、1相も 200 V として電流を出す。</div>
+
+<h2>結線ごとの決まり</h2>
+<table>
+<thead><tr><th>結線</th><th>電圧</th><th>電流</th></tr></thead>
+<tbody>
+<tr><td>Y結線</td><td>相電圧 ＝ 線間電圧 ÷ √3</td><td>線電流 ＝ 相電流</td></tr>
+<tr><td>Δ結線</td><td>相電圧 ＝ 線間電圧</td><td>線電流 ＝ 相電流 × √3</td></tr>
+</tbody>
+</table>
+<p>√3 が出るのは、「2つの相の差を取る所」だけです。Y結線では、線と線の間に2つの相が入るので、電圧で差を取ります。Δ結線では、1本の線に2つの相の電流が出入りするので、電流で差を取ります。大きさが同じで 120° ずれた2つの量の差は、もとの √3 倍になります。</p>
+
+<h2>数値で確かめる</h2>
+<div class="calc">線間電圧 200 V の電源に、1相 10 Ω の抵抗をY結線でつなぐ<br>相電圧 ＝ 200 ÷ √3 ≒ 115.5 V<br>線電流 ＝ 相電流 ＝ 115.5 ÷ 10 ≒ 11.5 A</div>
+
+<div class="check"><strong>確かめの1問</strong><br>同じ電源に、1相 10 Ω の抵抗をΔ結線でつなぐと、線電流は何 A ですか。
+<details><summary>答え</summary>相電流 ＝ 200 ÷ 10 ＝ 20 A。線電流 ＝ 20 × √3 ≒ 34.6 A。Y結線の3倍になります。</details></div>
+
+<div class="book">√3 の出どころから、Y結線とΔ結線、三相電力までを順に扱った本：<a href="https://www.amazon.co.jp/dp/B0HMMDKGDW">『三相交流の計算がわかる　電験三種の√3・Y結線・Δ結線・三相電力』</a></div>
+<p><a href="index.html">辞典の入口へ戻る</a></p>
+</main>
+<footer>
+<p>書いている人：電験数学ノート編集室。電験三種の計算で止まる所を1つずつ解く本を作っています。</p>
+<p>この辞典の数値と例題は編集室が作ったもので、過去問題そのものではありません。誤りに気付いたときは、本の商品ページのカスタマーレビューで知らせていただけると助かります。</p>
+</footer>
+</body>
+</html>
