@@ -138,6 +138,7 @@
     event.preventDefault();
     if (!form.reportValidity()) return;
     var self1 = form.querySelector('input[name="self1"]:checked').value;
+    var self2 = form.querySelector('input[name="self2"]:checked').value;
     var self3 = form.querySelector('input[name="self3"]:checked').value;
     var self4 = form.querySelector('input[name="self4"]:checked').value;
     var right = 0, missed = [];
@@ -158,8 +159,21 @@
     } else if (missed.length >= 2 && self3 === "formula") {
       primary = "basic";
     }
+    var studyTips = {
+      read:"解説を読むときは、公式を写すだけでなく「この式で何を求めているか」を一言で書き添えてみましょう。",
+      try:"先に自分で解いたあと、解説と違った最初の一行に印を付けると、復習する場所がはっきりします。",
+      repeat:"同じ問題を解き直すときは、答えを覚えていないか確認するため、数字を少し変えて計算してみましょう。",
+      avoid:"苦手な計算を一度に克服しようとせず、今回間違えた分野から一つだけ選んで取り組みましょう。"
+    };
+    var goals = {
+      weak:"今回の結果では、正解できなかった分野を優先して復習しましょう。",
+      method:"まずは自分の学習の進め方を一つ決め、短い問題で試してみましょう。",
+      practice:"今回の6問に加え、10問の計算点検や過去問題で理解を確かめましょう。",
+      material:"解説を読んでから、必要な分野の参考書・問題集を選ぶと無駄がありません。"
+    };
     var html = '<p class="step-label">YOUR RESULT</p><h2>診断結果：' + selfTitles[primary] + '</h2>';
     html += '<p class="result-lead">6問中 <strong>' + right + '問</strong> 正解でした。' + selfDescriptions[primary] + '</p>';
+    html += '<div class="diagnostic-tip"><h3>学習の進め方</h3><p>' + studyTips[self2] + '</p><p>' + goals[self4] + '</p></div>';
     html += '<h3>分野別の結果</h3><div class="score-list">';
     questions.forEach(function(q){
       html += '<div class="score-row"><span>' + q.name + '</span><strong>' + (q.correct ? "正解" : "復習の目安") + '</strong></div>';
