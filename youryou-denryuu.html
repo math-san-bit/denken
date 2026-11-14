@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>容量から電流を出す：√3 は、どこから来るのか｜電験三種　計算で止まる所の辞典</title>
+<meta name="description" content="三相の変圧器や負荷の容量から電流を出すとき、容量を電圧で割るだけでは合いません。√3 × 電圧で割る理由と、単相との違いを説明します。">
+<link rel="canonical" href="https://math-san-bit.github.io/denken/youryou-denryuu.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="容量から電流を出す：√3 は、どこから来るのか｜電験三種　計算で止まる所の辞典">
+<meta property="og:description" content="三相の変圧器や負荷の容量から電流を出すとき、容量を電圧で割るだけでは合いません。√3 × 電圧で割る理由と、単相との違いを説明します。">
+<meta property="og:url" content="https://math-san-bit.github.io/denken/youryou-denryuu.html">
+<meta property="og:image" content="https://math-san-bit.github.io/denken/img/og-denken.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "容量から電流を出す：√3 は、どこから来るのか", "description": "三相の変圧器や負荷の容量から電流を出すとき、容量を電圧で割るだけでは合いません。√3 × 電圧で割る理由と、単相との違いを説明します。", "inLanguage": "ja", "datePublished": "2026-11-14", "dateModified": "2026-11-14", "mainEntityOfPage": "https://math-san-bit.github.io/denken/youryou-denryuu.html", "author": {"@type": "Organization", "name": "電験数学ノート編集室"}}</script>
+<link rel="stylesheet" href="style.css">
+<script src="m.js"></script>
+</head>
+<body>
+<header class="site"><a href="index.html">電験三種　計算で止まる所の辞典</a></header>
+<main>
+<p class="crumb"><a href="index.html">辞典の入口</a> › 三相交流</p>
+<h1>容量から電流を出す：√3 は、どこから来るのか</h1>
+<p class="lead">「300 kV·A、6.6 kV の三相変圧器の定格電流は」という問いで、300 ÷ 6.6 としてしまう。解説には √3 が出てきて、どこから来たのかが書かれていません。</p>
+<div class="answer"><strong>先に答え</strong>三相の容量は、√3 × 線間電圧 × 線電流 です。だから、線電流 ＝ 容量 ÷（√3 × 線間電圧）です。単相なら、容量 ÷ 電圧 で合っています。問題の文に「三相」とあれば、√3 を入れます。</div>
+<h2>どこで止まるか</h2>
+<div class="wrong">300 ÷ 6.6 ≒ 45.5 A としてしまう。正しい値の √3 倍（約1.73倍）になります。</div>
+
+<h2>式を逆向きに読む</h2>
+<p>三相の皮相電力（容量）は、線間電圧 V と線電流 I で、次のように書けます。</p>
+<div class="calc">容量 ＝ √3 × V × I<br>I ＝ 容量 ÷（√3 × V）</div>
+<p>√3 は、三相の容量の式に、初めから入っている数です。電流を出すときは、それを割る側に回しているだけです。</p>
+<table>
+<thead><tr><th>問題の文</th><th>電流の出し方</th></tr></thead>
+<tbody>
+<tr><td>三相、線間電圧 V</td><td>容量 ÷（√3 × V）</td></tr>
+<tr><td>単相、電圧 V</td><td>容量 ÷ V</td></tr>
+<tr><td>三相を1相分で解く、相電圧 E</td><td>（容量 ÷ 3）÷ E</td></tr>
+</tbody>
+</table>
+<p>3行目は、1行目と同じ値になります。E ＝ V ÷ √3 を入れると、確かめられます。</p>
+
+<h2>数値で確かめる</h2>
+<div class="calc">三相、300 kV·A、6.6 kV<br>I ＝ 300 ÷（√3 × 6.6）≒ 300 ÷ 11.43 ≒ 26.2 A</div>
+<p>kV·A を kV で割ると、A になります。k どうしが消えるので、単位を直さずに割れます。</p>
+
+<div class="check"><strong>確かめの1問</strong><br>三相、100 kV·A、200 V の変圧器の定格電流は、およそ何 A ですか。
+<details><summary>答え</summary>100 kV·A ＝ 100000 V·A。100000 ÷（√3 × 200）≒ 289 A。</details></div>
+
+<div class="check"><strong>ほかに止まる所が無いか、10問で確かめる</strong><br>計算の10問です。約5分。やり直す所と、読むページと本が分かります。<br><a class="btn" href="tenken.html">点検を始める</a></div>
+<p>この計算を順を追って解く本：<a href="hon.html#v3">第3巻の案内</a></p>
+<p>関連するページ：<a href="root3-to-3.html">√3 を掛けたうえで、3倍しないのか</a></p>
+<nav class="next"><strong>次に読む</strong><ul class="list"><li><a href="root3-to-3.html">三相の電力：√3 を掛けたうえで、3倍しないのか</a></li><li><a href="tanraku-100.html">短絡電流：%Z の 100 は、掛けるのか割るのか</a></li></ul></nav>
+<p class="updated">最終更新：2026年11月14日</p>
+<p><a href="index.html">辞典の入口へ戻る</a></p>
+</main>
+<footer>
+<p>書いている人：電験数学ノート編集室。電験三種の計算で止まる所を1つずつ解く本を作っています。</p>
+<p>この辞典の数値と例題は編集室が作ったもので、過去問題そのものではありません。誤りに気付いたときは、本の商品ページのカスタマーレビューで知らせていただけると助かります。</p>
+<p><a href="privacy.html">このサイトが数えている物</a></p>
+</footer>
+</body>
+</html>

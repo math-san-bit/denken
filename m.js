@@ -57,4 +57,22 @@
   document.addEventListener("toggle", function (e) {
     if (e.target && e.target.tagName === "DETAILS" && e.target.open) { ev("open_answer", {}); }
   }, true);
+
+  /* 読んだページの印。このブラウザーの中だけに置き、どこにも送らない */
+  document.addEventListener("DOMContentLoaded", function () {
+    try {
+      var key = "jiten_read";
+      var list = JSON.parse(localStorage.getItem(key) || "[]");
+      var me = location.pathname.split("/denken/").pop();
+      if (document.querySelector(".answer") && document.querySelector(".crumb") && list.indexOf(me) < 0) {
+        list.push(me);
+        localStorage.setItem(key, JSON.stringify(list.slice(-200)));
+      }
+      document.querySelectorAll("ul.list a").forEach(function (a) {
+        if (a.host !== location.host) { return; }
+        var p = a.pathname.split("/denken/").pop();
+        if (p !== me && list.indexOf(p) >= 0) { a.insertAdjacentHTML("afterend", '<span class="read">読んだ</span>'); }
+      });
+    } catch (e) {}
+  });
 })();

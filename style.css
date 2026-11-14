@@ -34,3 +34,10 @@ table.num th:first-child,table.num td:first-child{white-space:nowrap}
 .tool output{display:block;margin-top:.6em;font-weight:700}
 img.sample{max-width:100%;border:1px solid var(--line);border-radius:6px}
 .updated{color:var(--sub);font-size:.85rem}
+
+.crumb{font-size:.85rem;color:var(--sub);margin:0 0 .4em}
+.crumb a{color:var(--sub)}
+nav.next{border-top:1px solid var(--line);margin-top:2em;padding-top:.6em}
+nav.next strong{display:block;font-size:.95rem}
+.read{font-size:.75rem;color:#fff;background:#5b7f95;border-radius:3px;padding:.1em .4em;margin-left:.4em;white-space:nowrap}
+.new{font-size:.75rem;color:var(--ink);background:var(--mark);border-radius:3px;padding:.1em .4em;margin-left:.4em}

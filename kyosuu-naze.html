@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>交流回路：なぜ j の付いた数を使うのか｜電験三種　計算で止まる所の辞典</title>
+<meta name="description" content="交流回路で、j の付いた数（複素数）を使う理由と、使わなくても解ける問題の見分け方を説明します。大きさと位相を、1つの数で運ぶための道具です。">
+<link rel="canonical" href="https://math-san-bit.github.io/denken/kyosuu-naze.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="交流回路：なぜ j の付いた数を使うのか｜電験三種　計算で止まる所の辞典">
+<meta property="og:description" content="交流回路で、j の付いた数（複素数）を使う理由と、使わなくても解ける問題の見分け方を説明します。大きさと位相を、1つの数で運ぶための道具です。">
+<meta property="og:url" content="https://math-san-bit.github.io/denken/kyosuu-naze.html">
+<meta property="og:image" content="https://math-san-bit.github.io/denken/img/og-denken.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "交流回路：なぜ j の付いた数を使うのか", "description": "交流回路で、j の付いた数（複素数）を使う理由と、使わなくても解ける問題の見分け方を説明します。大きさと位相を、1つの数で運ぶための道具です。", "inLanguage": "ja", "datePublished": "2026-11-14", "dateModified": "2026-11-14", "mainEntityOfPage": "https://math-san-bit.github.io/denken/kyosuu-naze.html", "author": {"@type": "Organization", "name": "電験数学ノート編集室"}}</script>
+<link rel="stylesheet" href="style.css">
+<script src="m.js"></script>
+</head>
+<body>
+<header class="site"><a href="index.html">電験三種　計算で止まる所の辞典</a></header>
+<main>
+<p class="crumb"><a href="index.html">辞典の入口</a> › 交流と複素数</p>
+<h1>交流回路：なぜ j の付いた数を使うのか</h1>
+<p class="lead">交流の問題に、突然 j が出てきます。「なぜ虚数を使うのか」「使う問題と使わない問題の違いは何か」。ここが分からないまま進むと、式を写すだけになります。</p>
+<div class="answer"><strong>先に答え</strong>交流の電圧と電流には、大きさのほかに、位相（波のずれ）があります。j の付いた数は、この2つを1つの数で運ぶための書き方です。ずれた物どうしを足し引きする問題で要ります。大きさだけを問う直列の回路は、三平方の定理だけで解けます。</div>
+<h2>どこで止まるか</h2>
+<div class="wrong">抵抗に 5 A、コイルに 10 A 流れている並列の回路で、合計を 5 ＋ 10 ＝ 15 A としてしまう。</div>
+
+<h2>ずれた物は、そのまま足せない</h2>
+<p>抵抗の電流は、電圧と同じ向きです。コイルの電流は、電圧より 90° 遅れます。向きが違う物は、矢印（ベクトル）として足します。</p>
+<p>j は「90° 回す」という印です。電圧と同じ向きの分を、そのままの数で書きます。90° ずれた分に、j を付けて書きます。</p>
+<div class="calc">抵抗の電流 ＝ 5 A<br>コイルの電流 ＝ −j10 A（90° 遅れ）<br>合計 ＝ 5 − j10 A<br>大きさ ＝ √(5² ＋ 10²) ＝ √125 ≒ 11.2 A</div>
+<p>15 A ではなく、約 11.2 A です。j を付けて分けて書いておくと、足し算は、付いていない数どうし、付いている数どうしで行えます。</p>
+
+<h2>使う問題、使わない問題</h2>
+<table>
+<thead><tr><th>問題の形</th><th>j は要るか</th></tr></thead>
+<tbody>
+<tr><td>抵抗とリアクタンスの直列で、インピーダンスの大きさや電流の大きさを問う</td><td>要らない。√(R² ＋ X²) で足りる</td></tr>
+<tr><td>並列の枝の電流を合わせる</td><td>要る（またはベクトル図で足す）</td></tr>
+<tr><td>コイルとコンデンサーが両方あり、打ち消し合う</td><td>要る。＋j と −j の引き算になる</td></tr>
+<tr><td>選択肢が「3 ＋ j4」の形</td><td>要る</td></tr>
+</tbody>
+</table>
+
+<h2>数値で確かめる</h2>
+<div class="calc">R ＝ 3 Ω、X ＝ 4 Ω の直列に 100 V<br>Z ＝ 3 ＋ j4、大きさ ＝ √(3² ＋ 4²) ＝ 5 Ω<br>電流 ＝ 100 ÷ 5 ＝ 20 A、力率 ＝ 3 ÷ 5 ＝ 0.6</div>
+
+<div class="check"><strong>確かめの1問</strong><br>抵抗に 3 A、コンデンサーに 4 A 流れている並列の回路で、合計の電流の大きさは何 A ですか。
+<details><summary>答え</summary>3 ＋ j4 A。大きさは √(3² ＋ 4²) ＝ 5 A。7 A ではありません。</details></div>
+
+<div class="check"><strong>ほかに止まる所が無いか、10問で確かめる</strong><br>計算の10問です。約5分。やり直す所と、読むページと本が分かります。<br><a class="btn" href="tenken.html">点検を始める</a></div>
+<p>この計算を順を追って解く本：<a href="hon.html#v1">第1巻の案内</a></p>
+<nav class="next"><strong>次に読む</strong><ul class="list"><li><a href="root3.html">線間電圧と相電圧：√3 は、掛けるのか割るのか</a></li><li><a href="suugaku-dokomade.html">電験三種に、数学はどこまで要るか</a></li></ul></nav>
+<p class="updated">最終更新：2026年11月14日</p>
+<p><a href="index.html">辞典の入口へ戻る</a></p>
+</main>
+<footer>
+<p>書いている人：電験数学ノート編集室。電験三種の計算で止まる所を1つずつ解く本を作っています。</p>
+<p>この辞典の数値と例題は編集室が作ったもので、過去問題そのものではありません。誤りに気付いたときは、本の商品ページのカスタマーレビューで知らせていただけると助かります。</p>
+<p><a href="privacy.html">このサイトが数えている物</a></p>
+</footer>
+</body>
+</html>
