@@ -1,22 +1,28 @@
 /* 読まれ方を数える（Google アナリティクス）。入力の中身や、点検でどの選択肢を選んだかは送らない。 */
 (function () {
+  /* 計測は本番のGitHub Pagesだけで有効にする。
+     raw.githack・ローカル環境・その他のホストでの確認アクセスは数えない。 */
+  var isProduction = location.hostname === "math-san-bit.github.io";
   var ID = "G-T409Z08E27";
-  var s = document.createElement("script");
-  s.async = true;
-  s.src = "https://www.googletagmanager.com/gtag/js?id=" + ID;
-  document.head.appendChild(s);
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { window.dataLayer.push(arguments); }
-  window.gtag = gtag;
-  gtag("js", new Date());
-  gtag("config", ID, { allow_google_signals: false, allow_ad_personalization_signals: false });
+  if (isProduction) {
+    var gaScript = document.createElement("script");
+    gaScript.async = true;
+    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=" + ID;
+    document.head.appendChild(gaScript);
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag("js", new Date());
+    gtag("config", ID, { allow_google_signals: false, allow_ad_personalization_signals: false });
+  }
 
   var pn = location.pathname;
   var site = pn.indexOf("/musen/") >= 0 ? "musen" : (/\/denken\/(index\.html)?$/.test(pn) ? "top" : "denken");
   function ev(name, p) {
+    if (!isProduction) { return; }
     p = p || {};
     p.site = site;
-    try { gtag("event", name, p); } catch (e) {}
+    try { window.gtag("event", name, p); } catch (e) {}
   }
   window.jitenEvent = ev;
 
