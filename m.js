@@ -11,7 +11,8 @@
   gtag("js", new Date());
   gtag("config", ID, { allow_google_signals: false, allow_ad_personalization_signals: false });
 
-  var site = location.pathname.indexOf("/musen/") >= 0 ? "musen" : "denken";
+  var pn = location.pathname;
+  var site = pn.indexOf("/musen/") >= 0 ? "musen" : (/\/denken\/(index\.html)?$/.test(pn) ? "top" : "denken");
   function ev(name, p) {
     p = p || {};
     p.site = site;

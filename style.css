@@ -41,3 +41,25 @@ nav.next{border-top:1px solid var(--line);margin-top:2em;padding-top:.6em}
 nav.next strong{display:block;font-size:.95rem}
 .read{font-size:.75rem;color:#fff;background:#5b7f95;border-radius:3px;padding:.1em .4em;margin-left:.4em;white-space:nowrap}
 .new{font-size:.75rem;color:var(--ink);background:var(--mark);border-radius:3px;padding:.1em .4em;margin-left:.4em}
+
+.hero{background:var(--accent);color:#fff;margin:-22px -18px 0;padding:34px 18px 30px;border-bottom:6px solid var(--mark)}
+.hero h1{font-size:1.75rem;line-height:1.45;margin:0 0 .5em;color:#fff}
+.hero p{margin:.3em 0;color:#dbe6ec}
+.hero .tags{margin-top:1em}
+.hero .tags span{display:inline-block;border:1px solid #7f9aab;border-radius:999px;padding:.1em .8em;margin:.2em .3em .2em 0;font-size:.9rem;color:#fff}
+ul.voice{list-style:none;padding:0;margin:1em 0}
+ul.voice li{background:#fff;border:1px solid var(--line);border-left:6px solid var(--mark);border-radius:6px;margin:.6em 0}
+ul.voice a{display:block;padding:.7em 1em;color:var(--ink);text-decoration:none;font-weight:700}
+ul.voice a small{display:block;font-weight:400;color:var(--sub);font-size:.85rem}
+.doors{display:grid;grid-template-columns:1fr;gap:.8em;margin:1em 0}
+.door{background:#fff;border:2px solid var(--accent);border-radius:8px;padding:.9em 1em}
+.door strong{display:block;font-size:1.05rem}
+.door p{margin:.3em 0 .2em;color:var(--sub);font-size:.95rem}
+.cards{display:grid;grid-template-columns:1fr;gap:.8em;margin:1em 0}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:.9em 1em}
+.card h3{margin:.1em 0 .3em;font-size:1.1rem}
+.card p{margin:.3em 0;font-size:.95rem}
+.steps{counter-reset:s;list-style:none;padding:0}
+.steps li{counter-increment:s;position:relative;padding:.2em 0 .2em 2.2em;margin:.3em 0}
+.steps li:before{content:counter(s);position:absolute;left:0;top:.25em;width:1.6em;height:1.6em;border-radius:50%;background:var(--mark);color:var(--ink);font-weight:700;text-align:center;line-height:1.6em;font-size:.9rem}
+@media(min-width:640px){.doors{grid-template-columns:1fr 1fr 1fr}.cards{grid-template-columns:1fr 1fr}}
