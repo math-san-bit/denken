@@ -84,3 +84,26 @@ ul.voice a small{display:block;font-weight:400;color:var(--sub);font-size:.85rem
 .text-link{font-weight:700}
 @media(max-width:420px){.book-card{gap:.75rem;padding:.75rem}.book-cover-link{flex-basis:88px;width:88px}}
 @media(min-width:700px){.book-list{grid-template-columns:1fr 1fr}}
+
+
+/* Learning diagnosis */
+.diagnostic-promo{background:#f1f5f7;border:2px solid var(--accent);border-radius:10px;padding:1.1em 1.2em;margin:1.4em 0}
+.diagnostic-promo h2{margin:.2em 0 .5em}
+.diagnostic-promo p{margin:.45em 0}
+.diagnostic-hero{margin-bottom:1.4em}
+.diagnostic-intro,.diagnostic-note{background:#fff;border:1px solid var(--line);border-radius:8px;padding:.8em 1em;margin:1.2em 0}
+.diagnostic-section{margin:2em 0}
+.step-label{font-size:.78rem;letter-spacing:.08em;font-weight:700;color:#557181;margin:0 0 .25em}
+.diagnostic-submit{text-align:center;margin:2em 0}
+.diagnostic-submit .btn{font-size:1.08rem;padding:.8em 2em}
+.diagnostic-result{padding:1em 1.2em}
+.diagnostic-result h2{margin-top:.4em}
+.result-lead{font-size:1.05rem}
+.result-lead strong{font-size:1.35rem}
+.score-list{display:grid;grid-template-columns:1fr;gap:.35em;margin:1em 0}
+.score-row{display:flex;justify-content:space-between;gap:1em;background:#f3f6f7;border-radius:5px;padding:.45em .7em}
+.score-row strong{white-space:nowrap}
+.recommend-list{padding-left:1.4em}
+.recommend-list li{margin:1em 0}
+.recommend-list li p{margin:.25em 0}
+@media(min-width:640px){.score-list{grid-template-columns:1fr 1fr}}
