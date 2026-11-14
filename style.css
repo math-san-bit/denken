@@ -71,10 +71,3 @@ ul.voice a small{display:block;font-weight:400;color:var(--sub);font-size:.85rem
 .book-bridge h3{font-size:1rem;margin:1em 0 .3em}
 .book-bridge p{margin:.55em 0}
 .small-note{font-size:.88rem;color:var(--sub)}
-
-/* Book funnel: clear but secondary to the free learning path */
-.book-bridge{background:#f1f5f7;border:1px solid var(--line);border-radius:8px;padding:1em 1.1em;margin:1.5em 0}
-.book-bridge h2{margin-top:.2em}
-.book-bridge h3{font-size:1rem;margin:1em 0 .3em}
-.book-bridge p{margin:.55em 0}
-.small-note{font-size:.88rem;color:var(--sub)}
