@@ -107,3 +107,7 @@ ul.voice a small{display:block;font-weight:400;color:var(--sub);font-size:.85rem
 .recommend-list li{margin:1em 0}
 .recommend-list li p{margin:.25em 0}
 @media(min-width:640px){.score-list{grid-template-columns:1fr 1fr}}
+
+.diagnostic-tip{background:#f1f5f7;border-left:4px solid var(--mark);padding:.7em 1em;margin:1em 0}
+.diagnostic-tip h3{margin:.1em 0 .35em}
+.diagnostic-tip p{margin:.35em 0}
