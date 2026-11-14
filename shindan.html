@@ -197,7 +197,7 @@
     result.innerHTML = html;
     result.hidden = false;
     result.scrollIntoView({behavior:"smooth", block:"start"});
-    if (window.jitenEvent) window.jitenEvent("diagnostic_done", {score:right, primary:primary, missed:missed.length});
+    if (window.jitenEvent) window.jitenEvent("diagnostic_done", {});
     document.getElementById("retry-diagnostic").addEventListener("click", function(){
       form.reset(); result.hidden = true; form.scrollIntoView({behavior:"smooth", block:"start"});
     });
