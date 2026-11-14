@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>変圧器の巻数比：電圧・電流・インピーダンスで、掛けるのか割るのか｜電験三種　計算で止まる所の辞典</title>
+<meta name="description" content="電験三種の変圧器の計算で、巻数比を掛けるのか割るのかを整理します。一次に直すとき、電圧は巻数比を掛け、電流は割り、インピーダンスは巻数比の2乗を掛けます。">
+<link rel="canonical" href="https://math-san-bit.github.io/denken/henatsu-makisuu.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="変圧器の巻数比：電圧・電流・インピーダンスで、掛けるのか割るのか｜電験三種　計算で止まる所の辞典">
+<meta property="og:description" content="電験三種の変圧器の計算で、巻数比を掛けるのか割るのかを整理します。一次に直すとき、電圧は巻数比を掛け、電流は割り、インピーダンスは巻数比の2乗を掛けます。">
+<meta property="og:url" content="https://math-san-bit.github.io/denken/henatsu-makisuu.html">
+<meta property="og:image" content="https://math-san-bit.github.io/denken/img/og-denken.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "変圧器の巻数比：電圧・電流・インピーダンスで、掛けるのか割るのか", "description": "三相交流の電力の式に、√3 を使う形と 3 を使う形があるのはなぜか。相の値で数えると 3、線の値で数えると √3 になり、どちらも同じ答えです。", "inLanguage": "ja", "datePublished": "2026-11-14", "dateModified": "2026-11-14", "mainEntityOfPage": "https://math-san-bit.github.io/denken/henatsu-makisuu.html", "author": {"@type": "Organization", "name": "電験数学ノート編集室"}}</script>
+<link rel="stylesheet" href="style.css">
+<script src="m.js"></script>
+</head>
+<body>
+<header class="site"><a href="denken3.html">電験三種　計算で止まる所の辞典</a></header>
+<main>
+<p class="crumb"><a href="index.html">トップ</a> › <a href="denken3.html">電験三種</a> › 変圧器</p>
+<h1>変圧器の巻数比：電圧・電流・インピーダンスで、掛けるのか割るのか</h1>
+<p class="lead">二次側の値を一次側に直す。変圧器の問題で必ず出てくる操作ですが、巻数比を掛けるのか割るのか、2乗するのかで手が止まります。</p>
+<div class="answer"><strong>先に答え</strong>巻数比を a ＝ 一次の巻数 ÷ 二次の巻数 とします。二次の値を一次に直すとき、電圧は a を掛け、電流は a で割り、インピーダンスは a の2乗を掛けます。6600 V / 200 V の変圧器なら a ＝ 33 です。</div>
+
+<h2>どこで止まるか</h2>
+<div class="wrong">二次側の 0.1 Ω を一次側に直すのに、0.1 × 33 ＝ 3.3 Ω としてしまう。正しくは、33 の2乗を掛けます。</div>
+
+<h2>電力が変わらない、から出す</h2>
+<p>損失を無視すると、変圧器の一次側と二次側で、電力（電圧 × 電流）は同じです。電圧が a 倍なら、電流は a 分の1でなければ、電力が合いません。</p>
+<p>インピーダンスは、電圧 ÷ 電流 です。電圧が a 倍、電流が a 分の1なので、a × a ＝ a の2乗 倍になります。</p>
+<table class="num">
+<thead><tr><th>直す物</th><th>二次 → 一次</th><th>一次 → 二次</th></tr></thead>
+<tbody>
+<tr><td>電圧</td><td>× a</td><td>÷ a</td></tr>
+<tr><td>電流</td><td>÷ a</td><td>× a</td></tr>
+<tr><td>インピーダンス</td><td>× a の2乗</td><td>÷ a の2乗</td></tr>
+</tbody>
+</table>
+<p>迷ったら、電圧の高い側では、電流は小さく、インピーダンスは大きい、と確かめます。</p>
+
+<h2>数値で確かめる</h2>
+<div class="calc">6600 V / 200 V の変圧器。a ＝ 6600 ÷ 200 ＝ 33<br>二次電流 330 A → 一次電流 ＝ 330 ÷ 33 ＝ 10 A<br>二次側の 0.1 Ω → 一次側では 0.1 × 33 × 33 ＝ 108.9 Ω</div>
+<p>確かめ：一次側の電力は 6600 × 10 ＝ 66000 V·A、二次側は 200 × 330 ＝ 66000 V·A。合っています。</p>
+
+<div class="check"><strong>確かめの1問</strong><br>巻数比が 33 の変圧器で、二次側の電圧が 20 V 下がりました。一次側に直すと、何 V ですか。
+<details><summary>答え</summary>電圧は a を掛けるので、20 × 33 ＝ 660 V。</details></div>
+
+<div class="check"><strong>ほかに止まる所が無いか、10問で確かめる</strong><br>計算の10問です。約5分。やり直す所と、読むページと本が分かります。<br><a class="btn" href="tenken.html">点検を始める</a></div>
+<p>この計算を順を追って解く本：<a href="hon.html#v5">第5巻の案内</a></p>
+<nav class="next"><strong>次に読む</strong><ul class="list"><li><a href="kijun-youryou.html">%Z の基準容量をそろえる：容量の比を、掛けるのか割るのか</a></li><li><a href="youryou-denryuu.html">容量から電流を出す：√3 は、どこから来るのか</a></li></ul></nav>
+<p class="updated">最終更新：2026年11月14日</p>
+<p><a href="denken3.html">電験三種の入口へ戻る</a>　／　<a href="index.html">辞典のトップ</a></p>
+</main>
+<footer>
+<p>書いている人：電験数学ノート編集室。電験三種の計算で止まる所を1つずつ解く本を作っています。</p>
+<p>この辞典の数値と例題は編集室が作ったもので、過去問題そのものではありません。誤りに気付いたときは、本の商品ページのカスタマーレビューで知らせていただけると助かります。</p>
+<p><a href="privacy.html">このサイトが数えている物</a></p>
+</footer>
+</body>
+</html>

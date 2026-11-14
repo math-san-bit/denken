@@ -63,3 +63,4 @@ ul.voice a small{display:block;font-weight:400;color:var(--sub);font-size:.85rem
 .steps li{counter-increment:s;position:relative;padding:.2em 0 .2em 2.2em;margin:.3em 0}
 .steps li:before{content:counter(s);position:absolute;left:0;top:.25em;width:1.6em;height:1.6em;border-radius:50%;background:var(--mark);color:var(--ink);font-weight:700;text-align:center;line-height:1.6em;font-size:.9rem}
 @media(min-width:640px){.doors{grid-template-columns:1fr 1fr 1fr}.cards{grid-template-columns:1fr 1fr}}
+.hero .eyebrow{font-size:.9rem;color:#f2b705;margin:0 0 .6em}
