@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>まず1問だけ試す｜一陸特・一陸技　計算で止まる所の辞典</title>
+<meta name="description" content="一陸特・一陸技の計算の土台を、1問だけ試せます。答えと理由がその場で出ます。約30秒。">
+<link rel="canonical" href="https://math-san-bit.github.io/denken/musen/ichimon.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="まず1問だけ試す｜一陸特・一陸技　計算で止まる所の辞典">
+<meta property="og:description" content="一陸特・一陸技の計算の土台を、1問だけ試せます。答えと理由がその場で出ます。約30秒。">
+<meta property="og:url" content="https://math-san-bit.github.io/denken/musen/ichimon.html">
+<meta property="og:image" content="https://math-san-bit.github.io/denken/img/og-musen.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../style.css">
+<script src="../m.js"></script>
+</head>
+<body>
+<header class="site"><a href="index.html">一陸特・一陸技　計算で止まる所の辞典</a></header>
+<main>
+<p class="crumb"><a href="../">トップ</a> › <a href="index.html">一陸特・一陸技</a> › まず1問</p>
+<h1>まず1問だけ試す</h1>
+<p class="lead">10問の点検の前に、1問だけ。選ぶと、答えと理由がその場で出ます。分からなければ「分からない」を選んでください。どれを選んだかは、どこにも送りません（数えるのは、合っていたかどうかだけです）。</p>
+<form id="one"><fieldset class="q"><legend>電力が2倍になりました。およそ何 dB ですか。</legend><label><input type="radio" name="q" value="0"> 2 dB</label><label><input type="radio" name="q" value="1"> 3 dB</label><label><input type="radio" name="q" value="2"> 6 dB</label><label><input type="radio" name="q" value="3"> 10 dB</label><label><input type="radio" name="q" value="4"> 分からない</label></fieldset></form>
+<div id="res" class="result" hidden></div>
+<p><a href="index.html">一陸特・一陸技の入口へ戻る</a>　／　<a href="../">辞典のトップ</a></p>
+</main>
+<script>
+(function () {
+  var done = false;
+  document.getElementById("one").addEventListener("change", function (e) {
+    var right = Number(e.target.value) === 1;
+    var res = document.getElementById("res");
+    res.innerHTML = "<h2>" + (right ? "合っています" : "答えは「3 dB」です") + "</h2><p>電力の2倍は、約 3 dB です。10倍は 10 dB。この2つを覚えると、4倍は 3 ＋ 3 ＝ 6 dB、20倍は 10 ＋ 3 ＝ 13 dB と、足し算で出せます。</p>" +
+      '<p><a href="db-3-10.html">くわしい説明：デシベル：電卓なしで、3 と 10 だけで出す</a></p>' +
+      '<p><a class="btn" href="tenken.html">続けて、10問の点検を始める（約5分）</a></p>';
+    res.hidden = false;
+    if (!done && window.jitenEvent) { done = true; window.jitenEvent(right ? "ichimon_right" : "ichimon_wrong", {}); }
+  });
+})();
+</script>
+<footer>
+<p>書いている人：数字でつまずく所の手帳。資格の計算で止まる所を1つずつ解く本と問題集を作っています。</p>
+<p>この辞典の数値と例題は自分で作ったもので、過去問題そのものではありません。誤りに気付いたときは、X の @tsumazuki_note へ知らせていただけると助かります。</p>
+<p><a href="../privacy.html">このサイトが数えている物</a>　／　<a href="../ichiran.html">ページの一覧</a></p>
+</footer>
+</body>
+</html>

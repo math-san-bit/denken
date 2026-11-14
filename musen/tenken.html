@@ -23,11 +23,13 @@
 <p class="lead">対策の本の解説は、ここにある計算ができる前提で書かれています。電卓を使わずに、紙に書いて解いてください。分からない問題は「分からない」を選んでかまいません。当てずっぽうで選ぶと、やり直す所が見えなくなります。</p>
 <p>採点はこの画面の中で行います。どの選択肢を選んだかは、どこにも送りません。数えているのは、採点した回数、何問できたか、やり直す所のまとまりの名前だけです（<a href="../privacy.html">このサイトが数えている物</a>）。</p>
 
+<p>10問は多い、と感じるときは：<a href="ichimon.html">まず1問だけ試す（約30秒）</a></p>
+
 <form id="quiz"></form>
 <p><button type="button" class="btn" id="grade">採点する</button></p>
 <div id="result" class="result" hidden></div>
 
-<p><a href="index.html">一陸特・一陸技の入口へ戻る</a>　／　<a href="../index.html">辞典のトップ</a></p>
+<p><a href="index.html">一陸特・一陸技の入口へ戻る</a>　／　<a href="../">辞典のトップ</a></p>
 </main>
 <footer>
 <p>書いている人：数字でつまずく所の手帳。資格の計算で止まる所を1つずつ解く本と問題集を作っています。</p>
@@ -40,9 +42,9 @@
     keta: { name: "10の何乗と単位", page: "keta-hachou.html", stop: "波長や周波数の計算で、桁がずれます。" },
     log: { name: "対数", page: "log-2-3.html", stop: "デシベルの式（10 log）の意味が読めません。" },
     db: { name: "デシベル", page: "db-3-10.html", stop: "利得や損失の計算の解説で止まります。" },
-    root: { name: "平方根と、j の付いた数の大きさ", page: "", stop: "交流回路のインピーダンスの解説で止まります。" },
-    bunsu: { name: "分数", page: "", stop: "並列の合成抵抗や、式の変形で止まります。" },
-    sankaku: { name: "三角関数", page: "", stop: "位相や力率の出てくる解説で止まります。" }
+    root: { name: "平方根と、j の付いた数の大きさ", page: "root-j.html", stop: "交流回路のインピーダンスの解説で止まります。" },
+    bunsu: { name: "分数", page: "bunsuu-heiretsu.html", stop: "並列の合成抵抗や、式の変形で止まります。" },
+    sankaku: { name: "三角関数", page: "sankaku.html", stop: "位相や力率の出てくる解説で止まります。" }
   };
   var qs = [
     { a: "keta", t: "10³ × 10⁻⁶ は、いくつですか。", c: ["10⁻³", "10⁻¹⁸", "10⁹", "10⁻²"], k: 0 },

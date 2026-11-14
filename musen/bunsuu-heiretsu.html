@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>分数：並列の合成抵抗で、分数の中の分数をほどく｜一陸特・一陸技　計算で止まる所の辞典</title>
+<meta name="description" content="一陸特・一陸技の計算で出る並列の合成抵抗を、分数の計算から整理します。2本なら「掛けた数 ÷ 足した数」。6 Ω と 3 Ω の並列は 2 Ω です。">
+<link rel="canonical" href="https://math-san-bit.github.io/denken/musen/bunsuu-heiretsu.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="分数：並列の合成抵抗で、分数の中の分数をほどく｜一陸特・一陸技　計算で止まる所の辞典">
+<meta property="og:description" content="一陸特・一陸技の計算で出る並列の合成抵抗を、分数の計算から整理します。2本なら「掛けた数 ÷ 足した数」。6 Ω と 3 Ω の並列は 2 Ω です。">
+<meta property="og:url" content="https://math-san-bit.github.io/denken/musen/bunsuu-heiretsu.html">
+<meta property="og:image" content="https://math-san-bit.github.io/denken/img/og-musen.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "分数：並列の合成抵抗で、分数の中の分数をほどく", "description": "一陸特・一陸技の計算で出る並列の合成抵抗を、分数の計算から整理します。2本なら「掛けた数 ÷ 足した数」。6 Ω と 3 Ω の並列は 2 Ω です。", "inLanguage": "ja", "datePublished": "2026-11-14", "dateModified": "2026-11-14", "mainEntityOfPage": "https://math-san-bit.github.io/denken/musen/bunsuu-heiretsu.html", "author": {"@type": "Organization", "name": "数字でつまずく所の手帳"}}</script>
+<link rel="stylesheet" href="../style.css">
+<script src="../m.js"></script>
+</head>
+<body>
+<header class="site"><a href="index.html">一陸特・一陸技　計算で止まる所の辞典</a></header>
+<main>
+<p class="crumb"><a href="../">トップ</a> › <a href="index.html">一陸特・一陸技</a> › 桁と単位</p>
+<h1>分数：並列の合成抵抗で、分数の中の分数をほどく</h1>
+<p class="lead">並列の合成抵抗の式は、分数の中に分数が入った形で書かれています。どこから手を付けるのか、最後にひっくり返すのを忘れていないかで手が止まります。</p>
+<div class="answer"><strong>先に答え</strong>2本の並列なら、掛けた数 ÷ 足した数 で出せます。6 Ω と 3 Ω なら、(6 × 3) ÷ (6 ＋ 3) ＝ 18 ÷ 9 ＝ 2 Ω。答えは、いちばん小さい抵抗より小さくなります。</div>
+
+<h2>どこで止まるか</h2>
+<div class="wrong">6 Ω と 3 Ω の並列を、1/6 ＋ 1/3 ＝ 1/2 と計算して、0.5 Ω と答えてしまう。出したのは「合成抵抗の逆数」なので、最後にひっくり返して 2 Ω にします。</div>
+
+<h2>なぜ、逆数を足すのか</h2>
+<p>並列は、電流の通り道を増やすつなぎ方です。通り道が増えるほど、全体では流れやすくなります。</p>
+<p>抵抗は「流れにくさ」です。その逆数（1 ÷ 抵抗）は「流れやすさ」です。並列では、流れやすさを足します。足した結果も流れやすさなので、最後にもう一度ひっくり返して、流れにくさ（抵抗）に戻します。</p>
+<h2>手順を、3つに分ける</h2>
+<table class="num">
+<thead><tr><th>順</th><th>すること</th><th>6 Ω と 3 Ω の例</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>それぞれの逆数にする</td><td>1/6 と 1/3</td></tr>
+<tr><td>2</td><td>分母をそろえて足す</td><td>1/6 ＋ 2/6 ＝ 3/6 ＝ 1/2</td></tr>
+<tr><td>3</td><td>ひっくり返す</td><td>2 Ω</td></tr>
+</tbody>
+</table>
+<p>2本のときは、この3つをまとめた近道が「掛けた数 ÷ 足した数」です。3本以上のときは、近道が使えないので、上の3つの順で計算します。</p>
+<p>答えが出たら、いちばん小さい抵抗（この例では 3 Ω）より小さいかを見ます。大きければ、ひっくり返し忘れか、足し算で終わっています。</p>
+
+<h2>数値で確かめる</h2>
+<div class="calc">6 Ω と 3 Ω の並列<br>掛けた数 ＝ 6 × 3 ＝ 18<br>足した数 ＝ 6 ＋ 3 ＝ 9<br>18 ÷ 9 ＝ 2 Ω（3 Ω より小さい）</div>
+
+<div class="check"><strong>確かめの1問</strong><br>12 Ω と 4 Ω の抵抗を並列につなぎました。合成抵抗は何 Ω ですか。
+<details><summary>答え</summary>(12 × 4) ÷ (12 ＋ 4) ＝ 48 ÷ 16 ＝ 3 Ω。小さいほうの 4 Ω より小さくなっています。</details></div>
+
+<div class="check"><strong>ほかに止まる所が無いか、10問で確かめる</strong><br>計算の土台の10問です。約5分。やり直す所と、読むページが分かります。<br><a class="btn" href="tenken.html">点検を始める</a></div>
+
+<nav class="next"><strong>次に読む</strong><ul class="list"><li><a href="root-j.html">平方根と j の付いた数：3 と 4 から、5 を出す</a></li><li><a href="keta-hachou.html">波長：300 を周波数で割るとき、桁がずれる</a></li></ul></nav>
+<p class="updated">最終更新：2026年11月14日</p>
+<p><a href="index.html">一陸特・一陸技の入口へ戻る</a>　／　<a href="../">辞典のトップ</a></p>
+</main>
+<footer>
+<p>書いている人：数字でつまずく所の手帳。資格の計算で止まる所を1つずつ解く本と問題集を作っています。</p>
+<p>この辞典の数値と例題は自分で作ったもので、過去問題そのものではありません。誤りに気付いたときは、X の @tsumazuki_note へ知らせていただけると助かります。</p>
+<p><a href="../privacy.html">このサイトが数えている物</a>　／　<a href="../ichiran.html">ページの一覧</a></p>
+</footer>
+</body>
+</html>
