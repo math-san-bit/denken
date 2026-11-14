@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>まず1問だけ試す｜電験三種　計算で止まる所の辞典</title>
+<meta name="description" content="電験三種の計算の土台を、1問だけ試せます。答えと理由がその場で出ます。約30秒。">
+<link rel="canonical" href="https://math-san-bit.github.io/denken/ichimon.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="まず1問だけ試す｜電験三種　計算で止まる所の辞典">
+<meta property="og:description" content="電験三種の計算の土台を、1問だけ試せます。答えと理由がその場で出ます。約30秒。">
+<meta property="og:url" content="https://math-san-bit.github.io/denken/ichimon.html">
+<meta property="og:image" content="https://math-san-bit.github.io/denken/img/og-denken.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="style.css">
+<script src="m.js"></script>
+</head>
+<body>
+<header class="site"><a href="denken3.html">電験三種　計算で止まる所の辞典</a></header>
+<main>
+<p class="crumb"><a href="./">トップ</a> › <a href="denken3.html">電験三種</a> › まず1問</p>
+<h1>まず1問だけ試す</h1>
+<p class="lead">10問の点検の前に、1問だけ。選ぶと、答えと理由がその場で出ます。分からなければ「分からない」を選んでください。どれを選んだかは、どこにも送りません（数えるのは、合っていたかどうかだけです）。</p>
+<form id="one"><fieldset class="q"><legend>線間電圧が 200 V の Y 結線があります。相電圧は、およそ何 V ですか（√3 は 1.73 とします）。</legend><label><input type="radio" name="q" value="0"> 346 V</label><label><input type="radio" name="q" value="1"> 200 V</label><label><input type="radio" name="q" value="2"> 141 V</label><label><input type="radio" name="q" value="3"> 115 V</label><label><input type="radio" name="q" value="4"> 分からない</label></fieldset></form>
+<div id="res" class="result" hidden></div>
+<p><a href="denken3.html">電験三種の入口へ戻る</a>　／　<a href="./">辞典のトップ</a></p>
+</main>
+<script>
+(function () {
+  var done = false;
+  document.getElementById("one").addEventListener("change", function (e) {
+    var right = Number(e.target.value) === 3;
+    var res = document.getElementById("res");
+    res.innerHTML = "<h2>" + (right ? "合っています" : "答えは「115 V」です") + "</h2><p>Y 結線では、相電圧 ＝ 線間電圧 ÷ √3 です。200 ÷ 1.73 ＝ 約 115 V。相電圧は線間電圧より小さい、と覚えると、掛けるのか割るのかで迷いません。</p>" +
+      '<p><a href="root3.html">くわしい説明：線間電圧と相電圧：√3 は、掛けるのか割るのか</a></p>' +
+      '<p><a class="btn" href="tenken.html">続けて、10問の点検を始める（約5分）</a></p>';
+    res.hidden = false;
+    if (!done && window.jitenEvent) { done = true; window.jitenEvent(right ? "ichimon_right" : "ichimon_wrong", {}); }
+  });
+})();
+</script>
+<footer>
+<p>書いている人：電験数学ノート編集室。電験三種の計算で止まる所を1つずつ解く本を作っています。</p>
+<p>この辞典の数値と例題は編集室が作ったもので、過去問題そのものではありません。誤りに気付いたときは、本の商品ページのカスタマーレビューで知らせていただけると助かります。</p>
+<p><a href="privacy.html">このサイトが数えている物</a>　／　<a href="ichiran.html">ページの一覧</a></p>
+</footer>
+</body>
+</html>

@@ -59,6 +59,28 @@
     if (e.target && e.target.tagName === "DETAILS" && e.target.open) { ev("open_answer", {}); }
   }, true);
 
+  /* 解説のページの終わりに、「解けそうか」の2択を出す。押された答えだけを数える */
+  document.addEventListener("DOMContentLoaded", function () {
+    var up = document.querySelector("p.updated");
+    if (!up || !document.querySelector(".answer") || !document.querySelector(".crumb")) { return; }
+    var box = document.createElement("div");
+    box.className = "check";
+    box.innerHTML = '<strong>この説明で、同じ形の問題を自分で解けそうですか。</strong><br>' +
+      '<button type="button" class="btn" data-a="yes">解けそう</button>　<button type="button" class="btn" data-a="no">まだ少し不安</button>' +
+      '<p id="helpmsg" role="status"></p>';
+    up.parentNode.insertBefore(box, up);
+    var sent = false;
+    box.addEventListener("click", function (e) {
+      var b = e.target.closest ? e.target.closest("button[data-a]") : null;
+      if (!b) { return; }
+      var yes = b.getAttribute("data-a") === "yes";
+      if (!sent) { sent = true; ev(yes ? "helpful_yes" : "helpful_no", { page: (location.pathname.split("/").pop() || "index").slice(0, 40) }); }
+      document.getElementById("helpmsg").textContent = yes
+        ? "ありがとうございます。確かめの1問が解けたら、次のページへ進んでください。"
+        : "ありがとうございます。このページは、説明を足す候補にします。10問の点検で、ほかに止まる所が無いかも確かめられます。";
+    });
+  });
+
   /* 読んだページの印。このブラウザーの中だけに置き、どこにも送らない */
   document.addEventListener("DOMContentLoaded", function () {
     try {

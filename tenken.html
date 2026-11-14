@@ -23,11 +23,13 @@
 <p class="lead">参考書の解説は、ここにある計算ができる前提で進みます。紙に書いて解いてください。電卓を使ってかまいません（√3 は 1.73 とします）。分からない問題は「分からない」を選んでかまいません。当てずっぽうで選ぶと、やり直す所が見えなくなります。</p>
 <p>採点はこの画面の中で行います。どの選択肢を選んだかは、どこにも送りません。数えているのは、採点した回数、何問できたか、やり直す所のまとまりの名前だけです（<a href="privacy.html">このサイトが数えている物</a>）。</p>
 
+<p>10問は多い、と感じるときは：<a href="ichimon.html">まず1問だけ試す（約30秒）</a></p>
+
 <form id="quiz"></form>
 <p><button type="button" class="btn" id="grade">採点する</button></p>
 <div id="result" class="result" hidden></div>
 
-<p><a href="denken3.html">電験三種の入口へ戻る</a>　／　<a href="index.html">辞典のトップ</a></p>
+<p><a href="denken3.html">電験三種の入口へ戻る</a>　／　<a href="./">辞典のトップ</a></p>
 </main>
 <footer>
 <p>書いている人：電験数学ノート編集室。電験三種の計算で止まる所を1つずつ解く本を作っています。</p>
@@ -38,16 +40,17 @@
 (function () {
   var areas = {
     fukuso: { name: "j の付いた数", page: "kyosuu-naze.html", book: "hon.html#v1", bname: "第1巻『複素数とベクトル図』", stop: "交流回路のインピーダンスとベクトル図の解説で止まります。" },
-    pz: { name: "パーセントインピーダンス", page: "tanraku-100.html", book: "hon.html#v2", bname: "第2巻『パーセントインピーダンスの計算がわかる』", stop: "短絡電流と、基準容量の換算で止まります。" },
+    pz_tanraku: { name: "%Z と短絡電流", page: "tanraku-100.html", book: "hon.html#v2", bname: "第2巻『パーセントインピーダンスの計算がわかる』", stop: "短絡電流の計算で、100 を掛けるのか割るのかで止まります。" },
+    pz_kijun: { name: "%Z の基準容量の換算", page: "kijun-youryou.html", book: "hon.html#v2", bname: "第2巻『パーセントインピーダンスの計算がわかる』", stop: "容量の違う機器の %Z を、そろえる所で止まります。" },
     sansou: { name: "三相交流と √3", page: "root3.html", book: "hon.html#v3", bname: "第3巻『三相交流の計算がわかる』", stop: "√3 を掛けるのか割るのかで止まります。" },
-    rikiritsu: { name: "力率と無効電力", page: "", book: "hon.html#v4", bname: "第4巻『力率改善の計算がわかる』", stop: "コンデンサーの容量と、力率を上げる計算で止まります。" },
+    rikiritsu: { name: "力率と無効電力", page: "rikiritsu.html", book: "hon.html#v4", bname: "第4巻『力率改善の計算がわかる』", stop: "コンデンサーの容量と、力率を上げる計算で止まります。" },
     henatsu: { name: "変圧器の巻数比", page: "henatsu-makisuu.html", book: "hon.html#v5", bname: "第5巻『変圧器の計算がわかる』", stop: "一次と二次の換算で、掛けるのか割るのかで止まります。" },
-    juyou: { name: "需要率・負荷率", page: "", book: "hon.html#v6", bname: "第6巻『需要率・不等率・負荷率の計算がわかる』", stop: "法規の施設管理の計算で止まります。" }
+    juyou: { name: "需要率・負荷率", page: "juyouritsu.html", book: "hon.html#v6", bname: "第6巻『需要率・不等率・負荷率の計算がわかる』", stop: "法規の施設管理の計算で止まります。" }
   };
   var qs = [
     { a: "fukuso", t: "3 ＋ j4 の大きさは、いくつですか。", c: ["7", "5", "12", "1"], k: 1 },
-    { a: "pz", t: "定格電流が 100 A、%Z が 5% の変圧器があります。二次側で三相短絡したときの短絡電流は何 A ですか。", c: ["500 A", "5 A", "2000 A", "20 A"], k: 2 },
-    { a: "pz", t: "10 MV·A を基準にして 5% の %Z を、20 MV·A の基準に直すと何 % ですか。", c: ["2.5%", "5%", "10%", "20%"], k: 2 },
+    { a: "pz_tanraku", t: "定格電流が 100 A、%Z が 5% の変圧器があります。二次側で三相短絡したときの短絡電流は何 A ですか。", c: ["500 A", "5 A", "2000 A", "20 A"], k: 2 },
+    { a: "pz_kijun", t: "10 MV·A を基準にして 5% の %Z を、20 MV·A の基準に直すと何 % ですか。", c: ["2.5%", "5%", "10%", "20%"], k: 2 },
     { a: "sansou", t: "線間電圧が 200 V の Y 結線の相電圧は、およそ何 V ですか。", c: ["346 V", "200 V", "141 V", "115 V"], k: 3 },
     { a: "sansou", t: "線間電圧 200 V、線電流 10 A、力率 0.8 の三相負荷の消費電力は、およそ何 kW ですか。", c: ["1.6 kW", "2.8 kW", "3.5 kW", "4.8 kW"], k: 1 },
     { a: "rikiritsu", t: "消費電力が 80 kW、力率が 0.8 の負荷の皮相電力は何 kV·A ですか。", c: ["100 kV·A", "64 kV·A", "80 kV·A", "160 kV·A"], k: 0 },

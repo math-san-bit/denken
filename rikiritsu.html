@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>力率と無効電力：kW と kV·A と kvar は、どうつながるのか｜電験三種　計算で止まる所の辞典</title>
+<meta name="description" content="電験三種の力率の計算で、kW（有効電力）、kV·A（皮相電力）、kvar（無効電力）のつながりを、直角三角形の3つの辺として整理します。80 kW・力率 0.8 なら、100 kV·A、60 kvar です。">
+<link rel="canonical" href="https://math-san-bit.github.io/denken/rikiritsu.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="力率と無効電力：kW と kV·A と kvar は、どうつながるのか｜電験三種　計算で止まる所の辞典">
+<meta property="og:description" content="電験三種の力率の計算で、kW（有効電力）、kV·A（皮相電力）、kvar（無効電力）のつながりを、直角三角形の3つの辺として整理します。80 kW・力率 0.8 なら、100 kV·A、60 kvar です。">
+<meta property="og:url" content="https://math-san-bit.github.io/denken/rikiritsu.html">
+<meta property="og:image" content="https://math-san-bit.github.io/denken/img/og-denken.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "力率と無効電力：kW と kV·A と kvar は、どうつながるのか", "description": "電験三種の力率の計算で、kW（有効電力）、kV·A（皮相電力）、kvar（無効電力）のつながりを、直角三角形の3つの辺として整理します。80 kW・力率 0.8 なら、100 kV·A、60 kvar です。", "inLanguage": "ja", "datePublished": "2026-11-14", "dateModified": "2026-11-14", "mainEntityOfPage": "https://math-san-bit.github.io/denken/rikiritsu.html", "author": {"@type": "Organization", "name": "電験数学ノート編集室"}}</script>
+<link rel="stylesheet" href="style.css">
+<script src="m.js"></script>
+</head>
+<body>
+<header class="site"><a href="denken3.html">電験三種　計算で止まる所の辞典</a></header>
+<main>
+<p class="crumb"><a href="./">トップ</a> › <a href="denken3.html">電験三種</a> › 力率</p>
+<h1>力率と無効電力：kW と kV·A と kvar は、どうつながるのか</h1>
+<p class="lead">力率の問題には、kW、kV·A、kvar の3つの単位が出てきます。どれをどれで割るのか、足してよいのかで手が止まります。</p>
+<div class="answer"><strong>先に答え</strong>3つは、直角三角形の3つの辺です。斜めの辺が皮相電力（kV·A）、底の辺が有効電力（kW）、高さが無効電力（kvar）。力率は、底の辺 ÷ 斜めの辺 です。だから、皮相電力 ＝ 有効電力 ÷ 力率。80 kW で力率 0.8 なら、100 kV·A です。</div>
+
+<h2>どこで止まるか</h2>
+<div class="wrong">80 kW で力率 0.8 の負荷の皮相電力を、80 × 0.8 ＝ 64 kV·A としてしまう。皮相電力は有効電力より必ず大きいので、割るのが正しい向きです。もう一つ、無効電力を 100 − 80 ＝ 20 kvar と引き算で出してしまう。辺の長さは、引き算ではつながりません。</div>
+
+<h2>3つの電力は、何を表しているか</h2>
+<p>皮相電力（kV·A）は、電圧 × 電流 をそのまま掛けた、見かけの大きさです。電線や変圧器は、この大きさに耐えるように選びます。</p>
+<p>有効電力（kW）は、そのうち、実際に仕事（熱、光、回転）になる分です。電気料金の元になるのは、こちらです。</p>
+<p>無効電力（kvar）は、コイルやコンデンサーと電源の間を行ったり来たりするだけで、仕事にならない分です。</p>
+<p>力率は、見かけの大きさのうち、仕事になる分の割合です。力率 ＝ 有効電力 ÷ 皮相電力。0.8 なら、8割が仕事になっています。</p>
+<h2>なぜ、三角形になるのか</h2>
+<p>有効電力と無効電力は、向きが90度ずれた2つの矢印です。90度ずれた2つを合わせた長さは、足し算ではなく、直角三角形の斜めの辺の長さになります。</p>
+<table class="num">
+<thead><tr><th>出したい物</th><th>式</th></tr></thead>
+<tbody>
+<tr><td>皮相電力（kV·A）</td><td>有効電力 ÷ 力率</td></tr>
+<tr><td>有効電力（kW）</td><td>皮相電力 × 力率</td></tr>
+<tr><td>無効電力（kvar）</td><td>皮相電力 × sin θ（力率 0.8 なら sin θ は 0.6）</td></tr>
+</tbody>
+</table>
+<p>力率 0.8 と 0.6 は、組で覚えておくと速くなります。0.8 の2乗 ＋ 0.6 の2乗 ＝ 1 だからです。3・4・5 の直角三角形と同じ形です。</p>
+
+<h2>数値で確かめる</h2>
+<div class="calc">有効電力 80 kW、力率 0.8<br>皮相電力 ＝ 80 ÷ 0.8 ＝ 100 kV·A<br>無効電力 ＝ 100 × 0.6 ＝ 60 kvar<br>確かめ：80 の2乗 ＋ 60 の2乗 ＝ 6400 ＋ 3600 ＝ 10000 ＝ 100 の2乗</div>
+
+<div class="check"><strong>確かめの1問</strong><br>有効電力 60 kW、力率 0.6 の負荷があります。皮相電力と無効電力は、いくつですか。
+<details><summary>答え</summary>皮相電力 ＝ 60 ÷ 0.6 ＝ 100 kV·A。力率が 0.6 なら sin θ は 0.8 なので、無効電力 ＝ 100 × 0.8 ＝ 80 kvar。</details></div>
+
+<div class="check"><strong>ほかに止まる所が無いか、10問で確かめる</strong><br>計算の10問です。約5分。やり直す所と、読むページと本が分かります。<br><a class="btn" href="tenken.html">点検を始める</a></div>
+<p>コンデンサーで力率を上げる計算を、順を追って解く本：<a href="hon.html#v4">第4巻の案内</a></p>
+<nav class="next"><strong>次に読む</strong><ul class="list"><li><a href="root3-to-3.html">三相の電力：√3 を掛けたうえで、3倍しないのか</a></li><li><a href="kyosuu-naze.html">交流回路：なぜ j（虚数）を使うのか</a></li></ul></nav>
+<p class="updated">最終更新：2026年11月14日</p>
+<p><a href="denken3.html">電験三種の入口へ戻る</a>　／　<a href="./">辞典のトップ</a></p>
+</main>
+<footer>
+<p>書いている人：電験数学ノート編集室。電験三種の計算で止まる所を1つずつ解く本を作っています。</p>
+<p>この辞典の数値と例題は編集室が作ったもので、過去問題そのものではありません。誤りに気付いたときは、本の商品ページのカスタマーレビューで知らせていただけると助かります。</p>
+<p><a href="privacy.html">このサイトが数えている物</a>　／　<a href="ichiran.html">ページの一覧</a></p>
+</footer>
+</body>
+</html>

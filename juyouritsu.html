@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>需要率と負荷率：どちらを、何で割るのか｜電験三種　計算で止まる所の辞典</title>
+<meta name="description" content="電験三種の法規で出る需要率と負荷率を整理します。需要率は 最大需要電力 ÷ 設備容量、負荷率は 平均電力 ÷ 最大需要電力。設備容量 100 kW・需要率 60% なら、最大需要電力は 60 kW です。">
+<link rel="canonical" href="https://math-san-bit.github.io/denken/juyouritsu.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="需要率と負荷率：どちらを、何で割るのか｜電験三種　計算で止まる所の辞典">
+<meta property="og:description" content="電験三種の法規で出る需要率と負荷率を整理します。需要率は 最大需要電力 ÷ 設備容量、負荷率は 平均電力 ÷ 最大需要電力。設備容量 100 kW・需要率 60% なら、最大需要電力は 60 kW です。">
+<meta property="og:url" content="https://math-san-bit.github.io/denken/juyouritsu.html">
+<meta property="og:image" content="https://math-san-bit.github.io/denken/img/og-denken.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "需要率と負荷率：どちらを、何で割るのか", "description": "電験三種の法規で出る需要率と負荷率を整理します。需要率は 最大需要電力 ÷ 設備容量、負荷率は 平均電力 ÷ 最大需要電力。設備容量 100 kW・需要率 60% なら、最大需要電力は 60 kW です。", "inLanguage": "ja", "datePublished": "2026-11-14", "dateModified": "2026-11-14", "mainEntityOfPage": "https://math-san-bit.github.io/denken/juyouritsu.html", "author": {"@type": "Organization", "name": "電験数学ノート編集室"}}</script>
+<link rel="stylesheet" href="style.css">
+<script src="m.js"></script>
+</head>
+<body>
+<header class="site"><a href="denken3.html">電験三種　計算で止まる所の辞典</a></header>
+<main>
+<p class="crumb"><a href="./">トップ</a> › <a href="denken3.html">電験三種</a> › 法規の計算</p>
+<h1>需要率と負荷率：どちらを、何で割るのか</h1>
+<p class="lead">法規の施設管理の計算には、需要率、負荷率、不等率と、似た名前の率が並びます。どれが、何を何で割った物なのかで手が止まります。</p>
+<div class="answer"><strong>先に答え</strong>どちらも「小さいほう ÷ 大きいほう」です。需要率 ＝ 最大需要電力 ÷ 設備容量。負荷率 ＝ 平均電力 ÷ 最大需要電力。大きさの順は、設備容量 ≧ 最大需要電力 ≧ 平均電力 なので、どちらの率も 100% を超えません。</div>
+
+<h2>どこで止まるか</h2>
+<div class="wrong">最大需要電力 60 kW、平均電力 30 kW のときの負荷率を、60 ÷ 30 ＝ 200% としてしまう。負荷率は 100% を超えません。超えたら、割る向きが逆です。</div>
+
+<h2>3つの電力を、大きい順に並べる</h2>
+<p>設備容量は、その工場や建物にある電気の設備を、全部足した大きさです。全部を同時に最大で使うことは、ふつうありません。</p>
+<p>最大需要電力は、ある期間のうち、実際にいちばん多く使った瞬間の電力です。</p>
+<p>平均電力は、その期間を通して、ならした電力です。</p>
+<table class="num">
+<thead><tr><th>率</th><th>式</th><th>何が分かるか</th></tr></thead>
+<tbody>
+<tr><td>需要率</td><td>最大需要電力 ÷ 設備容量</td><td>持っている設備のうち、いちばん使った時にどれだけ動いたか</td></tr>
+<tr><td>負荷率</td><td>平均電力 ÷ 最大需要電力</td><td>いちばん使った時に比べて、ふだんどれだけ使っているか</td></tr>
+</tbody>
+</table>
+<p>迷ったら、3つの電力を大きい順に並べて、となり合う2つを「小さいほう ÷ 大きいほう」で割る、と確かめます。</p>
+<p>不等率だけは逆で、1 以上になります（それぞれの最大需要電力の合計 ÷ 全体を合わせた最大需要電力）。この辞典では、別のページで扱います。</p>
+
+<h2>数値で確かめる</h2>
+<div class="calc">設備容量 100 kW、需要率 60%<br>最大需要電力 ＝ 100 × 0.6 ＝ 60 kW<br>平均電力が 30 kW なら、負荷率 ＝ 30 ÷ 60 ＝ 0.5 ＝ 50%</div>
+
+<div class="check"><strong>確かめの1問</strong><br>設備容量 200 kW、需要率 70% の工場で、平均電力が 84 kW でした。負荷率は何 % ですか。
+<details><summary>答え</summary>最大需要電力 ＝ 200 × 0.7 ＝ 140 kW。負荷率 ＝ 84 ÷ 140 ＝ 0.6 ＝ 60%。</details></div>
+
+<div class="check"><strong>ほかに止まる所が無いか、10問で確かめる</strong><br>計算の10問です。約5分。やり直す所と、読むページと本が分かります。<br><a class="btn" href="tenken.html">点検を始める</a></div>
+<p>需要率・不等率・負荷率の計算を、順を追って解く本：<a href="hon.html#v6">第6巻の案内</a></p>
+<nav class="next"><strong>次に読む</strong><ul class="list"><li><a href="rikiritsu.html">力率と無効電力：kW と kV·A と kvar は、どうつながるのか</a></li><li><a href="henatsu-makisuu.html">変圧器の巻数比：電圧・電流・インピーダンスで、掛けるのか割るのか</a></li></ul></nav>
+<p class="updated">最終更新：2026年11月14日</p>
+<p><a href="denken3.html">電験三種の入口へ戻る</a>　／　<a href="./">辞典のトップ</a></p>
+</main>
+<footer>
+<p>書いている人：電験数学ノート編集室。電験三種の計算で止まる所を1つずつ解く本を作っています。</p>
+<p>この辞典の数値と例題は編集室が作ったもので、過去問題そのものではありません。誤りに気付いたときは、本の商品ページのカスタマーレビューで知らせていただけると助かります。</p>
+<p><a href="privacy.html">このサイトが数えている物</a>　／　<a href="ichiran.html">ページの一覧</a></p>
+</footer>
+</body>
+</html>
