@@ -71,3 +71,16 @@ ul.voice a small{display:block;font-weight:400;color:var(--sub);font-size:.85rem
 .book-bridge h3{font-size:1rem;margin:1em 0 .3em}
 .book-bridge p{margin:.55em 0}
 .small-note{font-size:.88rem;color:var(--sub)}
+
+/* Editorial book catalogue */
+.book-list{display:grid;grid-template-columns:1fr;gap:1rem;margin:1.2rem 0 2rem}
+.book-card{display:flex;align-items:flex-start;gap:1rem;background:#fff;border:1px solid var(--line);border-radius:8px;padding:1rem;margin:0}
+.book-cover-link{display:block;flex:0 0 112px;width:112px;text-align:center}
+.book-cover{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:contain;background:#f4f6f7;border:1px solid var(--line);border-radius:3px}
+.book-card-body{min-width:0;flex:1}
+.book-card h3{font-size:1.05rem;line-height:1.55;margin:0 0 .55rem}
+.book-card p{font-size:.94rem;margin:.35rem 0 .8rem}
+.book-target{color:var(--sub)}
+.text-link{font-weight:700}
+@media(max-width:420px){.book-card{gap:.75rem;padding:.75rem}.book-cover-link{flex-basis:88px;width:88px}}
+@media(min-width:700px){.book-list{grid-template-columns:1fr 1fr}}
