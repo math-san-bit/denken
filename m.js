@@ -59,25 +59,50 @@
     if (e.target && e.target.tagName === "DETAILS" && e.target.open) { ev("open_answer", {}); }
   }, true);
 
-  /* 解説のページの終わりに、「解けそうか」の2択を出す。押された答えだけを数える */
+  /* 解説のページの終わりに、「解けそうか」の2択を出す。押された答えだけを数える。
+     「まだ少し不安」の人には、そのページに合う本を1冊だけ示す */
+  var BOOKS = {
+    v1: ["第1巻『複素数とベクトル図』", "j の付いた数の計算と、ベクトル図の向き"],
+    v2: ["第2巻『パーセントインピーダンスの計算がわかる』", "基準容量の換算と、短絡電流・短絡容量"],
+    v3: ["第3巻『三相交流の計算がわかる』", "√3 を掛けるのか割るのかと、Y結線・Δ結線"],
+    v4: ["第4巻『力率改善の計算がわかる』", "コンデンサーの容量と、力率を上げる計算"],
+    v5: ["第5巻『変圧器の計算がわかる』", "巻数比を掛けるのか割るのかと、効率の計算"],
+    v6: ["第6巻『需要率・不等率・負荷率の計算がわかる』", "需要率・不等率・負荷率と、変圧器の容量の決め方"]
+  };
   document.addEventListener("DOMContentLoaded", function () {
     var up = document.querySelector("p.updated");
     if (!up || !document.querySelector(".answer") || !document.querySelector(".crumb")) { return; }
+    var page = (location.pathname.split("/").pop() || "index").slice(0, 40);
+    var link = document.querySelector('main p > a[href^="hon.html#v"]');
+    var id = link ? link.getAttribute("href").split("#")[1] : "";
+    var book = BOOKS[id];
     var box = document.createElement("div");
     box.className = "check";
     box.innerHTML = '<strong>この説明で、同じ形の問題を自分で解けそうですか。</strong><br>' +
       '<button type="button" class="btn" data-a="yes">解けそう</button>　<button type="button" class="btn" data-a="no">まだ少し不安</button>' +
-      '<p id="helpmsg" role="status"></p>';
+      '<div id="helpmsg" role="status"></div>';
     up.parentNode.insertBefore(box, up);
-    var sent = false;
+    var sent = false, shown = false;
     box.addEventListener("click", function (e) {
-      var b = e.target.closest ? e.target.closest("button[data-a]") : null;
+      var t = e.target.closest ? e.target : null;
+      if (!t) { return; }
+      if (t.closest("a[data-book]")) { ev("book_click", { page: page, book: id }); return; }
+      var b = t.closest("button[data-a]");
       if (!b) { return; }
       var yes = b.getAttribute("data-a") === "yes";
-      if (!sent) { sent = true; ev(yes ? "helpful_yes" : "helpful_no", { page: (location.pathname.split("/").pop() || "index").slice(0, 40) }); }
-      document.getElementById("helpmsg").textContent = yes
-        ? "ありがとうございます。確かめの1問が解けたら、次のページへ進んでください。"
-        : "ありがとうございます。このページは、説明を足す候補にします。10問の点検で、ほかに止まる所が無いかも確かめられます。";
+      if (!sent) { sent = true; ev(yes ? "helpful_yes" : "helpful_no", { page: page }); }
+      var msg = document.getElementById("helpmsg");
+      if (yes) {
+        msg.innerHTML = "<p>ありがとうございます。上の「次に読む」から、次の止まる所へ進んでください。</p>";
+      } else if (book) {
+        msg.innerHTML = "<p>ありがとうございます。このページは、説明を足す候補にします。</p>" +
+          "<p><strong>同じ形を、もう何問か解いて固めたいときの1冊</strong><br>" + book[0] + "は、" + book[1] +
+          "を、途中の式から順に解く本です。全部の巻は要りません。この1冊で足ります。</p>" +
+          '<p><a class="btn" data-book="' + id + '" href="hon.html#' + id + '">' + book[0].split("『")[0] + "の案内を見る</a></p>";
+        if (!shown) { shown = true; ev("book_shown", { page: page, book: id }); }
+      } else {
+        msg.innerHTML = "<p>ありがとうございます。このページは、説明を足す候補にします。10問の点検で、ほかに止まる所が無いかも確かめられます。</p>";
+      }
     });
   });
 
