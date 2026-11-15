@@ -64,3 +64,35 @@ ul.voice a small{display:block;font-weight:400;color:var(--sub);font-size:.85rem
 .steps li:before{content:counter(s);position:absolute;left:0;top:.25em;width:1.6em;height:1.6em;border-radius:50%;background:var(--mark);color:var(--ink);font-weight:700;text-align:center;line-height:1.6em;font-size:.9rem}
 @media(min-width:640px){.doors{grid-template-columns:1fr 1fr 1fr}.cards{grid-template-columns:1fr 1fr}}
 .hero .eyebrow{font-size:.9rem;color:#f2b705;margin:0 0 .6em}
+
+/* 2026-11-15：見出しを辞典の書体に、本の案内を表紙付きに、トップに「飛ばされる1行」の見本を足した */
+:root{--mincho:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP","Noto Serif CJK JP",serif}
+h1,h2,.card h3,header.site a,.honcard-title{font-family:var(--mincho);font-weight:700;letter-spacing:.02em}
+h1{font-size:1.6rem}
+h2{font-size:1.25rem;margin-top:2.4em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--mark);outline-offset:2px}
+.btn{padding:.7em 1.3em;border-radius:4px;box-shadow:0 2px 0 #0a1f2e}
+.btn:active{transform:translateY(2px);box-shadow:none}
+.check .btn[data-a]{background:#fff;color:var(--accent);border:2px solid var(--accent);box-shadow:none}
+.check .btn[data-a]:hover{background:#eef3f6}
+#helpmsg:empty{display:none}
+
+.hero{background-color:var(--accent);background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:24px 24px}
+.hero h1{font-size:1.85rem}
+.gyou{display:block;margin:1.4em 0 0;padding:.9em 1em .8em;background:#fbfcfc;color:var(--ink);border-radius:4px;text-decoration:none;font-variant-numeric:tabular-nums;max-width:30em}
+.gyou-line{display:block;padding:.25em .4em;border-bottom:1px dashed var(--line)}
+.gyou-line.tobi{background:linear-gradient(transparent 55%,#ffe27a 55%);font-weight:700;padding-top:.5em}
+.gyou-line.tobi small{display:block;font-weight:400;font-size:.8rem;color:#8a5a00}
+.gyou-more{display:block;margin-top:.6em;font-size:.9rem;color:#0b5a8a;text-decoration:underline}
+
+.honcard{display:grid;grid-template-columns:108px 1fr;gap:1em;align-items:start;background:#fff;border:1px solid var(--line);border-top:6px solid var(--mark);border-radius:4px;padding:1em;margin:1.6em 0}
+.honcard.noimg{grid-template-columns:1fr}
+.honcard img{width:100%;height:auto;display:block;border:1px solid var(--line)}
+.honcard p{margin:.35em 0;font-size:.95rem}
+.honcard h2{border:0;padding:0;margin:0 0 .3em;font-size:1.1rem;line-height:1.5}
+.honcard-lead{color:var(--sub);font-size:.85rem}
+.honcard-title{font-size:1.1rem;line-height:1.5}
+.honcard-sub{font-size:.85rem}
+.check .honcard{margin:.8em 0 .2em}
+@media(min-width:640px){.honcard{grid-template-columns:140px 1fr}}
+.honcard .btn{white-space:nowrap;padding:.6em 1em}
