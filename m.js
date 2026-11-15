@@ -108,12 +108,35 @@
       });
     }
 
+    /* 一陸特・一陸技：問題集の案内がある解説では、BOOTH の問題集を1品だけ、同じ形で用意する */
+    var mlink = document.querySelector('main p > a[href="mondaishu.html"]');
+    if (!card && mlink) {
+      id = "booth40";
+      card = document.createElement("div");
+      card.className = "honcard";
+      card.innerHTML = '<img src="../img/mondaishu-sample.jpg" alt="問題集の見本のページ" width="900" loading="lazy">' +
+        '<div><p class="honcard-lead">同じ型の問題を、紙の上で繰り返したい人へ</p>' +
+        '<p class="honcard-title">電卓なしのデシベル 書き込み式の問題集 40問</p>' +
+        '<p>デシベルの出し入れを、途中の式を自分で書き込みながら固める問題集です。PDF（A4・10ページ）、300円。</p>' +
+        '<p class="honcard-lead">過去問題そのものではありません。合格を約束する物でもありません。</p>' +
+        '<p><a class="btn" data-micro="見本つき" data-book="' + id + '" href="mondaishu.html">中身と見本を見る</a></p>' +
+        '<p class="honcard-sub"><a data-book="' + id + '" href="https://tsumazuki-techo.booth.pm/items/9144717">BOOTH の商品のページへ（300円）</a></p></div>';
+      card.addEventListener("click", function (e) {
+        if (e.target.closest && e.target.closest("a[data-book]")) { ev("book_click", { page: page, book: id }); }
+      });
+    }
+
     var box = document.createElement("div");
     box.className = "check";
     box.innerHTML = '<strong>この説明で、同じ形の問題を自分で解けそうですか。</strong><br>' +
       '<button type="button" class="btn" data-a="yes">解けそう</button>　<button type="button" class="btn" data-a="no">まだ少し不安</button>' +
       '<div id="helpmsg" role="status"></div>';
-    up.parentNode.insertBefore(box, up);
+    /* 2択は、確かめの1問のすぐ下に置く（解いた直後に、次の一歩を1つだけ示す）。確かめの1問が無い頁では、終わりに置く */
+    var qs = document.querySelectorAll("main div.check details");
+    var kq = qs.length ? qs[qs.length - 1].closest("div.check") : null;
+    if (kq && kq.parentNode) { kq.parentNode.insertBefore(box, kq.nextSibling); }
+    else { up.parentNode.insertBefore(box, up); }
+    var nx = document.querySelector("main nav.next a");
     var sent = false, shown = false;
     box.addEventListener("click", function (e) {
       var b = e.target.closest ? e.target.closest("button[data-a]") : null;
@@ -122,7 +145,14 @@
       if (!sent) { sent = true; ev(yes ? "helpful_yes" : "helpful_no", { page: page }); }
       var msg = document.getElementById("helpmsg");
       if (yes) {
-        msg.innerHTML = "<p>ありがとうございます。上の「次に読む」から、次の止まる所へ進んでください。</p>";
+        if (nx) {
+          msg.innerHTML = "<p>ありがとうございます。次の止まる所へ進めます。</p>";
+          var na = document.createElement("a");
+          na.className = "btn"; na.href = nx.getAttribute("href"); na.textContent = "次へ：" + nx.textContent;
+          var np = document.createElement("p"); np.appendChild(na); msg.appendChild(np);
+        } else {
+          msg.innerHTML = "<p>ありがとうございます。下の「次に読む」から、次の止まる所へ進んでください。</p>";
+        }
       } else if (card) {
         msg.innerHTML = "<p>ありがとうございます。このページは、説明を足す候補にします。</p>";
         msg.appendChild(card);
