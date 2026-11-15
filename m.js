@@ -73,13 +73,14 @@
 
   /* 解説のページの終わり：本の1冊の案内と、「解けそうか」の2択。押された答えだけを数える。
      「まだ少し不安」の人には、案内を答えのすぐ下へ動かして見せる */
+  /* 書名と ASIN は、KDP の本棚（2026-11-15）のとおり。[書名, 扱う所, Kindle 版, 紙の本] */
   var BOOKS = {
-    v1: ["第1巻『複素数とベクトル図』", "j の付いた数の計算と、ベクトル図の向き", "B0HLYB3HQY"],
-    v2: ["第2巻『パーセントインピーダンスの計算がわかる』", "基準容量の換算と、短絡電流・短絡容量", "B0HLXHL4PM"],
-    v3: ["第3巻『三相交流の計算がわかる』", "√3 を掛けるのか割るのかと、Y結線・Δ結線", "B0HMMDKGDW"],
-    v4: ["第4巻『力率改善の計算がわかる』", "コンデンサーの容量と、力率を上げる計算", "B0HNDJMNTQ"],
-    v5: ["第5巻『変圧器の計算がわかる』", "巻数比を掛けるのか割るのかと、効率の計算", "B0HPYX48YY"],
-    v6: ["第6巻『需要率・不等率・負荷率の計算がわかる』", "需要率・不等率・負荷率と、変圧器の容量の決め方", "B0HQVZ88JP"]
+    v1: ["電験三種の数学 つまずき解消ノート1　複素数とベクトル図", "j の付いた数の計算と、ベクトル図の向き", "B0HLYB3HQY", "B0HLW1DPG8"],
+    v2: ["パーセントインピーダンスの計算がわかる　電験三種の短絡電流・短絡容量・変圧器", "基準容量の換算と、短絡電流・短絡容量", "B0HLXHL4PM", "B0HLXM1YQ1"],
+    v3: ["三相交流の計算がわかる　電験三種の√3・Y結線・Δ結線・三相電力", "√3 を掛けるのか割るのかと、Y結線・Δ結線", "B0HMMDKGDW", "B0HMMZH7T4"],
+    v4: ["力率改善の計算がわかる　電験三種のコンデンサー容量・損失・電圧降下・直列リアクトル", "コンデンサーの容量と、力率を上げる計算", "B0HNDJMNTQ", "B0HNDJSFBW"],
+    v5: ["変圧器の計算がわかる　電験三種の等価回路・損失・効率・全日効率", "巻数比を掛けるのか割るのかと、効率の計算", "B0HPYX48YY", "B0HPZ48PJ9"],
+    v6: ["需要率・不等率・負荷率の計算がわかる　電験三種 法規の負荷計算と変圧器の容量", "需要率・不等率・負荷率と、変圧器の容量の決め方", "B0HQVZ88JP", "B0HQVWT9D8"]
   };
   document.addEventListener("DOMContentLoaded", function () {
     var up = document.querySelector("p.updated");
@@ -98,8 +99,9 @@
         '<div><p class="honcard-lead">同じ形を、もう何問か解いて固めたいときの1冊</p>' +
         '<p class="honcard-title">' + book[0] + '</p>' +
         '<p>' + book[1] + 'を、途中の式から順に解く本です。全部の巻は要りません。</p>' +
-        '<p><a class="btn" data-book="' + id + '" href="https://www.amazon.co.jp/dp/' + book[2] + '">Amazon で見る</a></p>' +
-        '<p class="honcard-sub"><a href="hon.html">ほかの巻の案内</a></p></div>';
+        '<p class="honcard-lead">電験数学ノート編集室 著。Kindle 版と、紙の本があります。</p>' +
+        '<p><a class="btn" data-book="' + id + '" href="https://www.amazon.co.jp/dp/' + book[2] + '">Kindle 版を Amazon で見る</a></p>' +
+        '<p class="honcard-sub"><a data-book="' + id + '" href="https://www.amazon.co.jp/dp/' + book[3] + '">紙の本を Amazon で見る</a>　<a href="hon.html">ほかの巻の案内</a></p></div>';
       link.parentNode.parentNode.replaceChild(card, link.parentNode);
       card.addEventListener("click", function (e) {
         if (e.target.closest && e.target.closest("a[data-book]")) { ev("book_click", { page: page, book: id }); }
