@@ -12,8 +12,8 @@
 <meta property="og:url" content="https://math-san-bit.github.io/denken/musen/ichimon.html">
 <meta property="og:image" content="https://math-san-bit.github.io/denken/img/og-musen.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="../style.css?v=20261115c">
-<script src="../m.js?v=20261115c"></script>
+<link rel="stylesheet" href="../style.css?v=20261115d">
+<script src="../m.js?v=20261115d"></script>
 <script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}if(window.jitenLive){loadScript(function(){beTracker.t({hash:"2b75e6ae5b3bd38f11244c20df0cb5ad"})})}</script>
 </head>
 <body>
@@ -33,8 +33,8 @@
     var right = Number(e.target.value) === 1;
     var res = document.getElementById("res");
     res.innerHTML = "<h2>" + (right ? "合っています" : "答えは「3 dB」です") + "</h2><p>電力の2倍は、約 3 dB です。10倍は 10 dB。この2つを覚えると、4倍は 3 ＋ 3 ＝ 6 dB、20倍は 10 ＋ 3 ＝ 13 dB と、足し算で出せます。</p>" +
-      '<div class="cta"><p class="cta-need">なぜそうなるのかを、きちんと知りたい</p><a class="btn btn-main" href="db-3-10.html">解説を読む：デシベル：電卓なしで、3 と 10 だけで出す</a></div>' +
-      '<div class="cta cta-light"><p class="cta-need">ほかの計算も、確かめておきたい</p><a class="btn btn-sub" href="tenken.html">続けて、10問の点検を始める（約5分）</a></div>';
+      '<div class="cta"><p class="cta-need">なぜそうなるのかを、きちんと知りたい</p><a class="btn btn-main" href="db-3-10.html" data-micro="無料・登録なしで読めます">解説を読む：デシベル：電卓なしで、3 と 10 だけで出す</a></div>' +
+      '<div class="cta cta-light"><p class="cta-need">ほかの計算も、確かめておきたい</p><a class="btn btn-sub" href="tenken.html" data-micro="約5分・採点は画面の中だけ">続けて、10問の点検を始める</a></div>';
     res.hidden = false;
     if (!done && window.jitenEvent) { done = true; window.jitenEvent(right ? "ichimon_right" : "ichimon_wrong", {}); }
   });
