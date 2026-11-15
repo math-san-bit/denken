@@ -13,12 +13,12 @@
 <meta property="og:image" content="https://math-san-bit.github.io/denken/img/og-denken.png">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "線間電圧と相電圧：√3 は、掛けるのか割るのか", "description": "三相交流で、√3 を掛けるのか割るのかで止まる所を、Y結線とΔ結線に分けて解きます。", "inLanguage": "ja", "datePublished": "2026-11-13", "dateModified": "2026-11-13", "mainEntityOfPage": "https://math-san-bit.github.io/denken/root3.html", "author": {"@type": "Organization", "name": "電験数学ノート編集室"}}</script>
-<link rel="stylesheet" href="style.css">
-<script src="m.js"></script>
+<link rel="stylesheet" href="style.css?v=20261115b">
+<script src="m.js?v=20261115b"></script>
 <script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}if(window.jitenLive){loadScript(function(){beTracker.t({hash:"2b75e6ae5b3bd38f11244c20df0cb5ad"})})}</script>
 </head>
 <body>
-<header class="site"><a href="denken3.html">電験三種　計算で止まる所の辞典</a></header>
+<header class="site"><a href="denken3.html">電験三種　計算で止まる所の辞典</a><nav class="gnav" aria-label="サイトの案内"><a href="denken3.html">電験三種</a><a href="musen/index.html">一陸特・一陸技</a><a href="tenken.html">10問の点検</a><a href="hon.html">本の案内</a></nav></header>
 <main>
 <p class="crumb"><a href="./">トップ</a> › <a href="denken3.html">電験三種</a> › 三相交流</p>
 <h1>線間電圧と相電圧：√3 は、掛けるのか割るのか</h1>
@@ -40,7 +40,7 @@
 
 <h2>数値で確かめる</h2>
 <div class="calc">線間電圧 200 V の電源に、1相 10 Ω の抵抗をY結線でつなぐ<br>相電圧 ＝ 200 ÷ √3 ≒ 115.5 V<br>線電流 ＝ 相電流 ＝ 115.5 ÷ 10 ≒ 11.5 A</div>
-<figure class="tegaki"><img src="img/tegaki-root3.png" alt="手書きの筆算。200 ÷ 1.73 は、小数点を2つずらして 20000 ÷ 173。173 が 1回、1回、5回入り、商は 115、余り 105。相電圧は約 115 V。線間電圧より小さいので、割る。" width="456" height="640" loading="lazy"><figcaption>手で割るときは、√3 を 1.73 として、約 115 V まで出せば足ります（上の 115.5 V は、√3 を 1.732 とした値です）。</figcaption></figure>
+<figure class="tegaki"><img src="img/tegaki-root3.png" alt="手書きの筆算。相電圧 ＝ 200/√3 ≒ 200 ÷ 1.732。小数点を3けたずらして 200000 ÷ 1732 を筆算で割ると、商は 115.47。相電圧 ≒ 115.5 V。線間電圧より小さくなるので、割る。" width="456" height="800" loading="lazy"><figcaption>√3 ≒ 1.732 として、筆算で割った例です。試験では、小数第1位まで出せば足ります。</figcaption></figure>
 
 <div class="check"><strong>確かめの1問</strong><br>同じ電源に、1相 10 Ω の抵抗をΔ結線でつなぐと、線電流は何 A ですか。
 <details><summary>答え</summary>相電流 ＝ 200 ÷ 10 ＝ 20 A。線電流 ＝ 20 × √3 ≒ 34.6 A。Y結線の3倍になります。</details></div>

@@ -96,9 +96,9 @@
       card = document.createElement("div");
       card.className = "honcard";
       card.innerHTML = '<img src="img/cover-' + id + '.jpg" alt="' + book[0] + ' の表紙" width="360" height="576" loading="lazy">' +
-        '<div><p class="honcard-lead">同じ形を、もう何問か解いて固めたいときの1冊</p>' +
+        '<div><p class="honcard-lead">同じ型の問題を、もう少し解いておきたい人へ</p>' +
         '<p class="honcard-title">' + book[0] + '</p>' +
-        '<p>' + book[1] + 'を、途中の式から順に解く本です。全部の巻は要りません。</p>' +
+        '<p>' + book[1] + 'を、途中の式を省かずに解いていく本です。全巻をそろえる必要はなく、この1冊から読めます。</p>' +
         '<p class="honcard-lead">電験数学ノート編集室 著。Kindle 版と、紙の本があります。</p>' +
         '<p><a class="btn" data-book="' + id + '" href="https://www.amazon.co.jp/dp/' + book[2] + '">Kindle 版を Amazon で見る</a></p>' +
         '<p class="honcard-sub"><a data-book="' + id + '" href="https://www.amazon.co.jp/dp/' + book[3] + '">紙の本を Amazon で見る</a>　<a href="hon.html">ほかの巻の案内</a></p></div>';
@@ -131,6 +131,23 @@
         msg.innerHTML = "<p>ありがとうございます。このページは、説明を足す候補にします。10問の点検で、ほかに止まる所が無いかも確かめられます。</p>";
       }
     });
+  });
+
+  /* 解説のページに、目次を出す */
+  document.addEventListener("DOMContentLoaded", function () {
+    if (!document.querySelector(".answer") || !document.querySelector(".crumb")) { return; }
+    var hs = document.querySelectorAll("main > h2");
+    if (hs.length < 3) { return; }
+    var html = "<strong>このページの目次</strong><ol>";
+    for (var i = 0; i < hs.length; i++) {
+      if (!hs[i].id) { hs[i].id = "s" + (i + 1); }
+      html += '<li><a href="#' + hs[i].id + '">' + hs[i].textContent + "</a></li>";
+    }
+    var nav = document.createElement("nav");
+    nav.className = "toc";
+    nav.setAttribute("aria-label", "このページの目次");
+    nav.innerHTML = html + "</ol>";
+    hs[0].parentNode.insertBefore(nav, hs[0]);
   });
 
   /* 読んだページの印。このブラウザーの中だけに置き、どこにも送らない */
