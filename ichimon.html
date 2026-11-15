@@ -12,8 +12,8 @@
 <meta property="og:url" content="https://math-san-bit.github.io/denken/ichimon.html">
 <meta property="og:image" content="https://math-san-bit.github.io/denken/img/og-denken.png">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="style.css?v=20261115b">
-<script src="m.js?v=20261115b"></script>
+<link rel="stylesheet" href="style.css?v=20261115c">
+<script src="m.js?v=20261115c"></script>
 <script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}if(window.jitenLive){loadScript(function(){beTracker.t({hash:"2b75e6ae5b3bd38f11244c20df0cb5ad"})})}</script>
 </head>
 <body>
@@ -33,8 +33,8 @@
     var right = Number(e.target.value) === 3;
     var res = document.getElementById("res");
     res.innerHTML = "<h2>" + (right ? "合っています" : "答えは「115 V」です") + "</h2><p>Y 結線では、相電圧 ＝ 線間電圧 ÷ √3 です。200 ÷ 1.73 ＝ 約 115 V。相電圧は線間電圧より小さい、と覚えると、掛けるのか割るのかで迷いません。</p>" +
-      '<p><a href="root3.html">くわしい説明：線間電圧と相電圧：√3 は、掛けるのか割るのか</a></p>' +
-      '<p><a class="btn" href="tenken.html">続けて、10問の点検を始める（約5分）</a></p>';
+      '<div class="cta"><p class="cta-need">なぜそうなるのかを、きちんと知りたい</p><a class="btn btn-main" href="root3.html">解説を読む：線間電圧と相電圧：√3 は、掛けるのか割るのか</a></div>' +
+      '<div class="cta cta-light"><p class="cta-need">ほかの計算も、確かめておきたい</p><a class="btn btn-sub" href="tenken.html">続けて、10問の点検を始める（約5分）</a></div>';
     res.hidden = false;
     if (!done && window.jitenEvent) { done = true; window.jitenEvent(right ? "ichimon_right" : "ichimon_wrong", {}); }
   });

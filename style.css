@@ -144,3 +144,31 @@ figure.tegaki figcaption{font-size:.88rem;color:var(--sub);margin-top:.5em}
 footer{max-width:none;background:var(--accent);color:#cfdbe2;border-top:4px solid var(--mark);padding:24px 18px 32px;margin-top:0}
 footer p{max-width:720px;margin:.6em auto}
 footer a{color:#fff}
+
+/* 行き先へ送るボタンと、その前に置く「こういうときに」の1行 */
+.btn{display:block;width:100%;margin-top:.6em;padding:.95em 1em;font-size:1.05rem;line-height:1.5;border-radius:8px;text-align:center;box-shadow:0 3px 0 #0a1f2e}
+.btn-main{background:var(--mark);color:#12202b;box-shadow:0 3px 0 #b88a00}
+.btn-main:hover{background:#ffc91f}
+.btn-sub{background:#fff;color:var(--accent);border:2px solid var(--accent);box-shadow:0 3px 0 #c4d0d8}
+.btn-sub:hover{background:#eef3f6}
+.btn-main,.btn-sub{position:relative;padding-left:2.2em;padding-right:2.2em}
+.btn-main:after,.btn-sub:after{content:"";position:absolute;right:1em;top:50%;width:.5em;height:.5em;margin-top:-.3em;border-top:3px solid currentColor;border-right:3px solid currentColor;transform:rotate(45deg)}
+.check .btn[data-a]{display:inline-block;width:auto;font-size:1rem;padding:.7em 1.2em}
+.cta{background:var(--accent);color:#fff;border-radius:8px;padding:1.2em 1.1em 1.3em;margin:1.8em 0}
+.cta p{margin:.3em 0;color:#dbe6ec;font-size:.95rem}
+.cta .cta-need{color:#fff;font-size:1.12rem;font-weight:700;line-height:1.6;margin-bottom:.4em}
+.cta .cta-need:before{content:"";display:inline-block;width:.55em;height:.55em;margin-right:.5em;background:var(--mark);border-radius:50%}
+.cta .btn{margin-top:.8em}
+.cta-light{background:#eef3f6;color:var(--ink);border:1px solid var(--line)}
+.cta-light p{color:var(--sub)}
+.cta-light .cta-need{color:var(--ink)}
+.need{margin-top:1em;padding-top:.9em;border-top:1px dashed var(--line)}
+.need p{margin:0;font-weight:700;font-size:.98rem}
+.need .btn{margin-top:.5em}
+ul.voice a{position:relative;padding:.9em 1em 2.6em}
+ul.voice a:after{content:"このページを読む";position:absolute;right:1em;bottom:.7em;font-size:.85rem;font-weight:700;color:#fff;background:var(--accent);border-radius:999px;padding:.15em 1em}
+nav.next ul.list a{padding:.9em 1em 2.6em;position:relative}
+nav.next ul.list a:after{content:"続けて読む";position:absolute;right:1em;bottom:.7em;font-weight:700;font-size:.85rem;color:#fff;background:var(--accent);border-radius:999px;padding:.15em 1em}
+nav.next .read{position:relative;top:-2.4em;margin:0 0 -1.6em 1em}
+.honcard .btn{display:block;width:100%;font-size:1rem;padding:.8em .6em}
+@media(min-width:640px){.cta .btn,.need .btn{max-width:26em}.honcard .btn{display:block}}

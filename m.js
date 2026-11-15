@@ -100,7 +100,7 @@
         '<p class="honcard-title">' + book[0] + '</p>' +
         '<p>' + book[1] + 'を、途中の式を省かずに解いていく本です。全巻をそろえる必要はなく、この1冊から読めます。</p>' +
         '<p class="honcard-lead">電験数学ノート編集室 著。Kindle 版と、紙の本があります。</p>' +
-        '<p><a class="btn" data-book="' + id + '" href="https://www.amazon.co.jp/dp/' + book[2] + '">Kindle 版を Amazon で見る</a></p>' +
+        '<p><a class="btn btn-main" data-book="' + id + '" href="https://www.amazon.co.jp/dp/' + book[2] + '">Kindle 版を Amazon で見る</a></p>' +
         '<p class="honcard-sub"><a data-book="' + id + '" href="https://www.amazon.co.jp/dp/' + book[3] + '">紙の本を Amazon で見る</a>　<a href="hon.html">ほかの巻の案内</a></p></div>';
       link.parentNode.parentNode.replaceChild(card, link.parentNode);
       card.addEventListener("click", function (e) {
