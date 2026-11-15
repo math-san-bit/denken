@@ -186,3 +186,55 @@ nav.next .read{position:relative;top:-2.4em;margin:0 0 -1.6em 1em}
 @media(min-width:640px){.cta .btn,.need .btn{max-width:26em}}
 .btn[data-micro]:before{overflow:hidden}
 .honcard .btn[data-micro]:before{font-size:.8rem}
+
+/* 2026-11-15：筆算堂の見た目。生成りの方眼紙に黒の字。赤は「書き足した所」だけに使う。だいだいは Amazon へのボタンだけ */
+:root{--ink:#1c1c1e;--sub:#5a5a5f;--line:#e4e1d8;--accent:#1c1c1e;--mark:#ba2424;--bg:#faf8f3;--paper:#fffefb;--kami:#f3f0e8;--go:#1c1c1e;--go-d:#000}
+body{color:var(--ink);background-color:var(--bg);background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:24px 24px}
+main{background:var(--paper);box-shadow:0 1px 3px rgba(28,28,30,.1)}
+a{color:var(--ink);text-decoration-color:#9a968c;text-underline-offset:.18em}
+a:hover{color:var(--mark)}
+header.site{background:var(--paper);color:var(--ink);border-bottom:2px solid var(--ink)}
+header.site a{color:var(--ink)}
+header.site a.yagou,.yagou-foot strong{font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;font-weight:700;letter-spacing:.14em}
+header.site a.yagou{font-size:1.3rem;line-height:1.4;padding-left:1.55em;background:url("img/mark.svg") left center/1.25em 1.25em no-repeat}
+.gnav a{color:var(--sub)}
+.gnav a:hover{color:var(--ink)}
+h2{background:var(--kami);border-left-color:var(--ink)}
+th{background:var(--kami)}
+.calc,.check,.mondai,.toc{background:var(--bg)}
+.calc{border-left-color:#b9b4a6}
+.answer{background:var(--paper);border-color:var(--ink)}
+.answer strong:first-child{background:var(--ink);color:#fff}
+.wrong{background:var(--bg);border-color:#cfcabd}
+.wrong:before{background:var(--sub)}
+.gennin{border:1px solid var(--line);border-left:5px solid var(--mark);border-radius:0 6px 6px 0;background:var(--paper);padding:.8em 1.1em;margin:1.2em 0 1.6em}
+.gennin strong{display:block;color:var(--mark);font-size:.9rem;margin-bottom:.2em}
+.gennin .shurui{display:inline-block;border:1px solid var(--mark);color:var(--mark);border-radius:999px;padding:0 .8em;margin-right:.6em;font-size:.82rem;font-weight:700;line-height:1.7;white-space:nowrap}
+.hero{background-color:var(--paper);background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);color:var(--ink);border-bottom:2px solid var(--ink)}
+.hero h1{color:var(--ink);font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif}
+.hero p{color:var(--ink)}
+.hero .eyebrow{color:var(--sub)}
+.hero .aikotoba{font-size:1.08rem;font-weight:700;line-height:1.8;margin-top:.8em;padding-left:.8em;border-left:4px solid var(--mark)}
+.steps li:before{background:var(--ink);color:#fff}
+.new{background:var(--mark);color:#fff}
+.read{background:#8a857a}
+.honcard{border-top-color:var(--ink)}
+.btn-main{background-color:var(--ink);background-image:none;animation:none;text-shadow:none;box-shadow:0 4px 0 #000,0 8px 16px rgba(28,28,30,.22)}
+.btn-main:hover{filter:none;background-color:#38383c}
+.btn[data-micro]:before{color:var(--mark)}
+.btn-amazon[data-micro]:before{color:#9a5b00}
+.btn-sub{color:var(--ink);border-color:var(--ink);box-shadow:0 4px 0 #cfcabd}
+.btn-sub:hover,.check .btn[data-a]:hover{background:var(--kami)}
+.btn-sub[data-micro]:before{color:var(--sub)}
+.check .btn[data-a]{box-shadow:0 3px 0 #cfcabd}
+.cta{box-shadow:0 2px 8px rgba(28,28,30,.2)}
+.cta p{color:#e7e4dc}
+.cta .btn-main{background-color:#fff;color:var(--ink);box-shadow:0 4px 0 #b9b4a6}
+.cta .btn-main:hover{background-color:var(--kami)}
+.cta .btn[data-micro]:before{color:#ffb9b9}
+.cta-light{background:var(--kami)}
+.cta-light .btn-main{background-color:var(--ink);color:#fff;box-shadow:0 4px 0 #000}
+.cta-light .btn[data-micro]:before{color:var(--sub)}
+footer{color:#d8d5cc}
+.yagou-foot{font-size:.95rem;color:#fff}
+.yagou-foot strong{font-size:1.15rem;margin-right:.9em}
