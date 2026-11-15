@@ -11,7 +11,7 @@ from fontTools.ttLib import TTFont
 
 FD, OUT = sys.argv[1], sys.argv[2]
 S = 2                      # 2倍の大きさで描く
-INK, RED, GRID, PAPER, MARK = "#22303a", "#c0392b", "#d9e4ea", "#fdfdfb", "#ffe27a"
+INK, RED, GRID, PAPER, MARK = "#1c1c1e", "#ba2424", "#e4e1d8", "#faf8f3", "#f4dcdc"   # 筆算堂の色。赤は書き足した所だけ。下地の線は、赤をうすめた色
 _files = sorted(glob.glob(FD + "/zen-kurenaido-*-400-normal.woff"))
 _cmap = {}
 for f in _files:
