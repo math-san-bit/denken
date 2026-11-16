@@ -238,3 +238,18 @@ th{background:var(--kami)}
 footer{color:#d8d5cc}
 .yagou-foot{font-size:.95rem;color:#fff}
 .yagou-foot strong{font-size:1.15rem;margin-right:.9em}
+
+/* 地図の層（2026-11-16） */
+.chizu-ima{border:1px solid var(--line);border-radius:6px;background:var(--paper);padding:.6em 1em;margin:.6em 0 1.2em;font-size:.9rem}
+.chizu-ima p{margin:.2em 0}
+.chizu-dots a{display:inline-block;min-width:1.9em;text-align:center;text-decoration:none;color:var(--sub);font-size:1.05rem}
+.chizu-dots a.ima{color:var(--mark);font-weight:700}
+.chizu-zentai{color:var(--sub)}
+ul.chizu{list-style:none;padding:0}
+.chizu-card{display:flex;gap:.8em;align-items:flex-start;border-bottom:1px solid var(--line);padding:.8em 0}
+.chizu-no{font-size:1.5rem;line-height:1.2;color:var(--mark);font-weight:700}
+.chizu-card a{font-weight:700;font-size:1.05rem}
+.chizu-gennin,.chizu-ans{margin:.3em 0;font-size:.9rem}
+.chizu-ans{color:var(--sub)}
+.chizu-iriguchi{margin:.6em 0 1.4em}
+.chizu-iriguchi p{margin:.4em 0;font-size:.9rem;color:var(--sub)}

@@ -60,6 +60,7 @@
     var a = e.target.closest ? e.target.closest("a") : null;
     if (!a) { return; }
     var h = a.href || "";
+    if (a.hasAttribute("data-chizu")) { ev("chizu", { kind: a.getAttribute("data-chizu"), from: (location.pathname.split("/").pop() || "index").slice(0, 40), dest: (a.pathname.split("/").pop() || "index").slice(0, 40) }); }
     if (h.indexOf("amazon.co.jp") >= 0) { ev("go_book", { dest: (h.split("/dp/")[1] || h).slice(0, 40) }); }
     else if (h.indexOf("booth.pm") >= 0) { ev("go_booth", { dest: h.slice(0, 80) }); }
     else if (h.indexOf("tenken.html") >= 0) { ev("go_tenken", {}); }
