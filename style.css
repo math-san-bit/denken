@@ -239,18 +239,37 @@ footer{color:#d8d5cc}
 .yagou-foot{font-size:.95rem;color:#fff}
 .yagou-foot strong{font-size:1.15rem;margin-right:.9em}
 
-/* 地図の層（2026-11-16） */
-.chizu-ima{border:1px solid var(--line);border-radius:6px;background:var(--paper);padding:.6em 1em;margin:.6em 0 1.2em;font-size:.9rem}
-.chizu-ima p{margin:.2em 0}
-.chizu-dots a{display:inline-block;min-width:1.9em;text-align:center;text-decoration:none;color:var(--sub);font-size:1.05rem}
-.chizu-dots a.ima{color:#fff;background:var(--mark);border-radius:999px;font-weight:700}
-.chizu-zentai{color:var(--sub)}
-ul.chizu{list-style:none;padding:0}
-.chizu-card{display:flex;gap:.8em;align-items:flex-start;border-bottom:1px solid var(--line);padding:.8em 0}
-.chizu-no{font-size:1.5rem;line-height:1.2;color:var(--mark);font-weight:700}
-.chizu-card a{font-weight:700;font-size:1.05rem}
-.chizu-gennin,.chizu-ans{margin:.3em 0;font-size:.9rem}
-.chizu-ans{color:var(--sub)}
-.chizu-gennin .shurui{display:inline-block;border:1px solid var(--mark);color:var(--mark);border-radius:999px;padding:0 .8em;font-size:.8rem;font-weight:700;line-height:1.7}
+/* 全体像の層（2026-11-16） */
+.chizu-ima{border:1px solid var(--line);border-radius:6px;background:var(--paper);padding:.6em .8em;margin:.6em 0 1.2em;font-size:.9rem}
+.chizu-ima>p{margin:.1em 0 .5em}
+.pz{display:flex;flex-direction:column;gap:6px;margin:1em 0}
+.pz-row{display:flex;align-items:stretch;gap:8px}
+.pz-dan{flex:0 0 4.2em;font-size:.75rem;color:var(--sub);display:flex;align-items:center}
+.pz-cells{flex:1;display:flex;justify-content:center;gap:6px}
+.pz-d3 .pz-cells{padding:0 10%}.pz-d2 .pz-cells{padding:0 5%}.pz-d1 .pz-cells{padding:0 2%}
+.pz-box{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:1.5px solid var(--ink);border-radius:4px;background:var(--paper);color:var(--ink);text-decoration:none;padding:.35em .3em;line-height:1.35;font-size:.85rem}
+.pz-d0 .pz-box{border-width:2.5px}
+.pz-no{font-weight:700;margin-right:.2em}
+.pz-small{margin:.2em 0}
+.pz-small .pz-box{font-size:.72rem;padding:.2em .2em}
+.pz-small .pz-dan{flex-basis:3.6em;font-size:.68rem}
+.pz-box.ima{background:var(--mark);border-color:var(--mark);color:#fff}
+.pz-box.ok,.mx-dot.ok{opacity:.4}
+.pz-box.ng,.mx-dot.ng{background:var(--mark);border-color:var(--mark);color:#fff}
+table.mx{width:100%;border-collapse:collapse;font-size:.85rem;margin:1em 0}
+table.mx th,table.mx td{border:1px solid var(--line);padding:.4em .5em;text-align:center;vertical-align:middle}
+table.mx thead th{font-size:.78rem;color:var(--sub);font-weight:400}
+table.mx tbody th{white-space:nowrap}
+.mx-dot{display:inline-block;width:2em;height:2em;line-height:2em;border:1.5px solid var(--ink);border-radius:999px;margin:.15em;text-decoration:none;color:var(--ink);font-weight:700;background:var(--paper)}
+ol.zq-list{list-style:none;padding:0}
+.zq{border-bottom:1px solid var(--line);padding:.6em 0}
+.zq p{margin:.3em 0}
+.zq-opts{display:flex;flex-wrap:wrap;gap:6px}
+.btn-q{font:inherit;font-size:.9rem;padding:.35em .9em;border:1.5px solid var(--ink);border-radius:999px;background:var(--paper);color:var(--ink);cursor:pointer}
+.btn-q.right{font-weight:700;border-width:2.5px}
+.btn-q.wrong{border-color:var(--mark);color:var(--mark);text-decoration:line-through}
+.zq-res{font-size:.88rem;color:var(--mark)}
+.zq-sum{border:2px solid var(--ink);border-radius:6px;padding:.6em 1em;margin:1.2em 0;background:var(--paper)}
+.zq-big{font-weight:700;font-size:1.1rem}
 .chizu-iriguchi{margin:.6em 0 1.4em}
 .chizu-iriguchi p{margin:.4em 0;font-size:.9rem;color:var(--sub)}
