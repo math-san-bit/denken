@@ -15,8 +15,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "力率と無効電力：kW と kV·A と kvar は、どうつながるのか", "description": "電験三種の力率の計算で、kW（有効電力）、kV·A（皮相電力）、kvar（無効電力）のつながりを、直角三角形の3つの辺として整理します。80 kW・力率 0.8 なら、100 kV·A、60 kvar です。", "inLanguage": "ja", "datePublished": "2026-11-14", "dateModified": "2026-11-16", "mainEntityOfPage": "https://math-san-bit.github.io/denken/rikiritsu.html", "author": {"@type": "Organization", "name": "電験数学ノート編集室"}, "publisher": {"@type": "Organization", "name": "筆算堂", "url": "https://math-san-bit.github.io/denken/"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://math-san-bit.github.io/denken/"}, {"@type": "ListItem", "position": 2, "name": "電験三種", "item": "https://math-san-bit.github.io/denken/denken3.html"}, {"@type": "ListItem", "position": 3, "name": "力率", "item": "https://math-san-bit.github.io/denken/rikiritsu.html"}]}</script>
-<link rel="stylesheet" href="style.css?v=20261115f">
-<script src="m.js?v=20261115f"></script>
+<link rel="stylesheet" href="style.css?v=20261116a">
+<script src="m.js?v=20261116a"></script>
 <script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}if(window.jitenLive){loadScript(function(){beTracker.t({hash:"2b75e6ae5b3bd38f11244c20df0cb5ad"})})}</script>
 </head>
 <body>
@@ -24,11 +24,12 @@
 <main>
 <p class="crumb"><a href="./">トップ</a> › <a href="denken3.html">電験三種</a> › 力率</p>
 <h1>力率と無効電力：kW と kV·A と kvar は、どうつながるのか</h1>
+<div class="chizu-ima"><p><a href="sansou-zentai.html" data-chizu="ima">三相と変圧器の全体像</a>　9章のうち、このページは <strong>③ 力率と力率の改善</strong></p><div class="tr tr-small"><div class="tr-cols"><div class="tr-col"><p class="tr-head">理論：三相交流</p><a class="tr-box" data-i="0" href="root3.html" data-chizu="tr"><span class="pz-no">①</span>Y結線とΔ結線</a><a class="tr-box" data-i="1" href="root3-to-3.html" data-chizu="tr"><span class="pz-no">②</span>三相の電力と容量</a><a class="tr-box ima" data-i="2" href="rikiritsu.html" data-chizu="tr"><span class="pz-no">③</span>力率と力率の改善</a></div><div class="tr-col"><p class="tr-head">機械：変圧器</p><a class="tr-box" data-i="3" href="henatsu-makisuu.html" data-chizu="tr"><span class="pz-no">④</span>巻数比と等価回路</a><a class="tr-box mada" data-i="4" href="sansou-zentai.html#k5" data-chizu="tr"><span class="pz-no">⑤</span>損失と効率</a><a class="tr-box mada" data-i="5" href="sansou-zentai.html#k6" data-chizu="tr"><span class="pz-no">⑥</span>電圧変動率</a><a class="tr-box" data-i="6" href="tanraku-100.html" data-chizu="tr"><span class="pz-no">⑦</span>%Z と短絡電流</a><a class="tr-box mada" data-i="7" href="sansou-zentai.html#k8" data-chizu="tr"><span class="pz-no">⑧</span>並行運転</a><a class="tr-box mada" data-i="8" href="sansou-zentai.html#k9" data-chizu="tr"><span class="pz-no">⑨</span>三相の結線とV結線</a></div></div></div></div>
 <p class="lead">力率の問題には、kW、kV·A、kvar の3つの単位が出てきます。どれをどれで割るのか、足してよいのかで手が止まります。</p>
 <div class="answer"><strong>先に答え</strong>3つは、直角三角形の3つの辺です。斜めの辺が皮相電力（kV·A）、底の辺が有効電力（kW）、高さが無効電力（kvar）。力率は、底の辺 ÷ 斜めの辺 です。だから、皮相電力 ＝ 有効電力 ÷ 力率。80 kW で力率 0.8 なら、100 kV·A です。</div>
 
 <h2>どこで止まるか</h2>
-<div class="gennin"><strong>止まる原因</strong><span class="shurui">言葉や記号の意味が書かれていない</span>kW、kV·A、kvar の3つが、直角三角形の3つの辺にあたることが、式の前に示されないことが多くあります。</div>
+<div class="gennin"><strong>止まる段</strong><span class="shurui">立式</span>kW、kV·A、kvar の3つが、直角三角形の3つの辺にあたることが、式の前に示されないことが多くあります。</div>
 <div class="wrong">80 kW で力率 0.8 の負荷の皮相電力を、80 × 0.8 ＝ 64 kV·A としてしまう。皮相電力は有効電力より必ず大きいので、割るのが正しい向きです。もう一つ、無効電力を 100 − 80 ＝ 20 kvar と引き算で出してしまう。辺の長さは、引き算ではつながりません。</div>
 
 <h2>3つの電力は、何を表しているか</h2>
@@ -58,7 +59,7 @@
 
 <div class="cta cta-light"><p class="cta-need">ほかにも、止まっている所があるかもしれない</p><p>計算の10問を解くと、やり直す所と、読むページが分かります。約5分です。</p><a class="btn btn-sub" href="tenken.html" data-micro="約5分・採点は画面の中だけ">10問の点検を始める</a></div>
 <p>コンデンサーで力率を上げる計算を、順を追って解く本：<a href="hon.html#v4">第4巻の案内</a></p>
-<nav class="next"><strong>次に読む</strong><ul class="list"><li><a href="root3-to-3.html">三相の電力：√3 を掛けたうえで、3倍しないのか</a></li><li><a href="kyosuu-naze.html">交流回路：なぜ j（虚数）を使うのか</a></li></ul></nav>
+<nav class="next"><strong>次に止まりやすい所</strong><ul class="list"><li><a href="henatsu-makisuu.html" data-chizu="next">変圧器の巻数比：電圧・電流・インピーダンスで、掛けるのか割るのか</a></li><li><a href="tanraku-100.html" data-chizu="next">短絡電流：%Z の 100 は、掛けるのか割るのか</a></li><li><a href="kijun-youryou.html" data-chizu="next">%Z の基準容量をそろえる：容量の比を、掛けるのか割るのか</a></li></ul><p><a href="sansou-zentai.html" data-chizu="all">全体を俯瞰して、自分のツボを見つける（9問）</a></p></nav>
 <p class="updated">最終更新：2026年11月16日</p>
 <p><a href="denken3.html">電験三種の入口へ戻る</a>　／　<a href="./">辞典のトップ</a></p>
 </main>

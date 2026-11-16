@@ -238,3 +238,53 @@ th{background:var(--kami)}
 footer{color:#d8d5cc}
 .yagou-foot{font-size:.95rem;color:#fff}
 .yagou-foot strong{font-size:1.15rem;margin-right:.9em}
+
+/* 全体像の層（2026-11-16） */
+.chizu-ima{border:1px solid var(--line);border-radius:6px;background:var(--paper);padding:.6em .8em;margin:.6em 0 1.2em;font-size:.9rem}
+.chizu-ima>p{margin:.1em 0 .5em}
+.tr{margin:1em 0}
+.tr-root{text-align:center;font-weight:700;border:2px solid var(--ink);border-radius:4px;padding:.3em;margin:0 auto .6em;max-width:20em;background:var(--paper)}
+.tr-cols{display:flex;gap:10px;align-items:flex-start}
+.tr-col{flex:1;display:flex;flex-direction:column;gap:6px;border-top:2px solid var(--ink);padding-top:.4em}
+.tr-col:first-child{flex:.75}
+.tr-head{margin:0 0 .2em;font-size:.8rem;font-weight:700;text-align:center}
+.tr-box{display:block;border:1.5px solid var(--ink);border-radius:4px;background:var(--paper);color:var(--ink);text-decoration:none;padding:.35em .5em;font-size:.85rem;line-height:1.4}
+.tr-box.mada{border-style:dashed;color:var(--sub)}
+.tr-small .tr-box{font-size:.72rem;padding:.2em .4em}
+.tr-small .tr-head{font-size:.7rem}
+.tr-small .tr-col{gap:4px}
+.pz-no{font-weight:700;margin-right:.2em}
+.tr-box.ima{background:var(--mark);border-color:var(--mark);color:#fff}
+.tr-box.ok,.mx-dot.ok{opacity:.4}
+.tr-box.ng,.mx-dot.ng{background:var(--mark);border-color:var(--mark);color:#fff;border-style:solid}
+ol.st{list-style:none;padding:0;display:flex;flex-direction:column;gap:6px;margin:1em 0}
+ol.st li{display:flex;gap:.6em;align-items:flex-start;border:1px solid var(--line);border-radius:4px;padding:.4em .6em;background:var(--paper);font-size:.9rem}
+.st-no{flex:0 0 1.7em;height:1.7em;line-height:1.7em;text-align:center;border-radius:999px;background:var(--ink);color:#fff;font-weight:700;font-size:.85rem}
+.st-ex{color:var(--sub);font-size:.8rem}
+table.mx{width:100%;border-collapse:collapse;font-size:.8rem;margin:1em 0;table-layout:fixed}
+table.mx thead th:first-child{width:44%}
+table.mx th,table.mx td{border:1px solid var(--line);padding:.4em .4em;vertical-align:middle}
+table.mx thead th{font-size:.72rem;color:var(--sub);font-weight:400;text-align:center}
+table.mx tbody th{font-weight:700;text-align:left}
+.mx-pages{display:block;font-weight:400;font-size:.7rem;margin-top:.2em}
+.mx-pages a{display:block}
+.mada-txt{color:var(--sub)}
+td.mx-c{text-align:center;color:var(--mark);font-size:1.1rem}
+td.mx-c.okrow{background:var(--paper)}
+td.mx-c.ng{background:#f4dcdc}
+.mx-dot{display:inline-block;width:1.7em;height:1.7em;line-height:1.7em;text-align:center;border:1.5px solid var(--ink);border-radius:999px;margin-right:.3em;color:var(--ink);font-weight:700;background:var(--paper)}
+ol.zq-list{list-style:none;padding:0}
+.zq{border-bottom:1px solid var(--line);padding:.6em 0}
+.zq p{margin:.3em 0}
+.zq-kind{display:inline-block;font-size:.75rem;border:1px solid var(--sub);color:var(--sub);border-radius:3px;padding:0 .4em;margin-right:.4em}
+.zq-opts{display:flex;flex-wrap:wrap;gap:6px}
+.btn-q{font:inherit;font-size:.9rem;padding:.35em .9em;border:1.5px solid var(--ink);border-radius:999px;background:var(--paper);color:var(--ink);cursor:pointer}
+.btn-q.zq-right{font-weight:700;border-width:2.5px}
+.btn-q.zq-wrong{border-color:var(--mark);color:var(--mark);text-decoration:line-through}
+.zq-res{font-size:.88rem;color:var(--sub)}
+.zq-res.ng{color:var(--mark)}
+.zq-st{font-size:.8rem;color:var(--sub)}
+.zq-sum{border:2px solid var(--ink);border-radius:6px;padding:.6em 1em;margin:1.2em 0;background:var(--paper)}
+.zq-big{font-weight:700;font-size:1.1rem}
+.chizu-iriguchi{margin:.6em 0 1.4em}
+.chizu-iriguchi p{margin:.4em 0;font-size:.9rem;color:var(--sub)}
