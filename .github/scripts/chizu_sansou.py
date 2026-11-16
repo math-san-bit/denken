@@ -134,9 +134,9 @@ SCRIPT = r"""<script>
       var i = +li.getAttribute('data-q'), ans = +li.getAttribute('data-ans'); if (done[i] !== undefined) return;
       var ok = +b.getAttribute('data-k') === ans;
       done[i] = ok; if (!ok) { miss.push(i); miss.sort(function(a, c){ return a - c; }); }
-      li.querySelectorAll('button').forEach(function(x){ x.disabled = true; if (+x.getAttribute('data-k') === ans) { x.classList.add('right'); } });
-      if (!ok) { b.classList.add('wrong'); }
-      li.querySelector('.zq-res').innerHTML = ok ? '進めます' : 'ここで止まりやすい → <a href="' + links[i] + '" data-chizu="tsubo">解説を読む</a>';
+      li.querySelectorAll('button').forEach(function(x){ x.disabled = true; if (+x.getAttribute('data-k') === ans) { x.classList.add("zq-right"); } });
+      if (!ok) { b.classList.add("zq-wrong"); }
+      var rs = li.querySelector('.zq-res'); if (!ok) { rs.classList.add('ng'); } rs.innerHTML = ok ? '進めます' : 'ここで止まりやすい → <a href="' + links[i] + '" data-chizu="tsubo">解説を読む</a>';
       mark(i, ok); summary();
     });
   });
@@ -164,7 +164,7 @@ def zentai_page():
     body = f"""<main>
 <p class="crumb"><a href="./">トップ</a> › <a href="denken3.html">電験三種</a> › 三相と変圧器の全体像</p>
 <h1>{TITLE}</h1>
-<p class="lead">三相交流と変圧器の計算で、手が止まる所は {N}つです。まず全体を俯瞰して、そのあと {N}問で、自分がどこで止まるかを確かめます。{N}つ全部が苦手という人は少なく、たいていは1つか2つで止まっています。</p>
+<p class="lead">三相交流と変圧器の計算で、手が止まる所は {N}つです。まず全体を俯瞰して、そのあと {N}問で、自分がどこで止まるかを確かめます。止まるのは {N}つ全部とは限りません。{N}問を解くと、自分が止まる所だけが分かります。</p>
 
 <h2>全体像：段の図</h2>
 <p>下の段が土台です。上の段の計算は、下の段の計算を使います。たとえば ⑥ の短絡電流は、③ の定格電流が出せないと解けません。</p>
@@ -252,7 +252,7 @@ CSS = """
 .pz-no{font-weight:700;margin-right:.2em}
 .pz-small{margin:.2em 0}
 .pz-small .pz-box{font-size:.72rem;padding:.2em .2em}
-.pz-small .pz-dan{flex-basis:3.6em;font-size:.68rem}
+.pz-small .pz-dan{flex-basis:4.4em;font-size:.68rem;white-space:nowrap}
 .pz-box.ima{background:var(--mark);border-color:var(--mark);color:#fff}
 .pz-box.ok,.mx-dot.ok{opacity:.4}
 .pz-box.ng,.mx-dot.ng{background:var(--mark);border-color:var(--mark);color:#fff}
@@ -266,9 +266,10 @@ ol.zq-list{list-style:none;padding:0}
 .zq p{margin:.3em 0}
 .zq-opts{display:flex;flex-wrap:wrap;gap:6px}
 .btn-q{font:inherit;font-size:.9rem;padding:.35em .9em;border:1.5px solid var(--ink);border-radius:999px;background:var(--paper);color:var(--ink);cursor:pointer}
-.btn-q.right{font-weight:700;border-width:2.5px}
-.btn-q.wrong{border-color:var(--mark);color:var(--mark);text-decoration:line-through}
-.zq-res{font-size:.88rem;color:var(--mark)}
+.btn-q.zq-right{font-weight:700;border-width:2.5px}
+.btn-q.zq-wrong{border-color:var(--mark);color:var(--mark);text-decoration:line-through}
+.zq-res{font-size:.88rem;color:var(--sub)}
+.zq-res.ng{color:var(--mark)}
 .zq-sum{border:2px solid var(--ink);border-radius:6px;padding:.6em 1em;margin:1.2em 0;background:var(--paper)}
 .zq-big{font-weight:700;font-size:1.1rem}
 .chizu-iriguchi{margin:.6em 0 1.4em}

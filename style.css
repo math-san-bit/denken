@@ -252,7 +252,7 @@ footer{color:#d8d5cc}
 .pz-no{font-weight:700;margin-right:.2em}
 .pz-small{margin:.2em 0}
 .pz-small .pz-box{font-size:.72rem;padding:.2em .2em}
-.pz-small .pz-dan{flex-basis:3.6em;font-size:.68rem}
+.pz-small .pz-dan{flex-basis:4.4em;font-size:.68rem;white-space:nowrap}
 .pz-box.ima{background:var(--mark);border-color:var(--mark);color:#fff}
 .pz-box.ok,.mx-dot.ok{opacity:.4}
 .pz-box.ng,.mx-dot.ng{background:var(--mark);border-color:var(--mark);color:#fff}
@@ -266,9 +266,10 @@ ol.zq-list{list-style:none;padding:0}
 .zq p{margin:.3em 0}
 .zq-opts{display:flex;flex-wrap:wrap;gap:6px}
 .btn-q{font:inherit;font-size:.9rem;padding:.35em .9em;border:1.5px solid var(--ink);border-radius:999px;background:var(--paper);color:var(--ink);cursor:pointer}
-.btn-q.right{font-weight:700;border-width:2.5px}
-.btn-q.wrong{border-color:var(--mark);color:var(--mark);text-decoration:line-through}
-.zq-res{font-size:.88rem;color:var(--mark)}
+.btn-q.zq-right{font-weight:700;border-width:2.5px}
+.btn-q.zq-wrong{border-color:var(--mark);color:var(--mark);text-decoration:line-through}
+.zq-res{font-size:.88rem;color:var(--sub)}
+.zq-res.ng{color:var(--mark)}
 .zq-sum{border:2px solid var(--ink);border-radius:6px;padding:.6em 1em;margin:1.2em 0;background:var(--paper)}
 .zq-big{font-weight:700;font-size:1.1rem}
 .chizu-iriguchi{margin:.6em 0 1.4em}
