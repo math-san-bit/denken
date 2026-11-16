@@ -40,7 +40,10 @@ def main():
         p.write_text(new, encoding="utf-8")
     p = ROOT / "index.html"
     t = p.read_text(encoding="utf-8")
-    p.write_text(TOP_OLD.sub(TOP_NEW, t), encoding="utf-8")
+    t = TOP_OLD.sub(TOP_NEW, t)
+    t = t.replace("先に答え、止まる原因、", "先に答え、止まる段とその理由、")
+    t = t.replace("解説のはじめに、止まる原因を名指しします。", "解説のはじめに、どの段で止まるのかを名指しします。")
+    p.write_text(t, encoding="utf-8")
     left = [str(f.relative_to(ROOT)) for f in ROOT.rglob("*.html")
             if re.search("途中の式が省かれている|前に習った決まりを忘れている|言葉や記号の意味が書かれていない|大きく3つに分かれます", f.read_text(encoding="utf-8"))]
     if left:
