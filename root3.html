@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>線間電圧と相電圧：√3 は、掛けるのか割るのか｜筆算堂</title>
-<meta name="description" content="三相交流で、√3 を掛けるのか割るのかで止まる所を、Y結線とΔ結線に分けて解きます。">
+<title>線間電圧と相電圧の関係：√3 は、掛けるのか割るのか｜筆算堂</title>
+<meta name="description" content="線間電圧と相電圧の関係で、√3 を掛けるのか割るのかで止まる所を、Y結線とΔ結線に分けて解きます。Y結線は 線間電圧 ＝ √3 × 相電圧、Δ結線は 線電流 ＝ √3 × 相電流 です。">
 <link rel="canonical" href="https://math-san-bit.github.io/denken/root3.html">
 <meta property="og:site_name" content="筆算堂">
 <meta property="og:type" content="article">
-<meta property="og:title" content="線間電圧と相電圧：√3 は、掛けるのか割るのか｜筆算堂">
-<meta property="og:description" content="三相交流で、√3 を掛けるのか割るのかで止まる所を、Y結線とΔ結線に分けて解きます。">
+<meta property="og:title" content="線間電圧と相電圧の関係：√3 は、掛けるのか割るのか｜筆算堂">
+<meta property="og:description" content="線間電圧と相電圧の関係で、√3 を掛けるのか割るのかで止まる所を、Y結線とΔ結線に分けて解きます。Y結線は 線間電圧 ＝ √3 × 相電圧、Δ結線は 線電流 ＝ √3 × 相電流 です。">
 <meta property="og:url" content="https://math-san-bit.github.io/denken/root3.html">
 <meta property="og:image" content="https://math-san-bit.github.io/denken/img/og-denken.png">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "線間電圧と相電圧：√3 は、掛けるのか割るのか", "description": "三相交流で、√3 を掛けるのか割るのかで止まる所を、Y結線とΔ結線に分けて解きます。", "inLanguage": "ja", "datePublished": "2026-11-13", "dateModified": "2026-11-15", "mainEntityOfPage": "https://math-san-bit.github.io/denken/root3.html", "author": {"@type": "Organization", "name": "電験数学ノート編集室"}, "publisher": {"@type": "Organization", "name": "筆算堂", "url": "https://math-san-bit.github.io/denken/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "線間電圧と相電圧の関係：√3 は、掛けるのか割るのか", "description": "線間電圧と相電圧の関係で、√3 を掛けるのか割るのかで止まる所を、Y結線とΔ結線に分けて解きます。Y結線は 線間電圧 ＝ √3 × 相電圧、Δ結線は 線電流 ＝ √3 × 相電流 です。", "inLanguage": "ja", "datePublished": "2026-11-13", "dateModified": "2026-11-17", "mainEntityOfPage": "https://math-san-bit.github.io/denken/root3.html", "author": {"@type": "Organization", "name": "電験数学ノート編集室"}, "publisher": {"@type": "Organization", "name": "筆算堂", "url": "https://math-san-bit.github.io/denken/"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://math-san-bit.github.io/denken/"}, {"@type": "ListItem", "position": 2, "name": "電験三種", "item": "https://math-san-bit.github.io/denken/denken3.html"}, {"@type": "ListItem", "position": 3, "name": "三相交流", "item": "https://math-san-bit.github.io/denken/root3.html"}]}</script>
 <link rel="stylesheet" href="style.css?v=20261116a">
 <script src="m.js?v=20261116a"></script>
@@ -23,7 +23,7 @@
 <header class="site"><a class="yagou" href="./">筆算堂</a><a href="denken3.html">電験三種　計算で止まる所の辞典</a><nav class="gnav" aria-label="サイトの案内"><a href="denken3.html">電験三種</a><a href="musen/">一陸特・一陸技</a><a href="tenken.html">10問の点検</a><a href="hon.html">本の案内</a></nav></header>
 <main>
 <p class="crumb"><a href="./">トップ</a> › <a href="denken3.html">電験三種</a> › 三相交流</p>
-<h1>線間電圧と相電圧：√3 は、掛けるのか割るのか</h1>
+<h1>線間電圧と相電圧の関係：√3 は、掛けるのか割るのか</h1>
 <div class="chizu-ima"><p><a href="sansou-zentai.html" data-chizu="ima">三相と変圧器の全体像</a>　9章のうち、このページは <strong>① Y結線とΔ結線</strong></p><div class="tr tr-small"><div class="tr-cols"><div class="tr-col"><p class="tr-head">理論：三相交流</p><a class="tr-box ima" data-i="0" href="root3.html" data-chizu="tr"><span class="pz-no">①</span>Y結線とΔ結線</a><a class="tr-box" data-i="1" href="root3-to-3.html" data-chizu="tr"><span class="pz-no">②</span>三相の電力と容量</a><a class="tr-box" data-i="2" href="rikiritsu.html" data-chizu="tr"><span class="pz-no">③</span>力率と力率の改善</a></div><div class="tr-col"><p class="tr-head">機械：変圧器</p><a class="tr-box" data-i="3" href="henatsu-makisuu.html" data-chizu="tr"><span class="pz-no">④</span>巻数比と等価回路</a><a class="tr-box mada" data-i="4" href="sansou-zentai.html#k5" data-chizu="tr"><span class="pz-no">⑤</span>損失と効率</a><a class="tr-box mada" data-i="5" href="sansou-zentai.html#k6" data-chizu="tr"><span class="pz-no">⑥</span>電圧変動率</a><a class="tr-box" data-i="6" href="tanraku-100.html" data-chizu="tr"><span class="pz-no">⑦</span>%Z と短絡電流</a><a class="tr-box mada" data-i="7" href="sansou-zentai.html#k8" data-chizu="tr"><span class="pz-no">⑧</span>並行運転</a><a class="tr-box mada" data-i="8" href="sansou-zentai.html#k9" data-chizu="tr"><span class="pz-no">⑨</span>三相の結線とV結線</a></div></div></div></div>
 <p class="lead">三相交流の計算では、√3 がいろいろな式に出てきます。どこで掛け、どこで割るのかを、結線ごとに1つの決まりで見分けます。</p>
 <div class="answer"><strong>先に答え</strong>Y結線は、相電圧 ＝ 線間電圧 ÷ √3（電流はそのまま）。Δ結線は、線電流 ＝ 相電流 × √3（電圧はそのまま）。√3 が出るのは、2つの相の差を取る所だけです。</div>
@@ -46,13 +46,16 @@
 <div class="calc">線間電圧 200 V の電源に、1相 10 Ω の抵抗をY結線でつなぐ<br>相電圧 ＝ 200 ÷ √3 ≒ 115.5 V<br>線電流 ＝ 相電流 ＝ 115.5 ÷ 10 ≒ 11.5 A</div>
 <figure class="tegaki"><img src="img/tegaki-root3.png" alt="手書きの筆算。相電圧 ＝ 200/√3 ≒ 200 ÷ 1.732。小数点を3けたずらして 200000 ÷ 1732 を筆算で割ると、商は 115.47。相電圧 ≒ 115.5 V。線間電圧より小さくなるので、割る。" width="456" height="800" loading="lazy"><figcaption>√3 ≒ 1.732 として、筆算で割った例です。試験では、小数第1位まで出せば足ります。</figcaption></figure>
 
+<h2 id="matome">線間電圧と相電圧の式のまとめ</h2>
+<div class="calc">Y結線：線間電圧 ＝ √3 × 相電圧、線電流 ＝ 相電流<br>Δ結線：線間電圧 ＝ 相電圧、線電流 ＝ √3 × 相電流</div>
+<p>√3 ≒ 1.732 です。相電圧 200 V の Y結線なら、線間電圧は 200 × 1.732 ≒ 346 V になります。</p><p>別の呼び方：Y結線は星形結線・スター結線、Δ結線は三角結線・デルタ結線とも書かれます。線間電圧は「線と線の間の電圧」、相電圧は「1相ぶんの巻線や負荷にかかる電圧」です。</p>
 <div class="check"><strong>確かめの1問</strong><br>同じ電源に、1相 10 Ω の抵抗をΔ結線でつなぐと、線電流は何 A ですか。
 <details><summary>答え</summary>相電流 ＝ 200 ÷ 10 ＝ 20 A。線電流 ＝ 20 × √3 ≒ 34.6 A。Y結線の3倍になります。</details></div>
 
 <div class="cta cta-light"><p class="cta-need">ほかにも、止まっている所があるかもしれない</p><p>計算の10問を解くと、やり直す所と、読むページが分かります。約5分です。</p><a class="btn btn-sub" href="tenken.html" data-micro="約5分・採点は画面の中だけ">10問の点検を始める</a></div>
 <p>この計算を順を追って解く本：<a href="hon.html#v3">第3巻の案内</a></p>
-<nav class="next"><strong>次に止まりやすい所</strong><ul class="list"><li><a href="root3-to-3.html" data-chizu="next">三相の電力：√3 を掛けたうえで、3倍しないのか</a></li><li><a href="youryou-denryuu.html" data-chizu="next">容量から電流の求め方：√3 は、どこから来るのか</a></li><li><a href="rikiritsu.html" data-chizu="next">力率と無効電力：kW と kV·A と kvar は、どうつながるのか</a></li></ul><p><a href="sansou-zentai.html" data-chizu="all">全体を俯瞰して、自分のツボを見つける（9問）</a></p></nav>
-<p class="updated">最終更新：2026年11月15日</p>
+<nav class="next"><strong>次に止まりやすい所</strong><ul class="list"><li><a href="root3-to-3.html" data-chizu="next">三相電力の公式：√3 を掛けたうえで、なぜ3倍しないのか</a></li><li><a href="youryou-denryuu.html" data-chizu="next">容量から電流の求め方：√3 は、どこから来るのか</a></li><li><a href="rikiritsu.html" data-chizu="next">力率と無効電力の求め方：kW と kV·A と kvar は、どうつながるのか</a></li></ul><p><a href="sansou-zentai.html" data-chizu="all">全体を俯瞰して、自分のツボを見つける（9問）</a></p></nav>
+<p class="updated">最終更新：2026年11月17日</p>
 <p><a href="denken3.html">電験三種の入口へ戻る</a>　／　<a href="./">辞典のトップ</a></p>
 </main>
 <footer>

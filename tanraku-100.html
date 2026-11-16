@@ -13,7 +13,7 @@
 <meta property="og:url" content="https://math-san-bit.github.io/denken/tanraku-100.html">
 <meta property="og:image" content="https://math-san-bit.github.io/denken/img/og-denken.png">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "短絡電流の求め方：%Z の 100 は、掛けるのか割るのか", "description": "短絡電流を %Z から求めるとき、100 を掛けるのか割るのかで止まる所を、%Z の意味から解きます。", "inLanguage": "ja", "datePublished": "2026-11-13", "dateModified": "2026-11-15", "mainEntityOfPage": "https://math-san-bit.github.io/denken/tanraku-100.html", "author": {"@type": "Organization", "name": "電験数学ノート編集室"}, "publisher": {"@type": "Organization", "name": "筆算堂", "url": "https://math-san-bit.github.io/denken/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "短絡電流の求め方：%Z の 100 は、掛けるのか割るのか", "description": "電験三種の短絡電流の計算で、%Z の 100 を掛けるのか割るのかを、%Z の意味から出します。短絡電流 ＝ 定格電流 × 100 ÷ %Z。", "inLanguage": "ja", "datePublished": "2026-11-13", "dateModified": "2026-11-17", "mainEntityOfPage": "https://math-san-bit.github.io/denken/tanraku-100.html", "author": {"@type": "Organization", "name": "電験数学ノート編集室"}, "publisher": {"@type": "Organization", "name": "筆算堂", "url": "https://math-san-bit.github.io/denken/"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://math-san-bit.github.io/denken/"}, {"@type": "ListItem", "position": 2, "name": "電験三種", "item": "https://math-san-bit.github.io/denken/denken3.html"}, {"@type": "ListItem", "position": 3, "name": "パーセントインピーダンス", "item": "https://math-san-bit.github.io/denken/tanraku-100.html"}]}</script>
 <link rel="stylesheet" href="style.css?v=20261116a">
 <script src="m.js?v=20261116a"></script>
@@ -43,13 +43,16 @@
 <div class="calc">定格電流 ＝ 500 ÷（√3 × 6.6）≒ 43.7 A<br>短絡電流 ＝ 43.7 ×（100 ÷ 5）≒ 875 A</div>
 <figure class="tegaki"><img src="img/tegaki-tanraku-100.png" alt="手書きの筆算。定格電流 ＝ 500/(√3 × 6.6)。1.732 × 6.6 ＝ 11.4312 を筆算で出し、500 ÷ 11.43 ≒ 43.74 A。短絡すると電圧は 5% から 100% になり、100 ÷ 5 ＝ 20倍。電流も 20倍。短絡電流 ＝ 43.74 × 20 ≒ 875 A。" width="456" height="700" loading="lazy"><figcaption>手で計算した例です。分母の √3 × 6.6 を先に筆算で出しておくと、後の割り算が楽になります。</figcaption></figure>
 
+<h2 id="matome">短絡電流と %Z の式のまとめ</h2>
+<div class="calc">短絡電流 ＝ 定格電流 × 100 ÷ %Z<br>定格電流（三相）＝ 定格容量 ÷（√3 × 定格電圧）<br>短絡容量 ＝ 定格容量 × 100 ÷ %Z</div>
+<p>定格容量 500 kV·A、%Z ＝ 5% なら、短絡容量は 500 × 100 ÷ 5 ＝ 10000 kV·A（10 MV·A）です。</p><p>別の呼び方：%Z は、パーセントインピーダンス、百分率インピーダンス、%インピーダンスとも書かれます。ここで求めた値は、三相短絡電流と呼ばれます。</p>
 <div class="check"><strong>確かめの1問</strong><br>定格電流 100 A、%Z ＝ 4% の変圧器の短絡電流は何 A ですか。
 <details><summary>答え</summary>100 ×（100 ÷ 4）＝ 2500 A。電圧が 4% から 100% へ、25倍になるからです。</details></div>
 
 <div class="cta cta-light"><p class="cta-need">ほかにも、止まっている所があるかもしれない</p><p>計算の10問を解くと、やり直す所と、読むページが分かります。約5分です。</p><a class="btn btn-sub" href="tenken.html" data-micro="約5分・採点は画面の中だけ">10問の点検を始める</a></div>
 <p>この計算を順を追って解く本：<a href="hon.html#v2">第2巻の案内</a></p>
-<nav class="next"><strong>同じまとまりで、ほかに止まりやすい所</strong><ul class="list"><li><a href="kijun-youryou.html" data-chizu="next">%Z の基準容量の換算の求め方：容量の比を、掛けるのか割るのか</a></li><li><a href="root3.html" data-chizu="next">線間電圧と相電圧：√3 は、掛けるのか割るのか</a></li><li><a href="root3-to-3.html" data-chizu="next">三相の電力：√3 を掛けたうえで、3倍しないのか</a></li></ul><p><a href="sansou-zentai.html" data-chizu="all">全体を俯瞰して、自分のツボを見つける（9問）</a></p></nav>
-<p class="updated">最終更新：2026年11月15日</p>
+<nav class="next"><strong>同じまとまりで、ほかに止まりやすい所</strong><ul class="list"><li><a href="kijun-youryou.html" data-chizu="next">%Z の基準容量の換算の求め方：容量の比を、掛けるのか割るのか</a></li><li><a href="root3.html" data-chizu="next">線間電圧と相電圧の関係：√3 は、掛けるのか割るのか</a></li><li><a href="root3-to-3.html" data-chizu="next">三相電力の公式：√3 を掛けたうえで、なぜ3倍しないのか</a></li></ul><p><a href="sansou-zentai.html" data-chizu="all">全体を俯瞰して、自分のツボを見つける（9問）</a></p></nav>
+<p class="updated">最終更新：2026年11月17日</p>
 <p><a href="denken3.html">電験三種の入口へ戻る</a>　／　<a href="./">辞典のトップ</a></p>
 </main>
 <footer>

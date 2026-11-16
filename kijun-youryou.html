@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>%Z の基準容量の換算の求め方：容量の比を、掛けるのか割るのか｜筆算堂</title>
-<meta name="description" content="%Z を別の基準容量に直すとき、容量の比を掛けるのか割るのかで止まる所を解きます。">
+<meta name="description" content="%Z（パーセントインピーダンス）を別の基準容量に換算するとき、容量の比を掛けるのか割るのかで止まる所を解きます。新しい %Z ＝ 元の %Z × 新しい基準容量 ÷ 元の基準容量 です。">
 <link rel="canonical" href="https://math-san-bit.github.io/denken/kijun-youryou.html">
 <meta property="og:site_name" content="筆算堂">
 <meta property="og:type" content="article">
 <meta property="og:title" content="%Z の基準容量の換算の求め方：容量の比を、掛けるのか割るのか｜筆算堂">
-<meta property="og:description" content="%Z を別の基準容量に直すとき、容量の比を掛けるのか割るのかで止まる所を解きます。">
+<meta property="og:description" content="%Z（パーセントインピーダンス）を別の基準容量に換算するとき、容量の比を掛けるのか割るのかで止まる所を解きます。新しい %Z ＝ 元の %Z × 新しい基準容量 ÷ 元の基準容量 です。">
 <meta property="og:url" content="https://math-san-bit.github.io/denken/kijun-youryou.html">
 <meta property="og:image" content="https://math-san-bit.github.io/denken/img/og-denken.png">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "%Z の基準容量の換算の求め方：容量の比を、掛けるのか割るのか", "description": "%Z を別の基準容量に直すとき、容量の比を掛けるのか割るのかで止まる所を解きます。", "inLanguage": "ja", "datePublished": "2026-11-13", "dateModified": "2026-11-16", "mainEntityOfPage": "https://math-san-bit.github.io/denken/kijun-youryou.html", "author": {"@type": "Organization", "name": "電験数学ノート編集室"}, "publisher": {"@type": "Organization", "name": "筆算堂", "url": "https://math-san-bit.github.io/denken/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "%Z の基準容量の換算の求め方：容量の比を、掛けるのか割るのか", "description": "%Z（パーセントインピーダンス）を別の基準容量に換算するとき、容量の比を掛けるのか割るのかで止まる所を解きます。新しい %Z ＝ 元の %Z × 新しい基準容量 ÷ 元の基準容量 です。", "inLanguage": "ja", "datePublished": "2026-11-13", "dateModified": "2026-11-17", "mainEntityOfPage": "https://math-san-bit.github.io/denken/kijun-youryou.html", "author": {"@type": "Organization", "name": "電験数学ノート編集室"}, "publisher": {"@type": "Organization", "name": "筆算堂", "url": "https://math-san-bit.github.io/denken/"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://math-san-bit.github.io/denken/"}, {"@type": "ListItem", "position": 2, "name": "電験三種", "item": "https://math-san-bit.github.io/denken/denken3.html"}, {"@type": "ListItem", "position": 3, "name": "パーセントインピーダンス", "item": "https://math-san-bit.github.io/denken/kijun-youryou.html"}]}</script>
 <link rel="stylesheet" href="style.css?v=20261116a">
 <script src="m.js?v=20261116a"></script>
@@ -43,13 +43,16 @@
 
 <figure class="tegaki"><img src="img/tegaki-kijun-youryou.png" alt="手書きの計算。10 MV·A 基準で 7.5% を 30 MV·A 基準に直す。基準が3倍なので %Z も3倍。7.5 × 3 ＝ 22.5%。" width="456" height="378" loading="lazy"><figcaption>基準が何倍になったかを先に書くと、向きを取り違えません。</figcaption></figure>
 
+<h2 id="matome">%Z の基準容量の換算の式のまとめ</h2>
+<div class="calc">新しい %Z ＝ 元の %Z × 新しい基準容量 ÷ 元の基準容量</div>
+<p>基準容量 10 MV·A で 5% の %Z は、基準容量 100 MV·A に直すと 5 × 100 ÷ 10 ＝ 50% です。基準容量を大きくすると、%Z も同じ割合で大きくなります。</p><p>別の呼び方：この計算は「基準容量をそろえる」「基準容量の統一」「百分率インピーダンスの換算」とも書かれます。%Z を足し合わせる前に、必ず同じ基準容量に直します。</p>
 <div class="check"><strong>確かめの1問</strong><br>20 MV·A 基準で 6% の %Z を、10 MV·A 基準に直すと何%ですか。
 <details><summary>答え</summary>6 ×（10 ÷ 20）＝ 3%。基準の電流が半分になるので、かかる電圧も半分です。</details></div>
 
 <div class="cta cta-light"><p class="cta-need">ほかにも、止まっている所があるかもしれない</p><p>計算の10問を解くと、やり直す所と、読むページが分かります。約5分です。</p><a class="btn btn-sub" href="tenken.html" data-micro="約5分・採点は画面の中だけ">10問の点検を始める</a></div>
 <p>この計算を順を追って解く本：<a href="hon.html#v2">第2巻の案内</a></p>
-<nav class="next"><strong>同じまとまりで、ほかに止まりやすい所</strong><ul class="list"><li><a href="root3.html" data-chizu="next">線間電圧と相電圧：√3 は、掛けるのか割るのか</a></li><li><a href="root3-to-3.html" data-chizu="next">三相の電力：√3 を掛けたうえで、3倍しないのか</a></li><li><a href="youryou-denryuu.html" data-chizu="next">容量から電流の求め方：√3 は、どこから来るのか</a></li></ul><p><a href="sansou-zentai.html" data-chizu="all">全体を俯瞰して、自分のツボを見つける（9問）</a></p></nav>
-<p class="updated">最終更新：2026年11月16日</p>
+<nav class="next"><strong>同じまとまりで、ほかに止まりやすい所</strong><ul class="list"><li><a href="root3.html" data-chizu="next">線間電圧と相電圧の関係：√3 は、掛けるのか割るのか</a></li><li><a href="root3-to-3.html" data-chizu="next">三相電力の公式：√3 を掛けたうえで、なぜ3倍しないのか</a></li><li><a href="youryou-denryuu.html" data-chizu="next">容量から電流の求め方：√3 は、どこから来るのか</a></li></ul><p><a href="sansou-zentai.html" data-chizu="all">全体を俯瞰して、自分のツボを見つける（9問）</a></p></nav>
+<p class="updated">最終更新：2026年11月17日</p>
 <p><a href="denken3.html">電験三種の入口へ戻る</a>　／　<a href="./">辞典のトップ</a></p>
 </main>
 <footer>
