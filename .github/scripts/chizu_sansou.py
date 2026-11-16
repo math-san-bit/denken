@@ -170,7 +170,7 @@ SCRIPT = r"""<script>
       var top = 0; for (var s = 1; s < 3; s++) { if (cnt[s] > cnt[top]) top = s; }
       var ls = miss.map(function(m){ return '<li><a href="' + links[m.i] + '" data-chizu="tsubo">' + NUMS[m.i] + ' ' + names[m.i] + '</a>　<span class="zq-st">' + stages[m.s] + 'の段</span></li>'; }).join('');
       box.innerHTML = '<p class="zq-big">' + N + '章のうち、止まるのは ' + miss.length + '章だけです。</p>'
-        + '<p>止まった段で見ると、いちばん多いのは「' + stages[top] + '」です（読み取り ' + cnt[0] + '、立式 ' + cnt[1] + '、計算 ' + cnt[2] + '）。' + (cnt[3] ? 'そのうち ' + cnt[3] + 'つは、最後に「確かめ」をすれば気付けた答えです。' : '') + '表の●が、つまずきのツボです。</p><ul class="list">' + ls + '</ul>';
+        + '<p>止まった段で見ると、' + (cnt.slice(0, 3).filter(function(c){ return c === cnt[top]; }).length > 1 ? '1つの段に偏ってはいません' : 'いちばん多いのは「' + stages[top] + '」です') + '（読み取り ' + cnt[0] + '、立式 ' + cnt[1] + '、計算 ' + cnt[2] + '）。' + (cnt[3] ? 'そのうち ' + cnt[3] + 'つは、最後に「確かめ」をすれば気付けた答えです。' : '') + '表の●が、つまずきのツボです。</p><ul class="list">' + ls + '</ul>';
     }
     try { if (window.jitenEvent) { window.jitenEvent('chizu_check', { right: N - miss.length, miss: miss.map(function(m){ return (m.i + 1) + ':' + 'RTK'[m.s] + (m.k ? 'C' : ''); }).join('-') || 'none' }); } } catch (e) {}
   }
