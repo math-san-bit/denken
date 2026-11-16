@@ -144,6 +144,7 @@ ul.chizu{list-style:none;padding:0}
 .chizu-card a{font-weight:700;font-size:1.05rem}
 .chizu-gennin,.chizu-ans{margin:.3em 0;font-size:.9rem}
 .chizu-ans{color:var(--sub)}
+.chizu-gennin .shurui{display:inline-block;border:1px solid var(--mark);color:var(--mark);border-radius:999px;padding:0 .8em;font-size:.8rem;font-weight:700;line-height:1.7}
 .chizu-iriguchi{margin:.6em 0 1.4em}
 .chizu-iriguchi p{margin:.4em 0;font-size:.9rem;color:var(--sub)}
 """
@@ -152,7 +153,8 @@ ul.chizu{list-style:none;padding:0}
 def css():
     p = ROOT / "style.css"
     t = p.read_text(encoding="utf-8")
-    if "地図の層" not in t:
+    if "chizu-gennin .shurui" not in t:
+        t = re.sub(r"\n/\* 地図の層.*", "", t, flags=re.S)
         p.write_text(t.rstrip("\n") + "\n" + CSS, encoding="utf-8")
 
 
