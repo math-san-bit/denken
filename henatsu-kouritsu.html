@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>変圧器の効率の求め方：鉄損と銅損は、負荷でどう変わるのか｜筆算堂</title>
+<meta name="description" content="変圧器の効率の求め方。効率 ＝ 出力 ÷（出力 ＋ 鉄損 ＋ 負荷率の2乗 × 全負荷銅損）。銅損は負荷率の2乗で変わり、鉄損は負荷によらず一定です。電験三種の機械の計算で、半分の負荷のときの損失を数値で確かめます。">
+<link rel="canonical" href="https://math-san-bit.github.io/denken/henatsu-kouritsu.html">
+<meta property="og:site_name" content="筆算堂">
+<meta property="og:type" content="article">
+<meta property="og:title" content="変圧器の効率の求め方：鉄損と銅損は、負荷でどう変わるのか｜筆算堂">
+<meta property="og:description" content="変圧器の効率の求め方。効率 ＝ 出力 ÷（出力 ＋ 鉄損 ＋ 負荷率の2乗 × 全負荷銅損）。銅損は負荷率の2乗で変わり、鉄損は負荷によらず一定です。電験三種の機械の計算で、半分の負荷のときの損失を数値で確かめます。">
+<meta property="og:url" content="https://math-san-bit.github.io/denken/henatsu-kouritsu.html">
+<meta property="og:image" content="https://math-san-bit.github.io/denken/img/og-denken.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "変圧器の効率の求め方：鉄損と銅損は、負荷でどう変わるのか", "description": "変圧器の効率の求め方。効率 ＝ 出力 ÷（出力 ＋ 鉄損 ＋ 負荷率の2乗 × 全負荷銅損）。銅損は負荷率の2乗で変わり、鉄損は負荷によらず一定です。電験三種の機械の計算で、半分の負荷のときの損失を数値で確かめます。", "inLanguage": "ja", "datePublished": "2026-11-17", "dateModified": "2026-11-17", "mainEntityOfPage": "https://math-san-bit.github.io/denken/henatsu-kouritsu.html", "author": {"@type": "Organization", "name": "電験数学ノート編集室"}, "publisher": {"@type": "Organization", "name": "筆算堂", "url": "https://math-san-bit.github.io/denken/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://math-san-bit.github.io/denken/"}, {"@type": "ListItem", "position": 2, "name": "電験三種", "item": "https://math-san-bit.github.io/denken/denken3.html"}, {"@type": "ListItem", "position": 3, "name": "変圧器", "item": "https://math-san-bit.github.io/denken/henatsu-kouritsu.html"}]}</script>
+<link rel="stylesheet" href="style.css?v=20261116a">
+<script src="m.js?v=20261116a"></script>
+<script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}if(window.jitenLive){loadScript(function(){beTracker.t({hash:"2b75e6ae5b3bd38f11244c20df0cb5ad"})})}</script>
+</head>
+<body>
+<header class="site"><a class="yagou" href="./">筆算堂</a><a href="denken3.html">電験三種　計算で止まる所の辞典</a><nav class="gnav" aria-label="サイトの案内"><a href="denken3.html">電験三種</a><a href="musen/">一陸特・一陸技</a><a href="tenken.html">10問の点検</a><a href="hon.html">本の案内</a></nav></header>
+<main>
+<p class="crumb"><a href="./">トップ</a> › <a href="denken3.html">電験三種</a> › 変圧器</p>
+<h1>変圧器の効率の求め方：鉄損と銅損は、負荷でどう変わるのか</h1>
+<div class="chizu-ima"><p><a href="sansou-zentai.html" data-chizu="ima">三相と変圧器の全体像</a>　9章のうち、このページは <strong>⑤ 損失と効率</strong></p><div class="tr tr-small"><div class="tr-cols"><div class="tr-col"><p class="tr-head">理論：三相交流</p><a class="tr-box" data-i="0" href="root3.html" data-chizu="tr"><span class="pz-no">①</span>Y結線とΔ結線</a><a class="tr-box" data-i="1" href="root3-to-3.html" data-chizu="tr"><span class="pz-no">②</span>三相の電力と容量</a><a class="tr-box" data-i="2" href="rikiritsu.html" data-chizu="tr"><span class="pz-no">③</span>力率と力率の改善</a></div><div class="tr-col"><p class="tr-head">機械：変圧器</p><a class="tr-box" data-i="3" href="henatsu-makisuu.html" data-chizu="tr"><span class="pz-no">④</span>巻数比と等価回路</a><a class="tr-box ima" data-i="4" href="henatsu-kouritsu.html" data-chizu="tr"><span class="pz-no">⑤</span>損失と効率</a><a class="tr-box" data-i="5" href="denatsu-hendouritsu.html" data-chizu="tr"><span class="pz-no">⑥</span>電圧変動率</a><a class="tr-box" data-i="6" href="tanraku-100.html" data-chizu="tr"><span class="pz-no">⑦</span>%Z と短絡電流</a><a class="tr-box mada" data-i="7" href="sansou-zentai.html#k8" data-chizu="tr"><span class="pz-no">⑧</span>並行運転</a><a class="tr-box mada" data-i="8" href="sansou-zentai.html#k9" data-chizu="tr"><span class="pz-no">⑨</span>三相の結線とV結線</a></div></div></div></div>
+<p class="lead">損失を足して、出力で割る。変圧器の効率の式は短いのに、負荷が全負荷でないときに、銅損をいくつにするかで手が止まります。</p>
+<div class="answer"><strong>先に答え</strong>効率 ＝ 出力 ÷（出力 ＋ 鉄損 ＋ 銅損）。負荷率を α とすると、出力は α × 容量 × 力率、鉄損は負荷によらず同じ、銅損は α の2乗 × 全負荷の銅損です。負荷が半分なら、銅損は4分の1になります。</div>
+
+<h2>どこで止まるか</h2>
+<div class="gennin"><strong>止まる段</strong><span class="shurui">立式</span>銅損は「電流の2乗 × 巻線の抵抗」なので、電流が α 倍なら α の2乗倍になります。この途中が省かれ、効率の式だけが示されがちです。</div>
+<div class="wrong">負荷が半分なので、銅損も半分にして 1.5 × 0.5 ＝ 0.75 kW としてしまう。正しくは、1.5 × 0.5 × 0.5 ＝ 0.375 kW です。</div>
+
+<h2>鉄損と銅損は、何で決まるか</h2>
+<p>鉄損は、鉄心の中で磁気の向きが変わるたびに出る損失です。鉄心の磁気の強さは、かかる電圧で決まります。電圧は負荷によらずほぼ同じなので、鉄損は負荷が軽くても重くても同じです。このため、無負荷損とも呼ばれます。</p>
+<p>銅損は、巻線の抵抗に電流が流れて出る熱です。</p>
+<div class="calc">銅損 ＝ 電流 × 電流 × 巻線の抵抗<br>負荷率 α のとき、電流 ＝ α × 全負荷の電流<br>銅損 ＝ α × α × 全負荷の電流 × 全負荷の電流 × 巻線の抵抗<br>銅損 ＝ α² × 全負荷の銅損</div>
+<p>このため、銅損は負荷損とも呼ばれます。負荷が半分なら4分の1、4分の3なら16分の9になります。</p>
+
+<h2>数値で確かめる</h2>
+<p>容量 100 kV·A、鉄損 0.5 kW、全負荷の銅損 1.5 kW、力率 0.8 の変圧器で、負荷が半分のときの効率を出します。</p>
+<div class="calc">出力 ＝ 1/2 × 100 kV·A × 0.8 ＝ 40 kW<br>鉄損 ＝ 0.5 kW<br>銅損 ＝ (1/2)² × 1.5 ＝ 0.25 × 1.5 ＝ 0.375 kW<br>損失の合計 ＝ 0.5 ＋ 0.375 ＝ 0.875 kW<br>効率 ＝ 40 ÷ (40 ＋ 0.875) ＝ 40 ÷ 40.875 ≒ 0.979 → 97.9%</div>
+<p>同じ変圧器の全負荷の効率は、80 ÷ (80 ＋ 0.5 ＋ 1.5) ＝ 80 ÷ 82 ≒ 97.6% です。銅損を半分の 0.75 kW にした誤りの答えは、40 ÷ 41.25 ≒ 97.0% になり、全負荷より低く出ます。</p>
+<p>確かめ：損失の合計（0.875 kW）は、鉄損（0.5 kW）より大きく、全負荷の損失（2.0 kW）より小さい。出力より大きな損失や、鉄損より小さな損失の合計が出たら、式を見直します。</p>
+
+<figure class="tegaki"><img src="img/tegaki-henatsu-kouritsu.png" alt="手書きの計算。出力 ＝ 100 × 1/2 × 0.8 ＝ 40 kW。鉄損は 0.5 kW のまま。銅損 ＝ 1.5 × (1/2)² ＝ 0.375 kW。効率 ＝ 40 ÷ 40.875 ≒ 97.9 %。" width="456" height="380" loading="lazy"><figcaption>負荷で変わるのは銅損だけ。それも2乗で変わります。</figcaption></figure>
+
+<h2 id="matome">変圧器の効率の式のまとめ</h2>
+<div class="calc">出力 ＝ 負荷率 α × 容量 × 力率<br>鉄損（無負荷損）：負荷によらず同じ<br>銅損（負荷損）＝ α² × 全負荷の銅損<br>効率 ＝ 出力 ÷（出力 ＋ 鉄損 ＋ α² × 全負荷の銅損）× 100〔%〕</div>
+<p>別の呼び方：損失から計算で出した効率を、規約効率と呼びます。負荷率は、利用率や負荷の割合と書かれることもあります。</p>
+<p>容量 100 kV·A、鉄損 0.5 kW、全負荷の銅損 1.5 kW、力率 0.8 なら、全負荷で 97.6%、半分の負荷で 97.9% です。</p>
+<div class="check"><strong>確かめの1問</strong><br>容量 50 kV·A、鉄損 200 W、全負荷の銅損 800 W の変圧器を、力率 1.0、負荷率 1/2 で使います。効率は何 % ですか（小数第2位まで）。
+<details><summary>答え</summary>出力 ＝ 1/2 × 50 kV·A × 1.0 ＝ 25 kW ＝ 25000 W。銅損 ＝ (1/2)² × 800 ＝ 200 W。損失の合計 ＝ 200 ＋ 200 ＝ 400 W。効率 ＝ 25000 ÷ 25400 ≒ 98.43%。</details></div>
+
+<div class="cta cta-light"><p class="cta-need">ほかにも、止まっている所があるかもしれない</p><p>計算の10問を解くと、やり直す所と、読むページが分かります。約5分です。</p><a class="btn btn-sub" href="tenken.html" data-micro="約5分・採点は画面の中だけ">10問の点検を始める</a></div>
+<p>この計算を順を追って解く本：<a href="hon.html#v5">第5巻の案内</a></p>
+<nav class="next"><strong>次に止まりやすい所</strong><ul class="list"><li><a href="denatsu-hendouritsu.html" data-chizu="next">電圧変動率の求め方：p cos θ ＋ q sin θ の p と q は何か</a></li><li><a href="tanraku-100.html" data-chizu="next">短絡電流の求め方：%Z の 100 は、掛けるのか割るのか</a></li><li><a href="kijun-youryou.html" data-chizu="next">%Z の基準容量の換算の求め方：容量の比を、掛けるのか割るのか</a></li></ul><p><a href="sansou-zentai.html" data-chizu="all">全体を俯瞰して、自分のツボを見つける（9問）</a></p></nav>
+<p class="updated">最終更新：2026年11月17日</p>
+<p><a href="sansou-zentai.html">三相と変圧器の全体像へ</a>　／　<a href="denken3.html">電験三種の入口へ戻る</a>　／　<a href="./">辞典のトップ</a></p>
+</main>
+<footer>
+<p class="yagou-foot"><strong>筆算堂</strong>止まる原因を、書いて見せます。</p>
+<p>筆算堂で書いている人：電験数学ノート編集室。電験三種の計算で止まる所を1つずつ解く本を作っています。</p>
+<p>この辞典の数値と例題は編集室が作ったもので、過去問題そのものではありません。誤りに気付いたときは、本の商品ページのカスタマーレビューで知らせていただけると助かります。</p>
+<p><a href="privacy.html">このサイトが数えている物</a>　／　<a href="ichiran.html">ページの一覧</a></p>
+</footer>
+</body>
+</html>
