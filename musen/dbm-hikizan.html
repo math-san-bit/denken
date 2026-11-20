@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dBmの引き算：dBm−dBmの答えはdB。−50dBm−(−70dBm)＝20dB｜筆算堂</title>
+<meta name="description" content="dBm どうしの引き算は、W に戻さずにそのまま引けます。答えの単位は dBm ではなく dB（2つの電力の比）です。信号 −50 dBm、雑音 −70 dBm なら、S/N は 20 dB。マイナスの数を引くときの符号と、答えの単位の書き方を確かめます。">
+<link rel="canonical" href="https://math-san-bit.github.io/denken/musen/dbm-hikizan.html">
+<meta property="og:site_name" content="筆算堂">
+<meta property="og:type" content="article">
+<meta property="og:title" content="dBmの引き算：dBm−dBmの答えはdB。−50dBm−(−70dBm)＝20dB｜筆算堂">
+<meta property="og:description" content="dBm どうしの引き算は、W に戻さずにそのまま引けます。答えの単位は dBm ではなく dB（2つの電力の比）です。信号 −50 dBm、雑音 −70 dBm なら、S/N は 20 dB。マイナスの数を引くときの符号と、答えの単位の書き方を確かめます。">
+<meta property="og:url" content="https://math-san-bit.github.io/denken/musen/dbm-hikizan.html">
+<meta property="og:image" content="https://math-san-bit.github.io/denken/img/og-musen.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "dBm の引き算：dBm − dBm の答えは、dB（比）になる", "description": "dBm どうしの引き算は、W に戻さずにそのまま引けます。答えの単位は dBm ではなく dB（2つの電力の比）です。信号 −50 dBm、雑音 −70 dBm なら、S/N は 20 dB。マイナスの数を引くときの符号と、答えの単位の書き方を確かめます。", "inLanguage": "ja", "datePublished": "2026-11-20", "dateModified": "2026-11-20", "mainEntityOfPage": "https://math-san-bit.github.io/denken/musen/dbm-hikizan.html", "author": {"@type": "Organization", "name": "数字でつまずく所の手帳"}, "publisher": {"@type": "Organization", "name": "筆算堂", "url": "https://math-san-bit.github.io/denken/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://math-san-bit.github.io/denken/"}, {"@type": "ListItem", "position": 2, "name": "一陸特・一陸技", "item": "https://math-san-bit.github.io/denken/musen/"}, {"@type": "ListItem", "position": 3, "name": "デシベルと対数", "item": "https://math-san-bit.github.io/denken/musen/dbm-hikizan.html"}]}</script>
+<link rel="stylesheet" href="../style.css?v=20261116a">
+<script src="../m.js?v=20261116a"></script>
+<script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}if(window.jitenLive){loadScript(function(){beTracker.t({hash:"2b75e6ae5b3bd38f11244c20df0cb5ad"})})}</script>
+</head>
+<body>
+<header class="site"><a class="yagou" href="../">筆算堂</a><a href="./">一陸特・一陸技　計算で止まる所の辞典</a><nav class="gnav" aria-label="サイトの案内"><a href="./">一陸特・一陸技</a><a href="../denken3.html">電験三種</a><a href="tenken.html">10問の点検</a><a href="mondaishu.html">問題集の案内</a></nav></header>
+<main>
+<p class="crumb"><a href="../">トップ</a> › <a href="./">一陸特・一陸技</a> › デシベルと対数</p>
+<h1>dBm の引き算：dBm − dBm の答えは、dB（比）になる</h1>
+<p class="lead">dBm から dBm を引いた答えは、dB です。dBm ではありません。信号が −50 dBm、雑音が −70 dBm なら、−50 − (−70) ＝ 20 dB で、信号は雑音の100倍です。dBm どうしは足せない、と覚えた後なので、引いてよいのかで手が止まります。</p>
+<div class="answer"><strong>先に答え</strong>dBm − dBm は、W に戻さずにそのまま引けます。答えは2つの電力の比で、単位は dB です。マイナスの dBm を引くときは、符号を変えて足し算にします。</div>
+
+<h2>どこで止まるか</h2>
+<div class="gennin"><strong>止まる段</strong><span class="shurui">読み取り</span>dBm どうしを引くと、基準の 1 mW が消えて比が残る、という読み方が示されないことが多くあります。</div>
+<div class="wrong">−50 dBm − (−70 dBm) を、−120 dBm と答えてしまう。符号を落としたうえ、単位も dBm のままです。</div>
+
+<h2>引くと 1 mW が消えて、比が残る</h2>
+<p>dBm は「1 mW の何倍か」を dB で表した量です。2つの dBm を引くと、どちらにも入っている「1 mW」が打ち消し合います。残るのは、2つの電力の比だけです。</p>
+<div class="calc">−50 dBm ＝ 1 mW の 10<sup>−5</sup> 倍 ＝ 10 nW<br>−70 dBm ＝ 1 mW の 10<sup>−7</sup> 倍 ＝ 0.1 nW<br>10 nW ÷ 0.1 nW ＝ 100倍 ＝ 20 dB</div>
+<p>足し算と違い、引き算はどの組み合わせでもできます。違うのは、答えの単位です。</p>
+<table>
+<thead><tr><th>組み合わせ</th><th>引けるか</th><th>答えの単位</th></tr></thead>
+<tbody>
+<tr><td>dBm − dBm</td><td>引ける</td><td>dB（2つの電力の比）</td></tr>
+<tr><td>dBm − dB</td><td>引ける</td><td>dBm（電力から損失を引く）</td></tr>
+<tr><td>dB − dB</td><td>引ける</td><td>dB</td></tr>
+</tbody>
+</table>
+
+<h2>マイナスの dBm を引くとき</h2>
+<p>受信した電力や雑音は、1 mW より小さいので、マイナスの dBm で書かれます。マイナスの数を引くときは、符号を変えて足します。</p>
+<div class="calc">−50 − (−70) ＝ −50 ＋ 70 ＝ 20</div>
+
+<h2>数値で確かめる</h2>
+<p>送信機の出力が 30 dBm、受信機に届いた電力が −60 dBm のとき、途中で失われた分（伝搬の損失）を求めます。</p>
+<div class="calc">30 − (−60) ＝ 30 ＋ 60 ＝ 90 dB<br>確かめ：30 dBm は 1 W。90 dB は 10<sup>9</sup> 倍なので、1 W ÷ 10<sup>9</sup> ＝ 1 nW ＝ 10<sup>−6</sup> mW ＝ −60 dBm</div>
+<p>答えは「何倍小さくなったか」なので、dB で書きます。</p>
+
+<figure class="tegaki"><img src="../img/tegaki-dbm-hikizan.png" alt="手書きの筆算。信号 −50 dBm、雑音 −70 dBm。S/N ＝ −50 − (−70) ＝ −50 ＋ 70 ＝ 20 dB。答えは dB で、dBm ではない。20 dB は100倍。" width="456" height="377" loading="lazy"><figcaption>引いた答えには、dBm の m を付けません。</figcaption></figure>
+
+<h2 id="matome">dBm の引き算のまとめ</h2>
+<div class="calc">dBm − dBm ＝ dB（2つの電力の比）<br>dBm − dB ＝ dBm<br>マイナスの数を引くときは、符号を変えて足す</div>
+<p>dBm どうしの足し算（W に戻して足す）は、<a href="dbm-tasenai.html">dBm の足し算：30 dBm ＋ 30 dBm は、60 dBm ではなく 33 dBm</a>で扱っています。</p><p>別の呼び方：S/N は、信号対雑音比（SN比）とも書かれます。信号の電力と雑音の電力の比を、dB で表した物です。</p>
+<div class="check"><strong>確かめの1問</strong><br>受信した信号が −40 dBm、雑音が −75 dBm のとき、S/N は何 dB ですか。
+<details><summary>答え</summary>−40 − (−75) ＝ −40 ＋ 75 ＝ 35 dB。単位は dB です。</details></div>
+
+<div class="cta cta-light"><p class="cta-need">ほかにも、止まっている所があるかもしれない</p><p>計算の土台の10問を解くと、やり直す所と、読むページが分かります。約5分です。</p><a class="btn btn-sub" href="tenken.html" data-micro="約5分・採点は画面の中だけ">10問の点検を始める</a></div>
+<p>紙の上で繰り返して固めたい方へ：<a href="mondaishu.html">書き込み式の問題集の案内</a>　／　数を入れて確かめる：<a href="db-keisan.html">デシベルの計算の道具</a></p>
+<nav class="next"><strong>次に読む</strong><ul class="list"><li><a href="dbm-tasenai.html">dBm の足し算：30 dBm ＋ 30 dBm は、60 dBm ではなく 33 dBm</a></li><li><a href="1w-30dbm.html">1 W は、なぜ 30 dBm なのか：W と dBm の換算</a></li></ul></nav>
+<p class="updated">最終更新：2026年11月20日</p>
+<p><a href="./">一陸特・一陸技の入口へ戻る</a>　／　<a href="../">辞典のトップ</a></p>
+</main>
+<footer>
+<p class="yagou-foot"><strong>筆算堂</strong>止まる原因を、書いて見せます。</p>
+<p>筆算堂で書いている人：数字でつまずく所の手帳。資格の計算で止まる所を1つずつ解く本と問題集を作っています。</p>
+<p>この辞典の数値と例題は自分で作ったもので、過去問題そのものではありません。誤りに気付いたときは、X の @tsumazuki_note へ知らせていただけると助かります。</p>
+<p><a href="../privacy.html">このサイトが数えている物</a>　／　<a href="../ichiran.html">ページの一覧</a></p>
+</footer>
+</body>
+</html>

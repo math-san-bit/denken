@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>三角関数：cos 60° は、なぜ 0.5 なのか｜筆算堂</title>
-<meta name="description" content="一陸特・一陸技の解説に出る sin と cos を、直角三角形の辺の割合として整理します。cos は「横 ÷ 斜め」、sin は「縦 ÷ 斜め」。cos 60° は 0.5、覚える値は 30°・45°・60° の3つです。">
+<title>cos60°の値は1/2（0.5）：分数・小数の答えと、半分になるわけ｜筆算堂</title>
+<meta name="description" content="cos60°の値は、分数で 1/2、小数で 0.5 です。正三角形を半分に切った図で、なぜ半分になるかを確かめます。30°・45°・60° の sin と cos の値の一覧表つき。一陸特・一陸技や電験の力率の計算で使います。">
 <link rel="canonical" href="https://math-san-bit.github.io/denken/musen/sankaku.html">
 <meta property="og:site_name" content="筆算堂">
 <meta property="og:type" content="article">
-<meta property="og:title" content="三角関数：cos 60° は、なぜ 0.5 なのか｜筆算堂">
-<meta property="og:description" content="一陸特・一陸技の解説に出る sin と cos を、直角三角形の辺の割合として整理します。cos は「横 ÷ 斜め」、sin は「縦 ÷ 斜め」。cos 60° は 0.5、覚える値は 30°・45°・60° の3つです。">
+<meta property="og:title" content="cos60°の値は1/2（0.5）：分数・小数の答えと、半分になるわけ｜筆算堂">
+<meta property="og:description" content="cos60°の値は、分数で 1/2、小数で 0.5 です。正三角形を半分に切った図で、なぜ半分になるかを確かめます。30°・45°・60° の sin と cos の値の一覧表つき。一陸特・一陸技や電験の力率の計算で使います。">
 <meta property="og:url" content="https://math-san-bit.github.io/denken/musen/sankaku.html">
 <meta property="og:image" content="https://math-san-bit.github.io/denken/img/og-musen.png">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "三角関数：cos 60° は、なぜ 0.5 なのか", "description": "一陸特・一陸技の解説に出る sin と cos を、直角三角形の辺の割合として整理します。cos は「横 ÷ 斜め」、sin は「縦 ÷ 斜め」。cos 60° は 0.5、覚える値は 30°・45°・60° の3つです。", "inLanguage": "ja", "datePublished": "2026-11-14", "dateModified": "2026-11-17", "mainEntityOfPage": "https://math-san-bit.github.io/denken/musen/sankaku.html", "author": {"@type": "Organization", "name": "数字でつまずく所の手帳"}, "publisher": {"@type": "Organization", "name": "筆算堂", "url": "https://math-san-bit.github.io/denken/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "cos60° の値は 1/2（0.5）：なぜ半分になるのか", "description": "cos60°の値は、分数で 1/2、小数で 0.5 です。正三角形を半分に切った図で、なぜ半分になるかを確かめます。30°・45°・60° の sin と cos の値の一覧表つき。一陸特・一陸技や電験の力率の計算で使います。", "inLanguage": "ja", "datePublished": "2026-11-14", "dateModified": "2026-11-20", "mainEntityOfPage": "https://math-san-bit.github.io/denken/musen/sankaku.html", "author": {"@type": "Organization", "name": "数字でつまずく所の手帳"}, "publisher": {"@type": "Organization", "name": "筆算堂", "url": "https://math-san-bit.github.io/denken/"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://math-san-bit.github.io/denken/"}, {"@type": "ListItem", "position": 2, "name": "一陸特・一陸技", "item": "https://math-san-bit.github.io/denken/musen/"}, {"@type": "ListItem", "position": 3, "name": "交流と複素数", "item": "https://math-san-bit.github.io/denken/musen/sankaku.html"}]}</script>
 <link rel="stylesheet" href="../style.css?v=20261116a">
 <script src="../m.js?v=20261116a"></script>
@@ -23,30 +23,42 @@
 <header class="site"><a class="yagou" href="../">筆算堂</a><a href="./">一陸特・一陸技　計算で止まる所の辞典</a><nav class="gnav" aria-label="サイトの案内"><a href="./">一陸特・一陸技</a><a href="../denken3.html">電験三種</a><a href="tenken.html">10問の点検</a><a href="mondaishu.html">問題集の案内</a></nav></header>
 <main>
 <p class="crumb"><a href="../">トップ</a> › <a href="./">一陸特・一陸技</a> › 交流と複素数</p>
-<h1>三角関数：cos 60° は、なぜ 0.5 なのか</h1>
-<p class="lead">位相や力率の解説には、cos 60° のような書き方が出てきます。角度から数が出てくる仕組みが分からないまま、値だけを覚えようとして手が止まります。</p>
+<h1>cos60° の値は 1/2（0.5）：なぜ半分になるのか</h1>
+<p class="lead">cos60° の値は、分数で 1/2（2分の1）、小数で 0.5 です。cos は直角三角形の「横の辺 ÷ 斜めの辺」で、角度が 60° のとき、横の辺は斜めの辺のちょうど半分になります。</p>
+
+<h2 id="atai">30°・45°・60° の sin と cos の値（分数と小数）</h2>
+<table class="num">
+<thead><tr><th>角度</th><th>cos（分数と小数）</th><th>sin（分数と小数）</th></tr></thead>
+<tbody>
+<tr><td>30°</td><td>√3/2（約 0.87）</td><td>1/2（0.5）</td></tr>
+<tr><td>45°</td><td>1/√2（約 0.71）</td><td>1/√2（約 0.71）</td></tr>
+<tr><td>60°</td><td><strong>1/2（0.5）</strong></td><td>√3/2（約 0.87）</td></tr>
+</tbody>
+</table>
+<p>1/√2 は、√2/2 とも書きます。</p>
+<p>位相や力率の解説には、cos 60° のような書き方が出てきます。角度から数が出てくる仕組みが分からないまま、値だけを覚えようとして手が止まります。</p>
 <div class="answer"><strong>先に答え</strong>cos は、直角三角形の「横の辺 ÷ 斜めの辺」です。sin は「縦の辺 ÷ 斜めの辺」。角度が 60° の直角三角形では、横の辺は斜めの辺のちょうど半分なので、cos 60° ＝ 0.5 です。覚える角度は、30°・45°・60° の3つで足ります。</div>
+
+<h2 id="cos60">cos60° の値：分数では 1/2、小数では 0.5</h2>
+<p>1/2 と 0.5 は、同じ値の書き方の違いです。分数で書くか小数で書くかは、問題の選択肢に合わせます。</p>
+<p>取り違えやすい相手は sin60° です。sin60° は √3/2（約 0.87）で、cos60° より大きくなります。</p>
 
 <h2>どこで止まるか</h2>
 <div class="gennin"><strong>止まる段</strong><span class="shurui">計算</span>cos は横、sin は縦、という三角関数の決まりを、長く使っていないことです。</div>
 <div class="wrong">cos 60° と sin 60° を取り違えて、0.87 と答えてしまう。角度が大きくなるほど、三角形は縦に伸びて、横は短くなります。cos（横）は小さくなり、sin（縦）は大きくなります。</div>
 
-<h2>角度を決めると、辺の割合が決まる</h2>
+<h2 id="naze">なぜ 1/2 になるか：正三角形を半分に切る</h2>
 <p>直角三角形は、もう1つの角度を決めると、形が決まります。大きさが変わっても、辺どうしの割合は変わりません。その割合に名前を付けた物が、sin と cos です。</p>
 <p>斜めの辺を 1 とすると、横の辺の長さが cos、縦の辺の長さが sin です。</p>
+<p>60° の直角三角形は、正三角形を半分に切ると作れます。正三角形の3つの角は、どれも 60° です。</p>
+<div class="calc">① 1辺が 2 の正三角形を描く（3つの角は、どれも 60°）<br>② 上の頂点から、底の辺へ垂直に線を下ろす。底の辺は 1 と 1 に分かれる<br>③ 左半分は、60° の角を持つ直角三角形。斜めの辺 2、横の辺 1<br>④ 縦の辺は、三平方の定理で 2 × 2 − 1 × 1 ＝ 3 なので √3<br>⑤ cos60° ＝ 横 ÷ 斜め ＝ 1 ÷ 2 ＝ 1/2 ＝ 0.5<br>⑥ sin60° ＝ 縦 ÷ 斜め ＝ √3 ÷ 2 ≒ 0.87</div>
+<figure class="tegaki"><img src="../img/tegaki-sankaku.png" alt="手書きの図。1辺 2 の正三角形を、高さの線で半分に切る。左半分は、60° の角を持つ直角三角形で、斜め 2、横 1、縦 √3。cos60° ＝ 横 ÷ 斜め ＝ 1 ÷ 2 ＝ 1/2 ＝ 0.5。" width="456" height="430" loading="lazy"><figcaption>横は、斜めのちょうど半分。だから cos60° は 1/2 です。</figcaption></figure>
+
 <h2>覚える値は、3つの角度だけ</h2>
-<table class="num">
-<thead><tr><th>角度</th><th>cos（横 ÷ 斜め）</th><th>sin（縦 ÷ 斜め）</th></tr></thead>
-<tbody>
-<tr><td>30°</td><td>約 0.87</td><td>0.5</td></tr>
-<tr><td>45°</td><td>約 0.71</td><td>約 0.71</td></tr>
-<tr><td>60°</td><td>0.5</td><td>約 0.87</td></tr>
-</tbody>
-</table>
-<p>30° と 60° は、cos と sin が入れ替わるだけです。45° は、横と縦が同じ長さです。出てくる数は、0.5、約 0.71、約 0.87 の3つしかありません。</p>
+<p>上の表のとおり、30° と 60° は、cos と sin が入れ替わるだけです。45° は、横と縦が同じ長さです。出てくる数は、0.5、約 0.71、約 0.87 の3つしかありません。</p>
 <p>迷ったら、角度が小さいときは横に長い三角形、と思い出します。0° に近いほど cos は 1 に近く、90° に近いほど 0 に近くなります。</p>
 <h2>どこで使うか</h2>
-<p>交流では、電圧と電流の波のずれを角度で表します。力率は、その角度の cos です。ずれが 60° なら、力率は 0.5 です。</p>
+<p>交流では、電圧と電流の波のずれを角度で表します。力率は、その角度の cos です。ずれが 60° なら、力率は 0.5 です。力率から電力を出す流れは、<a href="../rikiritsu.html">力率と無効電力の求め方</a>（電験三種）で扱っています。</p>
 
 <h2>数値で確かめる</h2>
 <div class="calc">ずれの角度が 60° のとき<br>cos 60° ＝ 0.5（横は、斜めの半分）<br>sin 60° ＝ 約 0.87<br>確かめ：0.5 × 0.5 ＋ 0.87 × 0.87 ＝ 0.25 ＋ 0.76 ＝ 約 1</div>
@@ -60,7 +72,7 @@
 <div class="cta cta-light"><p class="cta-need">ほかにも、止まっている所があるかもしれない</p><p>計算の土台の10問を解くと、やり直す所と、読むページが分かります。約5分です。</p><a class="btn btn-sub" href="tenken.html" data-micro="約5分・採点は画面の中だけ">10問の点検を始める</a></div>
 
 <nav class="next"><strong>次に読む</strong><ul class="list"><li><a href="root-j.html">複素数の大きさ（絶対値）の出し方：3 ＋ j4 から、5 を出す</a></li><li><a href="bunsuu-heiretsu.html">並列の合成抵抗の求め方：分数の中の分数をほどく</a></li></ul></nav>
-<p class="updated">最終更新：2026年11月17日</p>
+<p class="updated">最終更新：2026年11月20日</p>
 <p><a href="./">一陸特・一陸技の入口へ戻る</a>　／　<a href="../">辞典のトップ</a></p>
 </main>
 <footer>
