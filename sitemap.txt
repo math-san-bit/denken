@@ -37,3 +37,6 @@ https://math-san-bit.github.io/denken/musen/ichimon.html
 https://math-san-bit.github.io/denken/sansou-zentai.html
 https://math-san-bit.github.io/denken/henatsu-kouritsu.html
 https://math-san-bit.github.io/denken/denatsu-hendouritsu.html
+https://math-san-bit.github.io/denken/musen/log-warizan.html
+https://math-san-bit.github.io/denken/musen/dbm-hikizan.html
+https://math-san-bit.github.io/denken/musen/hachou-hyou.html

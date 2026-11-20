@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>logの割り算：log8÷log2はlog4ではなく3。log(a÷b)との違い｜筆算堂</title>
+<meta name="description" content="log の割り算には2つの形があります。log の中の割り算は引き算になり、log(8 ÷ 2) ＝ log 8 − log 2。log どうしの割り算は別物で、log 8 ÷ log 2 ＝ 3 です。2倍の増幅器を何段つなぐと1000倍になるかの計算で確かめます。">
+<link rel="canonical" href="https://math-san-bit.github.io/denken/musen/log-warizan.html">
+<meta property="og:site_name" content="筆算堂">
+<meta property="og:type" content="article">
+<meta property="og:title" content="logの割り算：log8÷log2はlog4ではなく3。log(a÷b)との違い｜筆算堂">
+<meta property="og:description" content="log の割り算には2つの形があります。log の中の割り算は引き算になり、log(8 ÷ 2) ＝ log 8 − log 2。log どうしの割り算は別物で、log 8 ÷ log 2 ＝ 3 です。2倍の増幅器を何段つなぐと1000倍になるかの計算で確かめます。">
+<meta property="og:url" content="https://math-san-bit.github.io/denken/musen/log-warizan.html">
+<meta property="og:image" content="https://math-san-bit.github.io/denken/img/og-musen.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "log の割り算：log 8 ÷ log 2 は、log 4 ではなく 3", "description": "log の割り算には2つの形があります。log の中の割り算は引き算になり、log(8 ÷ 2) ＝ log 8 − log 2。log どうしの割り算は別物で、log 8 ÷ log 2 ＝ 3 です。2倍の増幅器を何段つなぐと1000倍になるかの計算で確かめます。", "inLanguage": "ja", "datePublished": "2026-11-20", "dateModified": "2026-11-20", "mainEntityOfPage": "https://math-san-bit.github.io/denken/musen/log-warizan.html", "author": {"@type": "Organization", "name": "数字でつまずく所の手帳"}, "publisher": {"@type": "Organization", "name": "筆算堂", "url": "https://math-san-bit.github.io/denken/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://math-san-bit.github.io/denken/"}, {"@type": "ListItem", "position": 2, "name": "一陸特・一陸技", "item": "https://math-san-bit.github.io/denken/musen/"}, {"@type": "ListItem", "position": 3, "name": "デシベルと対数", "item": "https://math-san-bit.github.io/denken/musen/log-warizan.html"}]}</script>
+<link rel="stylesheet" href="../style.css?v=20261116a">
+<script src="../m.js?v=20261116a"></script>
+<script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}if(window.jitenLive){loadScript(function(){beTracker.t({hash:"2b75e6ae5b3bd38f11244c20df0cb5ad"})})}</script>
+</head>
+<body>
+<header class="site"><a class="yagou" href="../">筆算堂</a><a href="./">一陸特・一陸技　計算で止まる所の辞典</a><nav class="gnav" aria-label="サイトの案内"><a href="./">一陸特・一陸技</a><a href="../denken3.html">電験三種</a><a href="tenken.html">10問の点検</a><a href="mondaishu.html">問題集の案内</a></nav></header>
+<main>
+<p class="crumb"><a href="../">トップ</a> › <a href="./">一陸特・一陸技</a> › デシベルと対数</p>
+<h1>log の割り算：log 8 ÷ log 2 は、log 4 ではなく 3</h1>
+<p class="lead">log の割り算には、2つの形があります。log の中の割り算 log(8 ÷ 2) は、log 8 − log 2 という引き算になります。log どうしの割り算 log 8 ÷ log 2 は引き算にはならず、答えは 3 です。log の掛け算が足し算になると覚えた直後に、この2つを取り違えて手が止まります。</p>
+<div class="answer"><strong>先に答え</strong>log(A ÷ B) ＝ log A − log B。log A ÷ log B は「B を何回掛けると A になるか」を表し、log 8 ÷ log 2 ＝ 0.903 ÷ 0.301 ＝ 3 です。log 4（0.602）とは違う数です。</div>
+
+<h2>どこで止まるか</h2>
+<div class="gennin"><strong>止まる段</strong><span class="shurui">計算</span>log の中の割り算は引き算になる、という決まりを、log どうしの割り算にも当てはめてしまうことです。</div>
+<div class="wrong">log 8 ÷ log 2 を、log(8 ÷ 2) ＝ log 4 ＝ 0.602 としてしまう。または、log 8 − log 2 と引いて、同じ 0.602 と答えてしまう。</div>
+
+<h2>2つの割り算は、別の計算</h2>
+<table>
+<thead><tr><th>書き方</th><th>意味</th><th>8 と 2 のとき</th></tr></thead>
+<tbody>
+<tr><td>log(A ÷ B)</td><td>log の中の割り算。引き算になる</td><td>log 8 − log 2 ＝ 0.903 − 0.301 ＝ 0.602（log 4 と同じ）</td></tr>
+<tr><td>log A ÷ log B</td><td>log どうしの割り算。B を何回掛けると A になるか</td><td>0.903 ÷ 0.301 ＝ 3</td></tr>
+</tbody>
+</table>
+<p>log 8 は「10 を何乗すると 8 になるか」、log 2 は「10 を何乗すると 2 になるか」です。8 は 2 を3回掛けた数なので、log 8 は log 2 のちょうど3倍です。だから、割ると 3 が残ります。</p>
+<p>括弧の位置で、どちらの形かを読み分けます。log の後ろの括弧の中で割っていれば引き算、log と log の間に ÷ があれば、ふつうの割り算です。</p>
+
+<h2>どこで使うか</h2>
+<p>「同じ倍率を何回掛けると、目標の倍率に届くか」を出すときに、log どうしの割り算が出てきます。増幅器を何段つなぐか、半分に減る回数が何回か、といった問いです。</p>
+
+<h2>数値で確かめる</h2>
+<p>電力を2倍にする増幅器を何段つなぐと、1000倍以上になるかを求めます。log₁₀ 2 ＝ 0.3010 とします。</p>
+<div class="calc">2 を n 回掛けて 1000 にする<br>n ＝ log 1000 ÷ log 2 ＝ 3 ÷ 0.3010 ≒ 9.97<br>9段では足りないので、10段<br>確かめ：2倍は約 3 dB、1000倍は 30 dB。30 ÷ 3 ＝ 10段</div>
+<p>dB で数えると、log どうしの割り算は、dB の割り算として見えます。2 を10回掛けると 1024 で、1000 を超えます。</p>
+
+<figure class="tegaki"><img src="../img/tegaki-log-warizan.png" alt="手書きの筆算。log 8 ÷ log 2 ＝ 0.903 ÷ 0.301 ＝ 3。2 を3回掛けると 8。log 4 ＝ 0.602 は log(8 ÷ 2) で、log の中の割り算は引き算。" width="456" height="375" loading="lazy"><figcaption>括弧の中の割り算か、log どうしの割り算かを、先に見分けます。</figcaption></figure>
+
+<h2 id="matome">log の割り算のまとめ</h2>
+<div class="calc">log（A ÷ B）＝ log A − log B（中の割り算は、引き算）<br>log A ÷ log B：B を何回掛けると A になるか<br>log 8 ÷ log 2 ＝ 3、log 9 ÷ log 3 ＝ 2、log 1000 ÷ log 10 ＝ 3</div>
+<p>掛け算と割り算を、足し算と引き算に直す決まりは、<a href="log-2-3.html">対数の計算：log 2 と log 3 だけで、ほかの数の log を出す</a>で扱っています。</p><p>別の呼び方：log A ÷ log B の形は、「底の変換」と呼ばれる式です。底（てい）は、何を何乗するかの元の数で、ここでは 10 です。2 を底とする対数を、10 を底とする対数で書き直すと、この形になります。</p>
+<div class="check"><strong>確かめの1問</strong><br>log₁₀ 3 ＝ 0.4771 として、log 9 ÷ log 3 と、log(9 ÷ 3) は、それぞれいくつですか。
+<details><summary>答え</summary>log 9 ÷ log 3 ＝ 0.9542 ÷ 0.4771 ＝ 2（3 を2回掛けると 9）。log(9 ÷ 3) ＝ log 3 ＝ 0.4771。</details></div>
+
+<div class="cta cta-light"><p class="cta-need">ほかにも、止まっている所があるかもしれない</p><p>計算の土台の10問を解くと、やり直す所と、読むページが分かります。約5分です。</p><a class="btn btn-sub" href="tenken.html" data-micro="約5分・採点は画面の中だけ">10問の点検を始める</a></div>
+<p>紙の上で繰り返して固めたい方へ：<a href="mondaishu.html">書き込み式の問題集の案内</a>　／　数を入れて確かめる：<a href="db-keisan.html">デシベルの計算の道具</a></p>
+<nav class="next"><strong>次に読む</strong><ul class="list"><li><a href="log-2-3.html">対数の計算：log 2 と log 3 だけで、ほかの数の log を出す</a></li><li><a href="db-3-10.html">デシベルの計算：電卓なしで、3 と 10 だけで出す</a></li></ul></nav>
+<p class="updated">最終更新：2026年11月20日</p>
+<p><a href="./">一陸特・一陸技の入口へ戻る</a>　／　<a href="../">辞典のトップ</a></p>
+</main>
+<footer>
+<p class="yagou-foot"><strong>筆算堂</strong>止まる原因を、書いて見せます。</p>
+<p>筆算堂で書いている人：数字でつまずく所の手帳。資格の計算で止まる所を1つずつ解く本と問題集を作っています。</p>
+<p>この辞典の数値と例題は自分で作ったもので、過去問題そのものではありません。誤りに気付いたときは、X の @tsumazuki_note へ知らせていただけると助かります。</p>
+<p><a href="../privacy.html">このサイトが数えている物</a>　／　<a href="../ichiran.html">ページの一覧</a></p>
+</footer>
+</body>
+</html>
