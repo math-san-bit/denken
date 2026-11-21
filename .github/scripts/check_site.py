@@ -14,7 +14,8 @@ import sys
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
-BASE_URL = "https://math-san-bit.github.io/denken/"
+BASE_URL = "https://hissandou.pages.dev/"
+OLD_URL = "https://math-san-bit.github.io/denken/"
 ROOT = Path(sys.argv[1] if len(sys.argv) > 1 else ".").resolve()
 SKIP_DIRS = {".git", ".github", ".claude", "_site"}
 ATTR = re.compile(r"""(?:href|src)\s*=\s*["']([^"']*)["']""", re.I)
@@ -31,6 +32,8 @@ def to_file(path: Path):
     """フォルダーを指すアドレスは、その中の index.html に読み替える。"""
     if path.is_dir():
         path = path / "index.html"
+    if not path.is_file() and path.suffix == "" and path.with_suffix(".html").is_file():
+        path = path.with_suffix(".html")  # 公開先（Cloudflare Pages）は .html を外したアドレスで出す
     return path if path.is_file() else None
 
 
@@ -40,7 +43,7 @@ def local_target(src: Path, ref: str):
     if not ref or ref.startswith(("#", "mailto:", "tel:", "data:", "javascript:")):
         return False
     if ref.startswith(BASE_URL):
-        ref = "/denken/" + ref[len(BASE_URL):]
+        ref = "/" + ref[len(BASE_URL):]
     parts = urlsplit(ref)
     if parts.scheme or parts.netloc:
         return False
@@ -48,9 +51,7 @@ def local_target(src: Path, ref: str):
     if not path:
         return False
     if path.startswith("/"):
-        if not path.startswith("/denken/") and path != "/denken":
-            return None
-        base = ROOT / path[len("/denken/"):]
+        base = ROOT / path[1:]
     else:
         base = src.parent / path
     base = base.resolve()
@@ -70,6 +71,19 @@ def main():
             if target is None:
                 errors.append(f"リンク切れ: {page.relative_to(ROOT)} → {ref}")
 
+    # 公開のアドレスは .html を外した形で書く（Cloudflare Pages は .html 付きを 308 で外す）。古いアドレスも残さない
+    abs_html = re.compile(re.escape(BASE_URL) + r"[^\s\"'<>)]*\.html")
+    for f in sorted(ROOT.rglob("*")):
+        if SKIP_DIRS.intersection(f.relative_to(ROOT).parts) or not f.is_file():
+            continue
+        if f.suffix not in {".html", ".xml", ".txt", ".js"}:
+            continue
+        text = f.read_text(encoding="utf-8", errors="replace")
+        for u in abs_html.findall(text):
+            errors.append(f".html 付きの公開アドレス: {f.relative_to(ROOT)} → {u}")
+        if OLD_URL in text:
+            errors.append(f"古いアドレス（github.io）が残っている: {f.relative_to(ROOT)}")
+
     listed = set()
     for name in ("sitemap.xml", "sitemap-pages.xml", "sitemap.txt"):
         f = ROOT / name
@@ -81,7 +95,7 @@ def main():
             if not url.startswith(BASE_URL):
                 errors.append(f"{name}: このサイトの外のアドレス → {url}")
                 continue
-            target = to_file(ROOT / unquote(urlsplit(url).path)[len("/denken/"):])
+            target = to_file(ROOT / unquote(urlsplit(url).path)[1:])
             if target is None:
                 errors.append(f"{name}: 実在しない頁 → {url}")
             elif name == "sitemap.xml":

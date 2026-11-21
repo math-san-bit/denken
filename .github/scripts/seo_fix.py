@@ -12,7 +12,7 @@
 import json, re, sys
 from pathlib import Path
 
-BASE = "https://math-san-bit.github.io/denken/"
+BASE = "https://hissandou.pages.dev/"
 ROOT = Path(sys.argv[1] if len(sys.argv) > 1 else ".").resolve()
 PUBLISHER = {"@type": "Organization", "name": "筆算堂", "url": BASE}
 

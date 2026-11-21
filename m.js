@@ -8,7 +8,7 @@
     if (q) { if (q[1] === "1") { localStorage.setItem("jiten_off", "1"); } else { localStorage.removeItem("jiten_off"); } }
     off = localStorage.getItem("jiten_off") === "1";
   } catch (e) {}
-  var live = location.hostname === "math-san-bit.github.io" && !off;
+  var live = location.hostname === "hissandou.pages.dev" && !off;
   window.jitenLive = live;
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
@@ -23,7 +23,7 @@
   }
 
   var pn = location.pathname;
-  var site = pn.indexOf("/musen/") >= 0 ? "musen" : (/\/denken\/(index\.html)?$/.test(pn) ? "top" : "denken");
+  var site = pn.indexOf("/musen/") >= 0 ? "musen" : (/^\/(index(\.html)?)?$/.test(pn) ? "top" : "denken");
   function ev(name, p) {
     p = p || {};
     p.site = site;
@@ -186,14 +186,14 @@
     try {
       var key = "jiten_read";
       var list = JSON.parse(localStorage.getItem(key) || "[]");
-      var me = location.pathname.split("/denken/").pop();
+      var me = location.pathname.replace(/^\//, "").replace(/(index)?\.html$/, "").replace(/\/index$/, "/");
       if (document.querySelector(".answer") && document.querySelector(".crumb") && list.indexOf(me) < 0) {
         list.push(me);
         localStorage.setItem(key, JSON.stringify(list.slice(-200)));
       }
       document.querySelectorAll("ul.list a").forEach(function (a) {
         if (a.host !== location.host) { return; }
-        var p = a.pathname.split("/denken/").pop();
+        var p = a.pathname.replace(/^\//, "").replace(/(index)?\.html$/, "").replace(/\/index$/, "/");
         if (p !== me && list.indexOf(p) >= 0) { a.insertAdjacentHTML("afterend", '<span class="read">読んだ</span>'); }
       });
     } catch (e) {}

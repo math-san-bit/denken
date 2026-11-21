@@ -1,6 +1,7 @@
 name: release
 
-# タグ（v1、v2、…）の中身を、そのまま GitHub Pages に公開する。
+# タグ（v1、v2、…）の中身を、公開用の site ブランチに写す。
+# Cloudflare Pages は site ブランチを本番として公開する（https://hissandou.pages.dev/）。
 # - タグを push すると、そのタグが公開される
 # - 前の版に戻すときは、Actions の画面から「Run workflow」で戻したいタグを入れる
 on:
@@ -13,37 +14,42 @@ on:
         required: true
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
-  group: pages
+  group: release
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  publish:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: 公開するタグを取り出す
         uses: actions/checkout@v4
         with:
           ref: refs/tags/${{ inputs.tag || github.ref_name }}
+          fetch-depth: 1
+
+      - name: 検査
+        run: python3 .github/scripts/check_site.py .
 
       - name: 公開する物だけを集める
         run: |
-          mkdir _site
-          rsync -a ./ _site/ \
-            --exclude=_site --exclude=.git --exclude=.github --exclude=.claude \
+          mkdir /tmp/_site
+          rsync -a ./ /tmp/_site/ \
+            --exclude=.git --exclude=.github --exclude=.claude \
             --exclude='*.md'
-          echo "公開するタグ: ${{ inputs.tag || github.ref_name }}（$(git rev-parse --short HEAD)）" >> "$GITHUB_STEP_SUMMARY"
 
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - name: site ブランチに写す
+        env:
+          TAG: ${{ inputs.tag || github.ref_name }}
+        run: |
+          SHA=$(git rev-parse --short HEAD)
+          cd /tmp/_site
+          git init -q -b site
+          git config user.name "math-san"
+          git config user.email "351488474+math-san-bit@users.noreply.github.com"
+          git add -A
+          git commit -q -m "公開: ${TAG}（${SHA}）"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" site:site
+          echo "公開するタグ: ${TAG}（${SHA}）→ site ブランチ → https://hissandou.pages.dev/" >> "$GITHUB_STEP_SUMMARY"
