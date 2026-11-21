@@ -4,54 +4,54 @@
 
 ## 入口
 
-- [電験三種・一陸特・一陸技の計算でつまずいたら](https://math-san-bit.github.io/denken/): トップページ
-- [筆算堂のページの一覧](https://math-san-bit.github.io/denken/ichiran.html): 全ページの一覧
-- [本の案内](https://math-san-bit.github.io/denken/hon.html): 止まっている所から、Kindle 本を1冊選ぶための案内
-- [まず1問だけ試す](https://math-san-bit.github.io/denken/ichimon.html): 電験三種の計算を1問だけ試す入口
+- [電験三種・一陸特・一陸技の計算でつまずいたら](https://hissandou.pages.dev/): トップページ
+- [筆算堂のページの一覧](https://hissandou.pages.dev/ichiran): 全ページの一覧
+- [本の案内](https://hissandou.pages.dev/hon): 止まっている所から、Kindle 本を1冊選ぶための案内
+- [まず1問だけ試す](https://hissandou.pages.dev/ichimon): 電験三種の計算を1問だけ試す入口
 
 ## 電験三種
 
-- [電験三種の計算で止まる所の辞典](https://math-san-bit.github.io/denken/denken3.html): 電験三種の入口ページ
-- [三相と変圧器の計算を、俯瞰する](https://math-san-bit.github.io/denken/sansou-zentai.html): 三相と変圧器まわりの計算の全体図
-- [線間電圧と相電圧：√3 は、掛けるのか割るのか](https://math-san-bit.github.io/denken/root3.html)
-- [三相電力の公式：√3 を掛けたうえで、なぜ3倍しないのか](https://math-san-bit.github.io/denken/root3-to-3.html)
-- [容量から電流の求め方：√3 は、どこから来るのか](https://math-san-bit.github.io/denken/youryou-denryuu.html)
-- [短絡電流の求め方：%Z の 100 は、掛けるのか割るのか](https://math-san-bit.github.io/denken/tanraku-100.html)
-- [%Z の基準容量の換算の求め方](https://math-san-bit.github.io/denken/kijun-youryou.html): 容量の比を、掛けるのか割るのか
-- [力率と無効電力の求め方](https://math-san-bit.github.io/denken/rikiritsu.html): kW と kVA と kvar は、どうつながるのか
-- [需要率と負荷率の違い](https://math-san-bit.github.io/denken/juyouritsu.html): どちらを、何で割るのか
-- [変圧器の巻数比の計算](https://math-san-bit.github.io/denken/henatsu-makisuu.html): 電圧・電流・インピーダンスで、掛けるのか割るのか
-- [変圧器の効率の求め方](https://math-san-bit.github.io/denken/henatsu-kouritsu.html): 鉄損と銅損は、負荷でどう変わるのか
-- [電圧変動率の求め方](https://math-san-bit.github.io/denken/denatsu-hendouritsu.html): p cos θ ＋ q sin θ の p と q は何か
-- [交流回路の複素数：なぜ j（虚数）を使うのか](https://math-san-bit.github.io/denken/kyosuu-naze.html)
-- [電験三種の数学は、どこまで要るか](https://math-san-bit.github.io/denken/suugaku-dokomade.html): 単元ごとの範囲
-- [計算の点検（10問）](https://math-san-bit.github.io/denken/tenken.html): 電験三種の計算チェック10問
-- [資格を取ったあとの仕事](https://math-san-bit.github.io/denken/shigoto.html): 電験三種・一陸特・一陸技で、何ができるようになるか
+- [電験三種の計算で止まる所の辞典](https://hissandou.pages.dev/denken3): 電験三種の入口ページ
+- [三相と変圧器の計算を、俯瞰する](https://hissandou.pages.dev/sansou-zentai): 三相と変圧器まわりの計算の全体図
+- [線間電圧と相電圧：√3 は、掛けるのか割るのか](https://hissandou.pages.dev/root3)
+- [三相電力の公式：√3 を掛けたうえで、なぜ3倍しないのか](https://hissandou.pages.dev/root3-to-3)
+- [容量から電流の求め方：√3 は、どこから来るのか](https://hissandou.pages.dev/youryou-denryuu)
+- [短絡電流の求め方：%Z の 100 は、掛けるのか割るのか](https://hissandou.pages.dev/tanraku-100)
+- [%Z の基準容量の換算の求め方](https://hissandou.pages.dev/kijun-youryou): 容量の比を、掛けるのか割るのか
+- [力率と無効電力の求め方](https://hissandou.pages.dev/rikiritsu): kW と kVA と kvar は、どうつながるのか
+- [需要率と負荷率の違い](https://hissandou.pages.dev/juyouritsu): どちらを、何で割るのか
+- [変圧器の巻数比の計算](https://hissandou.pages.dev/henatsu-makisuu): 電圧・電流・インピーダンスで、掛けるのか割るのか
+- [変圧器の効率の求め方](https://hissandou.pages.dev/henatsu-kouritsu): 鉄損と銅損は、負荷でどう変わるのか
+- [電圧変動率の求め方](https://hissandou.pages.dev/denatsu-hendouritsu): p cos θ ＋ q sin θ の p と q は何か
+- [交流回路の複素数：なぜ j（虚数）を使うのか](https://hissandou.pages.dev/kyosuu-naze)
+- [電験三種の数学は、どこまで要るか](https://hissandou.pages.dev/suugaku-dokomade): 単元ごとの範囲
+- [計算の点検（10問）](https://hissandou.pages.dev/tenken): 電験三種の計算チェック10問
+- [資格を取ったあとの仕事](https://hissandou.pages.dev/shigoto): 電験三種・一陸特・一陸技で、何ができるようになるか
 
 ## 一陸特・一陸技
 
-- [一陸特・一陸技の計算で止まる所の辞典](https://math-san-bit.github.io/denken/musen/): 無線系の入口ページ
-- [デシベルの計算の道具](https://math-san-bit.github.io/denken/musen/db-keisan.html): 倍率と dB の行き来を、分け方つきで
-- [10 log と 20 log の違い](https://math-san-bit.github.io/denken/musen/10log-20log.html): どちらを使うか
-- [1 W は、なぜ 30 dBm なのか](https://math-san-bit.github.io/denken/musen/1w-30dbm.html): W と dBm の換算
-- [dBm の足し算](https://math-san-bit.github.io/denken/musen/dbm-tasenai.html): 30 dBm ＋ 30 dBm は、60 dBm ではなく 33 dBm
-- [dBm の引き算](https://math-san-bit.github.io/denken/musen/dbm-hikizan.html): dBm − dBm の答えは、dB（比）になる
-- [デシベルの計算：電卓なしで、3 と 10 だけで出す](https://math-san-bit.github.io/denken/musen/db-3-10.html)
-- [dB から倍率に戻す計算](https://math-san-bit.github.io/denken/musen/db-bairitsu.html): 54 dB は何倍か
-- [3 dB の減衰](https://math-san-bit.github.io/denken/musen/3db-hanbun.html): 半分になるのは電力。電圧は √2 分の1、6 dB で半分
-- [対数の計算](https://math-san-bit.github.io/denken/musen/log-2-3.html): log 2 と log 3 だけで、ほかの数の log を出す
-- [log の割り算](https://math-san-bit.github.io/denken/musen/log-warizan.html): log 8 ÷ log 2 は、log 4 ではなく 3
-- [波長の計算](https://math-san-bit.github.io/denken/musen/keta-hachou.html): 2.4 GHz は 12.5 cm。300 ÷ 周波数で桁がずれる所
-- [周波数と波長の対応表](https://math-san-bit.github.io/denken/musen/hachou-hyou.html): kHz から GHz まで、2分の1波長・4分の1波長つき
-- [並列の合成抵抗の求め方](https://math-san-bit.github.io/denken/musen/bunsuu-heiretsu.html): 分数の中の分数をほどく
-- [複素数の大きさ（絶対値）の出し方](https://math-san-bit.github.io/denken/musen/root-j.html): 3 ＋ j4 から、5 を出す
-- [cos60° の値は 1/2（0.5）](https://math-san-bit.github.io/denken/musen/sankaku.html): なぜ半分になるのか。30°・45°・60° の値の表つき
-- [一陸技の数学は、どこまで要るか](https://math-san-bit.github.io/denken/musen/ichirikugi-suugaku.html): 単元ごとの範囲
-- [一陸特の計算問題は、捨てても受かるか](https://math-san-bit.github.io/denken/musen/keisan-suteru.html): 3回分を数えた結果
-- [受ける前の点検（10問）](https://math-san-bit.github.io/denken/musen/tenken.html)
-- [まず1問だけ試す](https://math-san-bit.github.io/denken/musen/ichimon.html): 無線系の計算を1問だけ試す入口
-- [電卓なしのデシベル 書き込み式の問題集 40問の案内](https://math-san-bit.github.io/denken/musen/mondaishu.html)
+- [一陸特・一陸技の計算で止まる所の辞典](https://hissandou.pages.dev/musen/): 無線系の入口ページ
+- [デシベルの計算の道具](https://hissandou.pages.dev/musen/db-keisan): 倍率と dB の行き来を、分け方つきで
+- [10 log と 20 log の違い](https://hissandou.pages.dev/musen/10log-20log): どちらを使うか
+- [1 W は、なぜ 30 dBm なのか](https://hissandou.pages.dev/musen/1w-30dbm): W と dBm の換算
+- [dBm の足し算](https://hissandou.pages.dev/musen/dbm-tasenai): 30 dBm ＋ 30 dBm は、60 dBm ではなく 33 dBm
+- [dBm の引き算](https://hissandou.pages.dev/musen/dbm-hikizan): dBm − dBm の答えは、dB（比）になる
+- [デシベルの計算：電卓なしで、3 と 10 だけで出す](https://hissandou.pages.dev/musen/db-3-10)
+- [dB から倍率に戻す計算](https://hissandou.pages.dev/musen/db-bairitsu): 54 dB は何倍か
+- [3 dB の減衰](https://hissandou.pages.dev/musen/3db-hanbun): 半分になるのは電力。電圧は √2 分の1、6 dB で半分
+- [対数の計算](https://hissandou.pages.dev/musen/log-2-3): log 2 と log 3 だけで、ほかの数の log を出す
+- [log の割り算](https://hissandou.pages.dev/musen/log-warizan): log 8 ÷ log 2 は、log 4 ではなく 3
+- [波長の計算](https://hissandou.pages.dev/musen/keta-hachou): 2.4 GHz は 12.5 cm。300 ÷ 周波数で桁がずれる所
+- [周波数と波長の対応表](https://hissandou.pages.dev/musen/hachou-hyou): kHz から GHz まで、2分の1波長・4分の1波長つき
+- [並列の合成抵抗の求め方](https://hissandou.pages.dev/musen/bunsuu-heiretsu): 分数の中の分数をほどく
+- [複素数の大きさ（絶対値）の出し方](https://hissandou.pages.dev/musen/root-j): 3 ＋ j4 から、5 を出す
+- [cos60° の値は 1/2（0.5）](https://hissandou.pages.dev/musen/sankaku): なぜ半分になるのか。30°・45°・60° の値の表つき
+- [一陸技の数学は、どこまで要るか](https://hissandou.pages.dev/musen/ichirikugi-suugaku): 単元ごとの範囲
+- [一陸特の計算問題は、捨てても受かるか](https://hissandou.pages.dev/musen/keisan-suteru): 3回分を数えた結果
+- [受ける前の点検（10問）](https://hissandou.pages.dev/musen/tenken)
+- [まず1問だけ試す](https://hissandou.pages.dev/musen/ichimon): 無線系の計算を1問だけ試す入口
+- [電卓なしのデシベル 書き込み式の問題集 40問の案内](https://hissandou.pages.dev/musen/mondaishu)
 
 ## その他
 
-- [このサイトが数えている物](https://math-san-bit.github.io/denken/privacy.html): アクセス解析についての説明
+- [このサイトが数えている物](https://hissandou.pages.dev/privacy): アクセス解析についての説明

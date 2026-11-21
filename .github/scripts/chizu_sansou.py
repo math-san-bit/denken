@@ -22,7 +22,7 @@ import html, json, math, re, sys
 from pathlib import Path
 
 ROOT = Path(sys.argv[1] if len(sys.argv) > 1 else ".").resolve()
-BASE = "https://math-san-bit.github.io/denken/"
+BASE = "https://hissandou.pages.dev/"
 PAGE = "sansou-zentai.html"
 OLD = "sansou-chizu.html"
 TITLE = "三相と変圧器の計算を、俯瞰する"

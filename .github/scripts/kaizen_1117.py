@@ -13,7 +13,7 @@ import json, math, re, sys
 from pathlib import Path
 
 ROOT = Path(sys.argv[1] if len(sys.argv) > 1 else ".").resolve()
-BASE = "https://math-san-bit.github.io/denken/"
+BASE = "https://hissandou.pages.dev/"
 TODAY = "2026-11-17"
 TODAY_JA = "2026年11月17日"
 
@@ -60,7 +60,7 @@ HEAD_FMT = """<!DOCTYPE html>
 <meta property="og:title" content="{title}｜筆算堂">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{url}">
-<meta property="og:image" content="https://math-san-bit.github.io/denken/img/og-denken.png">
+<meta property="og:image" content="https://hissandou.pages.dev/img/og-denken.png">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{ld}</script>
 <link rel="stylesheet" href="style.css?v=20261116a">

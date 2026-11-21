@@ -19,5 +19,5 @@ User-agent: Meta-ExternalAgent
 User-agent: cohere-ai
 Allow: /
 
-Sitemap: https://math-san-bit.github.io/denken/sitemap.xml
-# AI向けの目次: https://math-san-bit.github.io/denken/llms.txt
+Sitemap: https://hissandou.pages.dev/sitemap.xml
+# AI向けの目次: https://hissandou.pages.dev/llms.txt
